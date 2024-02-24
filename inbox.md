@@ -1,12 +1,14 @@
-# Inbox
+# 受信トレイ
 
-- Here you can write disorganised notes to be categorised later
-- Bullet points are useful, but it could be free form text as well
-- Sometimes it's better to just get things off your mind quickly, rather than stop to think where it belongs
-- But don't let this list get too long
-- Move information to more specific documents and link to them.
-  - This helps you navigate between documents quickly
-  - For example, you can `Cmd`+`Click` (`Ctrl`+`Click` in Windows) this: [[todo]]
-- Some notes don't end up making sense the next day
-- That's ok, you can just delete them!
-  - You can always find them in your git history, if you really need it!
+- ここでは、後で分類するための整理されていないメモを書くことができます
+- 箇条書きも便利ですが、自由形式のテキストでも構いません
+- 時には、どこに属するか考えるよりも、すぐに頭から離れることがより良い場合もあります
+- しかし、このリストをあまり長くしないでください
+- 情報をより具体的なドキュメントに移動し、それらにリンクしてください。
+  - これにより、ドキュメント間を迅速に移動できます
+  - 例えば、これを `Cmd`+`Click` (Windowsでは`Ctrl`+`Click`) できます: [[todo]]
+- 一部のメモは翌日には意味をなさなくなることがあります
+- それでも大丈夫です、削除することができます!
+  - 本当に必要な場合は、git履歴でいつでも見つけることができます!
+
+

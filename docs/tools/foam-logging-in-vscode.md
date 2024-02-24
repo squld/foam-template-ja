@@ -1,20 +1,22 @@
-# Foam logging in VsCode
+# FoamのVsCodeでのログ
 
-The Foam extension logs details about what its doing in vscode's `Output` tab.
-Generally this is only useful if you're reporting an issue about Foam.
+Foam拡張機能は、vscodeの`Output`タブで何をしているかの詳細をログに記録します。
+通常、これはFoamに関する問題を報告する場合にのみ役立ちます。
 
-1. To show the tab, click on `View > Output`.
-2. In the dropdown on the right of the tab, select `Foam`.
+1. タブを表示するには、`View > Output`をクリックします。
+2. タブの右側のドロップダウンで、`Foam`を選択します。
 
-![Find the foam log](../../assets/images/foam-log.png)
+![Foamのログを見つける](../../assets/images/foam-log.png)
 
-When reporting an issue about Foam, set the log level to `Debug`:
+Foamに関する問題を報告する際は、ログレベルを`Debug`に設定してください:
 
-## Change the log level for the session
+## セッションのログレベルを変更する
 
-Execute the command `Foam: Set log level`.
+`Foam: Set log level`コマンドを実行します。
 
-## Change the default logging level
+## デフォルトのログレベルを変更する
 
-1. Open workspace settings (`cmd+,`, or execute the `Preferences: Open Workspace Settings` command)
-2. Look for the entry `Foam > Logging: Level`
+1. ワークスペース設定を開きます (`cmd+,`、または`Preferences: Open Workspace Settings`コマンドを実行)
+2. `Foam > Logging: Level`エントリを探します。
+
+

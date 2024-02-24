@@ -1,26 +1,26 @@
-# Foam Commands
+# Foamコマンド
 
-Foam has various commands that you can explore by calling the command palette and typing "Foam".
+Foamには"Foam"と入力してコマンドパレットを呼び出すことで探索できるさまざまなコマンドがあります。
 
-In particular, some commands can be very customizable and can help with custom workflows and use cases.
+特に、いくつかのコマンドは非常にカスタマイズ可能であり、カスタムワークフローやユースケースに役立ちます。
 
-## foam-vscode.create-note command
+## foam-vscode.create-noteコマンド
 
-This command creates a note.
-Although it works fine on its own, it can be customized to achieve various use cases.
-Here are the settings available for the command:
+このコマンドはノートを作成します。
+そのままでも十分に機能しますが、さまざまなユースケースを実現するためにカスタマイズすることができます。
+ここに、コマンドのための利用可能な設定があります:
 
-- `notePath`: The path of the note to create. If relative it will be resolved against the workspace root.
-- `templatePath`: The path of the template to use. If relative it will be resolved against the workspace root.
-- `title`: The title of the note (that is, the `FOAM_TITLE` variable)
-- `text`: The text to use for the note. If also a template is provided, the template has precedence
-- `variables`: Variables to use in the text or template
-- `date`: The date used to resolve the FOAM*DATE*\* variables. in `YYYY-MM-DD` format
-- `onFileExists?: 'overwrite' | 'open' | 'ask' | 'cancel'`: What to do in case the target file already exists
+- `notePath`: 作成するノートのパス。相対パスの場合、ワークスペースのルートに対して解決されます。
+- `templatePath`: 使用するテンプレートのパス。相対パスの場合、ワークスペースのルートに対して解決されます。
+- `title`: ノートのタイトル (つまり、`FOAM_TITLE`変数)
+- `text`: ノートに使用するテキスト。テンプレートも提供されている場合、テンプレートが優先されます
+- `variables`: テキストまたはテンプレートで使用する変数
+- `date`: FOAM*DATE*\*変数を解決するために使用される日付。`YYYY-MM-DD`形式
+- `onFileExists?: 'overwrite' | 'open' | 'ask' | 'cancel'`: ターゲットファイルが既に存在する場合の対応
 
-To customize a command and associate a key binding to it, open the key binding settings and add the appropriate configuration, here are some examples:
+コマンドをカスタマイズしてキーバインドを関連付けるには、キーバインド設定を開いて適切な設定を追加します。ここにいくつかの例があります:
 
-- Create a note called `test note.md` with some text. If the note already exists, ask for a new name
+- `test note.md`という名前のノートをいくつかのテキストで作成します。ノートが既に存在する場合は、新しい名前を尋ねます。
 
 ```
 {
@@ -34,7 +34,7 @@ To customize a command and associate a key binding to it, open the key binding s
 }
 ```
 
-- Create a note following the `weekly-note.md` template. If the note already exists, open it
+- `weekly-note.md`テンプレートに従ってノートを作成します。ノートが既に存在する場合は、それを開きます。
 
 ```
 {
@@ -47,18 +47,18 @@ To customize a command and associate a key binding to it, open the key binding s
 }
 ```
 
-## foam-vscode.open-resource command
+## foam-vscode.open-resourceコマンド
 
-This command opens a resource.
+このコマンドはリソースを開きます。
 
-Normally it receives a `URI`, which identifies the resource to open.
+通常、開くリソースを識別する`URI`を受け取ります。
 
-It is also possible to pass in a filter, which will be run against the workspace resources to find one or more matches.
+フィルターを渡すことも可能で、ワークスペースのリソースに対して実行され、一致するものを1つ以上見つけます。
 
-- If there is one match, it will be opened
-- If there is more than one match, a quick pick will show up allowing the user to select the desired resource
+- 一致するものが1つの場合、それが開かれます
+- 一致するものが複数ある場合、ユーザーが望むリソースを選択できるようにクイックピックが表示されます
 
-Examples:
+例:
 
 ```
 {
@@ -71,3 +71,5 @@ Examples:
   }
 }
 ```
+
+

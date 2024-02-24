@@ -1,40 +1,40 @@
-# Daily Notes
+# デイリーノート
 
-Daily notes allow you to quickly create and access a new notes file for each day. This is a surpisingly effective and increasingly common strategy to organize notes and manage events.
+デイリーノートを使用すると、毎日の新しいノートファイルをすばやく作成してアクセスできます。これは、ノートを整理し、イベントを管理するための驚くほど効果的で、ますます一般的な戦略です。
 
-View today's note file by running the `Foam: Open Daily Note` command, by using the shortcut `alt+d` (note: shortcuts can be [overridden](https://code.visualstudio.com/docs/getstarted/keybindings)), or by using [#snippets](#Snippets). The name, location, and title of daily notes files is [#configurable](#Configuration).
+`Foam: Open Daily Note` コマンドを実行するか、ショートカット `alt+d` を使用するか、または [#snippets](#スニペット) を使用して、今日のノートファイルを表示します。デイリーノートファイルの名前、場所、およびタイトルは [#configurable](#設定) で設定できます。
 
-## Roam-style Automatic Daily Notes
+## Roamスタイルの自動デイリーノート
 
-You can automatically open today's note on startup by setting the `Foam › Open Daily Note: On Startup` setting to `true`.
+`Foam › Open Daily Note: On Startup` 設定を `true` に設定することで、起動時に自動的に今日のノートを開くことができます。
 
-## Daily Note Templates
+## デイリーノートテンプレート
 
-Daily notes can also make use of [[Note Templates]], by defining a special `.foam/templates/daily-note.md` template.
+デイリーノートは、特別な `.foam/templates/daily-note.md` テンプレートを定義することで、[[Note Templates]] を使用することもできます。
 
-## Snippets
+## スニペット
 
-Create a link to a recent daily note using [snippets](https://code.visualstudio.com/docs/editor/userdefinedsnippets). Type `/today` and press `enter` to link to today's note. You can also write:
+[スニペット](https://code.visualstudio.com/docs/editor/userdefinedsnippets) を使用して、最近のデイリーノートへのリンクを作成します。`/today` と入力して `enter` を押すと、今日のノートへのリンクが作成されます。また、以下のように書くこともできます:
 
-| Snippet      | Date          |
+| スニペット    | 日付          |
 | ------------ | ------------- |
-| `/tomorrow`  | tomorrow      |
-| `/yesterday` | yesterday     |
-| `/monday`    | next Monday   |
-| `/+1d`       | tomorrow      |
-| `/-3d`       | 3 days ago    |
-| `/+1w`       | in a week     |
-| `/-1m`       | one month ago |
-| `/+1y`       | in one year   |
+| `/tomorrow`  | 明日          |
+| `/yesterday` | 昨日          |
+| `/monday`    | 次の月曜日    |
+| `/+1d`       | 明日          |
+| `/-3d`       | 3日前         |
+| `/+1w`       | 1週間後       |
+| `/-1m`       | 1ヶ月前       |
+| `/+1y`       | 1年後         |
 
-## Configuration
+## 設定
 
-By default, Daily Notes will be created in a file called `yyyy-mm-dd.md` in the workspace's `journals` folder, with a heading `yyyy-mm-dd`.
+デフォルトでは、デイリーノートはワークスペースの `journals` フォルダ内に `yyyy-mm-dd.md` というファイル名で、見出し `yyyy-mm-dd` で作成されます。
 
-These settings can be overridden in your workspace or global `.vscode/settings.json` file, using the [**dateformat** date masking syntax](https://github.com/felixge/node-dateformat#mask-options):
+これらの設定は、ワークスペースまたはグローバルの `.vscode/settings.json` ファイルで、[**dateformat** 日付マスキング構文](https://github.com/felixge/node-dateformat#mask-options)を使用して上書きすることができます:
 
-It's possible to customize path and heading of your daily notes, by following the [dateformat masking syntax](https://github.com/felixge/node-dateformat#mask-options).
-The following properties can be used:
+デイリーノートのパスと見出しをカスタマイズすることができます。[dateformat マスキング構文](https://github.com/felixge/node-dateformat#mask-options)に従ってください。
+以下のプロパティを使用できます:
 
 ```json
   "foam.openDailyNote.directory": "journal",
@@ -43,11 +43,13 @@ The following properties can be used:
   "foam.openDailyNote.titleFormat": "'Journal Entry, ' dddd, mmmm d",
 ```
 
-The above configuration would create a file `journal/daily-note-2020-07-25.mdx`, with the heading `Journal Entry, Sunday, July 25`.
+上記の設定では、`journal/daily-note-2020-07-25.mdx` というファイルが作成され、見出しは `Journal Entry, Sunday, July 25` になります。
 
-> NOTE: It is possible to set the filepath of a daily note according to the date using the special [[note-properties]] configurable for [[Note Templates]]. Specifically see [[note-templates#Example of date-based|Example of date-based filepath]]. Using the template property will override any setting configured through `.vscode/settings.json`.
+> 注意: 特別な [[note-properties]] を使用して、日付に基づいてデイリーノートのファイルパスを設定することができます。これは [[Note Templates]] で設定可能です。具体的には [[note-templates#Example of date-based|日付ベースの例]] を参照してください。テンプレートプロパティを使用すると、`.vscode/settings.json` を通じて設定された任意の設定が上書きされます。
 
-## Extend Functionality (Weekly, Monthly, Quarterly Notes)
+## 機能の拡張 (週次、月次、四半期ごとのノート)
 
-Please see [[note-macros]]
+[[note-macros]]を参照してください。
+
+
 

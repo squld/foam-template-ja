@@ -1,37 +1,39 @@
 # Wikilinks
 
-Wikilinks are the internal links that connect the files in your knowledge base. (Also called `[[MediaWiki]]` links).
+Wikilinksは、知識ベース内のファイルを接続する内部リンクです。 (`[[MediaWiki]]`リンクとも呼ばれます) 。
 
-## Creating and navigating wikilinks
+## Wikilinksの作成とナビゲーション
 
-To create a wikilink, type `[[` and then start typing the name of another note in your repo. Once the desired note is selected press the `tab` key to autocomplete it. For example: [[graph-visualization]].
+Wikilinkを作成するには、`[[`と入力し、リポジトリ内の別のノートの名前を入力し始めます。目的のノートが選択されたら、`tab`キーを押して自動補完します。例: [[graph-visualization]]。
 
-`Cmd` + `Click` ( `Ctrl` + `Click` on Windows ) on wikilink to navigate to that note (`F12` also works while your cursor is on the wikilink). If the file doesn't exist it will be created in your workspace based on your default [[note-templates]] settings.
+`Cmd` + `Click` (Windowsでは`Ctrl` + `Click`) でwikilinkをナビゲートします (カーソルがwikilink上にある間は`F12`も機能します) 。ファイルが存在しない場合は、デフォルトの[[note-templates]]設定に基づいてワークスペースに作成されます。
 
-## Placeholders
+## プレースホルダー
 
-You can also create a [[placeholder]]. <!--NOTE: this placeholder link should NOT have an associated file. This is to demonstrate the concept-->
-A placeholder is a wikilink that doesn't have a target file and a link to a placeholder is styled differently so you can easily tell them apart.
-They can still be helpful to highlight connections.
+[[placeholder]]のように、ターゲットファイルがないwikilinkも作成できます。<!--NOTE: このプレースホルダーリンクには関連ファイルが存在しません。これは概念を示すためです-->
+プレースホルダーは、ターゲットファイルがないwikilinkで、プレースホルダーへのリンクは異なるスタイルで表示されるため、簡単に区別できます。
+それでも、接続を強調するのに役立ちます。
 
-Open the graph with `Foam: Show Graph` command, and look at the placeholder node.
+`Foam: Show Graph`コマンドでグラフを開き、プレースホルダーノードを見てください。
 
-Remember, with `CTRL/CMD+click` on a wikilink you can navigate to the note, or create it (if the link is a placeholder).
+`CTRL/CMD+click`でwikilinkをナビゲートしたり、プレースホルダーのリンクであれば (ファイルが存在しない場合) 作成することを覚えておいてください。
 
-## Support for sections
+## セクションのサポート
 
-Foam supports autocompletion, navigation, embedding and diagnostics for note sections. Just use the standard wiki syntax of `[[resource#Section Title]]`. 
-- If it's an external file, `[your link will need the filename](other-file.md#that-section-I-want-to-link-to)`, but
-- if it's an anchor within the same document, `[you just need an octothorpe and the section name](#that-section-above)`.  
-- Doesn't matter what heading-level the anchor is; whether you're linking to an `H1` like `# MEN WALK ON MOON` or an `H2` like `## Astronauts Land on Plain`, the link syntax uses a single octothorpe: `[Walk!](#men-walk-on-moon)` and `[Land!](#astronauts-land-on-plain-collect-rocks-plant-flag)`. Autocomplete is your friend here.
+Foamは、ノートセクションの自動補完、ナビゲーション、埋め込み、診断をサポートしています。標準のwiki構文`[[resource#Section Title]]`を使用してください。
+- 外部ファイルの場合は、`[your link will need the filename](other-file.md#that-section-I-want-to-link-to)`が必要ですが、
+- 同じドキュメント内のアンカーの場合は、`[you just need an octothorpe and the section name](#that-section-above)`だけです。
+- アンカーがどの見出しレベルであっても、`H1`のような`# MEN WALK ON MOON`や`H2`のような`## Astronauts Land on Plain`にリンクする場合、リンク構文は単一のオクトーソープを使用します: `[Walk!](#men-walk-on-moon)`や`[Land!](#astronauts-land-on-plain-collect-rocks-plant-flag)`。ここでも自動補完が役立ちます。
 
-## Markdown compatibility
+## Markdownの互換性
 
-The [Foam for VSCode](https://marketplace.visualstudio.com/items?itemName=foam.foam-vscode) extension automatically generates [[link-reference-definitions]] at the bottom of the file to make wikilinks compatible with other Markdown tools and parsers.
+[VSCode用Foam](https://marketplace.visualstudio.com/items?itemName=foam.foam-vscode)拡張機能は、他のMarkdownツールやパーサーとwikilinksが互換性を持つように、ファイルの下部に[[link-reference-definitions]]を自動生成します。
 
-## Read more
+## 続きを読む
 
 - [[foam-file-format]]
 - [[note-templates]]
-- See [[link-reference-definition-improvements]] for further discussion on current problems and potential solutions.
+- 現在の問題と潜在的な解決策についてのさらなる議論については、[[link-reference-definition-improvements]]を参照してください。
+
+
 

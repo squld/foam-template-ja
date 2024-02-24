@@ -1,71 +1,71 @@
-# Link Reference Definitions
+# リンク参照定義
 
-When you use `[[wikilinks]]`, the [foam-vscode](https://github.com/foambubble/foam/tree/master/packages/foam-vscode) extension can automatically generate [Markdown Link Reference Definitions](https://spec.commonmark.org/0.29/#link-reference-definitions) at the bottom of the file. This is not needed to navigate your workspace with foam-vscode, but is useful for files to remain compatible with various Markdown tools (e.g. parsers, static site generators, VS code plugins etc), which don't support `[[wikilinks]]`.
+`[[wikilinks]]`を使用すると、[foam-vscode](https://github.com/foambubble/foam/tree/master/packages/foam-vscode)拡張機能はファイルの末尾に[Markdownリンク参照定義](https://spec.commonmark.org/0.29/#link-reference-definitions)を自動的に生成することができます。これはfoam-vscodeでワークスペースをナビゲートするために必要ではありませんが、`[[wikilinks]]`をサポートしていないさまざまなMarkdownツール (例: パーサー、静的サイトジェネレーター、VS codeプラグインなど) との互換性を保つために役立ちます。
 
-## Example
+## 例
 
-The following example:
+以下の例:
 
   ```md
   - [[wikilinks]]
   - [[github-pages]]
   ```
 
-...generates the following link reference definitions to the bottom of the file:
+...はファイルの末尾に以下のリンク参照定義を生成します:
 
   ```md
   [wikilinks]: wikilinks "Wikilinks"
   [github-pages]: github-pages "GitHub Pages"
   ```
 
-You can open the [raw markdown](https://foambubble.github.io/foam/features/link-reference-definitions.md) to see them at the bottom of this file
-You can open the [raw markdown](https://foambubble.github.io/foam/user/features/link-reference-definitions.md) to see them at the bottom of this file
+このファイルの末尾にあるそれらを見るために、[raw markdown](https://foambubble.github.io/foam/features/link-reference-definitions.md)を開くことができます。
+このファイルの末尾にあるそれらを見るために、[raw markdown](https://foambubble.github.io/foam/user/features/link-reference-definitions.md)を開くことができます。
 
-## Specification
+## 仕様
 
-The three components of a link reference definition are `[link-label]: link-target "Link Title"`
+リンク参照定義の3つのコンポーネントは`[link-label]: link-target "Link Title"`です。
 
-- **link label:** The link text to match in the surrounding markdown document. This matches the inner bracket of the double-bracketed `[[wikilink]]` notation
-- **link destination** The target of the matched link
-  - By default we generate links without extension. This can be overridden, see [Configuration](#configuration) below
-- **"Link Title"** Optional title for link (The Foam template has a snippet of JavaScript to replace this on the website at runtime)
+- **リンクラベル:** 周囲のmarkdownドキュメントで一致するリンクテキスト。これは二重括弧`[[wikilink]]`表記の内側の括弧に一致します。
+- **リンク先** 一致したリンクのターゲット
+  - デフォルトでは拡張子なしでリンクを生成します。これは下記の[設定](#設定)で上書きできます。
+- **"リンクタイトル"** リンクのオプショナルなタイトル (Foamテンプレートには、ウェブサイトの実行時にこれを置き換えるJavaScriptのスニペットがあります)
 
-## Configuration
+## 設定
 
-You can choose to generate link reference definitions with or without file extensions, depending on the target, or to disable the generation altogether. As a rule of thumb:
+ファイル拡張子を含むか含まないか、またはリンク参照定義の生成を完全に無効にするかを選択できます。一般的なルールとしては:
 
-- Links with file extensions work better with standard markdown-based tools, such as GitHub web UI.
-- Links without file extensions work better with certain web publishing tools that treat links as literal urls and don't transform them automatically, such as the standard GitHub pages installation.
+- ファイル拡張子を含むリンクは、GitHubウェブUIなどの標準的なmarkdownベースのツールとの互換性が高くなります。
+- ファイル拡張子を含まないリンクは、リンクをリテラルURLとして扱い、自動的に変換しない特定のウェブ公開ツールとの互換性が高くなります。例えば、標準のGitHubページのインストールなどです。
 
-By default, Foam generates links without file extensions for legacy reasons, but this may change in future versions.
+デフォルトでは、Foamはレガシーな理由から拡張子なしでリンクを生成しますが、将来のバージョンではこれが変更される可能性があります。
 
-You can override this setting in your Foam workspace's `settings.json`:
+Foamワークスペースの`settings.json`でこの設定を上書きできます:
 
-- `"foam.edit.linkReferenceDefinitions": "withoutExtensions"` (default)
+- `"foam.edit.linkReferenceDefinitions": "withoutExtensions"` (デフォルト)
 - `"foam.edit.linkReferenceDefinitions": "withExtensions"`
 - `"foam.edit.linkReferenceDefinitions": "off"`
 
-### Ignoring files
+### ファイルの無視
 
-Sometimes, you may want to ignore certain files or folders, so that Foam doesn't generate link reference definitions to them.
+場合によっては、特定のファイルやフォルダを無視して、Foamがそれらへのリンク参照定義を生成しないようにしたいことがあります。
 
-There are three options for excluding files from your Foam project:
+Foamプロジェクトからファイルを除外するための3つのオプションがあります:
 
-1. `files.exclude` (from VSCode) will prevent the folder from showing in the file explorer.
+1. `files.exclude` (VSCodeから) は、フォルダがファイルエクスプローラに表示されないようにします。
 
-    > "Configure glob patterns for excluding files and folders. For example, the file explorer decides which files and folders to show or hide based on this setting. Refer to the Search: Exclude setting to define search-specific excludes."
+    > "ファイルやフォルダを除外するためのglobパターンを設定します。例えば、ファイルエクスプローラはこの設定に基づいて、どのファイルやフォルダを表示または非表示にするかを決定します。検索固有の除外を定義するには、検索: 除外設定を参照してください。"
 
-2. `files.watcherExclude` (from VSCode) prevents VSCode from constantly monitoring files for changes.
+2. `files.watcherExclude` (VSCodeから) は、VSCodeがファイルの変更を常に監視するのを防ぎます。
 
-    > "Configure paths or glob patterns to exclude from file watching. Paths or basic glob patterns that are relative (for example `build/output` or `*.js`) will be resolved to an absolute path using the currently opened workspace. Complex glob patterns must match on absolute paths (i.e. prefix with `**/` or the full path and suffix with `/**` to match files within a path) to match properly (for example `**/build/output/**` or `/Users/name/workspaces/project/build/output/**`). When you experience the file watcher process consuming a lot of CPU, make sure to exclude large folders that are of less interest (such as build output folders)."
+    > "ファイル監視から除外するパスまたはglobパターンを設定します。相対パス (例: `build/output` や `*.js`) や基本的なglobパターンは、現在開いているワークスペースを使用して絶対パスに解決されます。複雑なglobパターンは、適切に一致させるために絶対パスに一致する必要があります (例: `**/build/output/**` や `/Users/name/workspaces/project/build/output/**`) 。ファイルウォッチャープロセスが多くのCPUを消費している場合は、ビルド出力フォルダなどの関心の低い大きなフォルダを除外することを確認してください。"
 
-3. `foam.files.ignore` (from Foam) ignores files from being added to the Foam graph.
+3. `foam.files.ignore` (Foamから) は、ファイルがFoamグラフに追加されるのを無視します。
 
-    > "Specifies the list of globs that will be ignored by Foam (e.g. they will not be considered when creating the graph). To ignore the all the content of a given folder, use `<folderName>/**/*`" (requires reloading VSCode to take effect).
+    > "Foamによって無視されるglobのリストを指定します (例: グラフの作成時に考慮されません) 。特定のフォルダのすべてのコンテンツを無視するには、`<folderName>/**/*` を使用します" (VSCodeを再読み込みする必要があります) 。
 
-For instance, if you're using a local instance of [Jekyll](https://jekyllrb.com/), you may find that it writes copies of each `.md` file into a `_site` directory, which may lead to Foam generating references to them instead of the original source notes.
+例えば、[Jekyll](https://jekyllrb.com/)のローカルインスタンスを使用している場合、`.md`ファイルのコピーを`_site`ディレクトリに書き込むことがあります。これにより、Foamが元のソースノートではなく、これらのファイルへの参照を生成する原因となることがあります。
 
-You can ignore the `_site` directory by adding any of the following settings to your `.vscode/settings.json` file:
+`_site`ディレクトリを無視するには、`.vscode/settings.json`ファイルに以下の設定のいずれかを追加します:
 
 ```json
   "files.exclude": {
@@ -79,7 +79,9 @@ You can ignore the `_site` directory by adding any of the following settings to 
   ]
 ```
 
-After changing the setting in your workspace, you can run the [[workspace-janitor]] command to convert all existing definitions.
+ワークスペースで設定を変更した後、[[workspace-janitor]]コマンドを実行して、既存の定義をすべて変換できます。
 
-See [[link-reference-definition-improvements]] for further discussion on current problems and potential solutions.
+現在の問題と潜在的な解決策についてのさらなる議論については、[[link-reference-definition-improvements]]を参照してください。
+
+
 

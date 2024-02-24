@@ -1,8 +1,9 @@
 # Todo
 
-You can create todos in Foam.
+Foamでは、todoリストを作成できます。
 
-- [x] This is an example of a todo list item that's complete
-- [ ] This one is not completed yet
-- [ ] You can mark it completed by pressing `Option`+`C` (or `Alt`+`C`) when your cursor is on this line
-  - [ ] You can also select multiple lines and mark them all at once!
+- [x] これは完了したtodoリストアイテムの例です
+- [ ] これはまだ完了していません
+- [ ] この行にカーソルがあるときに`Option`+`C` (またはWindowsでは`Alt`+`C`) を押すと、完了としてマークできます
+  - [ ] 複数の行を選択して、一度にすべてをマークすることもできます!
+

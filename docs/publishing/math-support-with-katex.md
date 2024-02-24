@@ -1,16 +1,16 @@
-# Katex Math Rendering
+# KaTeXを使用した数式レンダリング
 
-Apart from using the method mentioned in [[math-support-with-mathjax]], we can also use KaTeX to render our math equations in Foam. The caveat is: we can't rely on GitHub Pages to host and deploy our website anymore, because the plugin we'll be using to let Jekyll support KaTeX doesn't play well together with GitHub Pages.
+[[math-support-with-mathjax]]で述べた方法とは別に、Foamで数式をレンダリングするためにKaTeXも使用できます。ただし、JekyllがKaTeXをサポートするために使用するプラグインがGitHub Pagesとうまく連携しないため、もうGitHub Pagesを使用してウェブサイトをホストおよびデプロイすることはできません。
 
-The alternative solution is to using [[publish-to-vercel]] for building and publishing our website, so before you start integrating KaTeX into your Foam project, please follow the instructions to host your Foam workspace on [[publish-to-vercel]] first.
+代替解決策は、[[publish-to-vercel]]を使用してウェブサイトを構築および公開することです。そのため、FoamプロジェクトにKaTeXを統合する前に、まず[[publish-to-vercel]]の指示に従ってFoamワークスペースをホストしてください。
 
-## Adding required plugins
+## 必要なプラグインの追加
 
-Add the plugin `jekyll-katex` to your Foam workspace's `_config.yml` and `Gemfile` if you haven't done so already. For detailed instructions, please refer to the `#Adding a _config.yml` and `#Adding a Gemfile` in [[publish-to-vercel]].
+まだ行っていない場合は、Foamワークスペースの`_config.yml`と`Gemfile`にプラグイン`jekyll-katex`を追加してください。詳細な指示については、[[publish-to-vercel]]の`#Adding a _config.yml`および`#Adding a Gemfile`を参照してください。
 
-## Loading KaTeX JS and CSS
+## KaTeXのJSとCSSの読み込み
 
-Because we are using KaTeX to render math, we will also need to import KaTeX's JS and CSS files from CDN. The official method to load these files is documented at: [KaTeX/KaTeX#starter-template](https://github.com/KaTeX/KaTeX#starter-template). In our case, we will need to add the following code snippet to our `_layouts/page.html`:
+数式をレンダリングするためにKaTeXを使用しているため、CDNからKaTeXのJSとCSSファイルもインポートする必要があります。これらのファイルを読み込む公式の方法は、[KaTeX/KaTeX#starter-template](https://github.com/KaTeX/KaTeX#starter-template)で文書化されています。この場合、`_layouts/page.html`に次のコードスニペットを追加する必要があります:
 
 ```html
 <!-- _layouts/page.html -->
@@ -20,23 +20,23 @@ layout: default
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
 
-<!-- The loading of KaTeX is deferred to speed up page rendering -->
+<!-- ページのレンダリング速度を上げるために、KaTeXの読み込みを遅延させます -->
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
 
-<!-- To automatically render math in text elements, include the auto-render extension: -->
+<!-- テキスト要素内の数式を自動的にレンダリングするには、auto-render拡張機能を含めます:  -->
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
 
 <!-- ... -->
 ```
 
-## Adding liquid tags to wrap page content
+## ページコンテンツをラップするためのliquidタグの追加
 
-The plugin `jekyll-katex` focuses on rendering:
+`jekyll-katex`プラグインは以下のレンダリングに焦点を当てています:
 
-- Single math equations wrapped inside `katex` liquid tags like {% raw %}`{% katex %} ... {% endkatex %}`{% endraw %}.
-- Or multiple math equations in paragraphs wrapped inside {% raw %}`{% katexmm %} ... {% endkatexmm %}`{% endraw %}.
+- `katex` liquidタグでラップされた単一の数式、例: {% raw %}`{% katex %} ... {% endkatex %}`{% endraw %}。
+- または、{% raw %}`{% katexmm %} ... {% endkatexmm %}`{% endraw %}でラップされた複数の数式を含む段落。
 
-In our case, we'll be using the latter tag to wrap our {% raw %}`{{ content }}`{% endraw %}. Wrap {% raw %}`{{ content }}`{% endraw %} in the liquid tags inside `_layouts/page.html` like so:
+この場合、後者のタグを使用して{% raw %}`{{ content }}`{% endraw %}をラップします。`_layouts/page.html`内で{% raw %}`{{ content }}`{% endraw %}をliquidタグでラップする方法は以下の通りです:
 
 ```html
 <!-- _layouts/page.html -->
@@ -46,9 +46,11 @@ In our case, we'll be using the latter tag to wrap our {% raw %}`{{ content }}`{
 <!-- ... -->
 ```
 
-## Render equations in Foam's homepage as well
+## Foamのホームページでも数式をレンダリングする
 
-You may have noticed that we only made modifications to the template `_layouts/page.html`, which means that `_layouts/home.html` won't have KaTeX support. If you wan't to render math in Foam's home page, you'll need to make the same modifications to `_layouts/home.html` as well.
+`_layouts/page.html`のテンプレートにのみ変更を加えたことに気付いたかもしれませんが、これは`_layouts/home.html`がKaTeXサポートを持たないことを意味します。Foamのホームページで数式をレンダリングしたい場合は、`_layouts/home.html`にも同じ変更を加える必要があります。
 
-Finally, if all goes well, then our site hosted on Vercel will support rendering math equations with KaTeX after committing these changes to GitHub. Here's a demo of the default template with KaTeX support: [Foam Template with KaTeX support](https://foam-template.vercel.app/).
+最終的に、すべてがうまくいけば、これらの変更をGitHubにコミットした後、Vercelでホストされた私たちのサイトはKaTeXを使用して数式をレンダリングするサポートを持つことになります。KaTeXサポートを持つデフォルトテンプレートのデモはこちらです: [KaTeXサポート付きFoamテンプレート](https://foam-template.vercel.app/)。
+
+
 

@@ -4,13 +4,13 @@ keywords: hello world, bonjour
 tags: [hello, bonjour]
 ---
 
-# Note Properties
+# ノートプロパティ
 
-At the top of the file you can have a section where you define your properties. This section is known as the [Front-Matter](https://learn.cloudcannon.com/jekyll/introduction-to-jekyll-front-matter/) of the document and uses [YAML formatting](https://www.codeproject.com/Articles/1214409/Learn-YAML-in-five-minutes).
+ファイルの先頭には、プロパティを定義するセクションがあります。このセクションはドキュメントの[Front-Matter](https://learn.cloudcannon.com/jekyll/introduction-to-jekyll-front-matter/)として知られ、[YAMLフォーマット](https://www.codeproject.com/Articles/1214409/Learn-YAML-in-five-minutes)を使用しています。
 
-> Be aware that this YAML section needs to be at the very top of the file to be valid.
+> このYAMLセクションはファイルの非常に上部にある必要があります。
 
-For example, for this file, we have:
+例えば、このファイルの場合、以下のようになります:
 
 ```markdown
 ---
@@ -19,21 +19,21 @@ keywords: hello world, bonjour
 ---
 ```
 
-This sets the `type` of this document to `feature` and sets **three** keywords for the document: `hello`, `world`, and `bonjour`. The YAML parser will treat both spaces and commas as the separators for these YAML properties. If you want to use multi-word values for these properties, you will need to combine the words with dashes or underscores (i.e. instead of `hello world`, use `hello_world` or `hello-world`).
+これにより、このドキュメントの`type`が`feature`に設定され、ドキュメントのキーワードが**3つ**設定されます: `hello`、`world`、`bonjour`。YAMLパーサーは、これらのYAMLプロパティの区切り文字としてスペースとカンマの両方を扱います。これらのプロパティに複数の単語の値を使用したい場合は、単語をダッシュまたはアンダースコアで結合する必要があります (つまり、`hello world`の代わりに`hello_world`または`hello-world`を使用します) 。
 
-> You can set as many custom properties for a document as you like, but there are a few [special properties](#special-properties) defined by Foam.
+> ドキュメントに好きなだけカスタムプロパティを設定できますが、Foamによって定義されたいくつかの[特別なプロパティ](#special-properties)があります。
 
-## Special Properties
+## 特別なプロパティ
 
-Some properties have special meaning for Foam:
+Foamには特別な意味を持ついくつかのプロパティがあります:
 
-| Name    | Description                                                                                                                                                                      |
+| 名前    | 説明                                                                                                                                                                      |
 | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `title` | will assign the name to the note that you will see in the graph, regardless of the filename or the first heading (also see how to [[write-notes-in-foam]])                       |
-| `type`  | can be used to style notes differently in the graph (also see [[graph-visualization]]). The default type for a document is `note` unless otherwise specified with this property. |
-| `tags`  | can be used to add tags to a note (see [[tags]])                                                                                                                                 |
+| `title` | グラフで見ることになるノートの名前を割り当てます。ファイル名や最初の見出しに関係なく ([[write-notes-in-foam]]も参照) 。                       |
+| `type`  | グラフでノートを異なるスタイルで表示するために使用できます ([[graph-visualization]]も参照) 。ドキュメントのデフォルトタイプは`note`ですが、このプロパティで指定されていない限り。 |
+| `tags`  | ノートにタグを追加するために使用できます ([[tags]]を参照) 。                                                                                                                                 |
 
-For example:
+例えば:
 
 ```markdown
 ---
@@ -44,7 +44,9 @@ tags: daily, funny, planning
 ---
 ```
 
-## Foam Template Properties
+## Foamテンプレートプロパティ
 
-There also exists properties that are even more specific to Foam templates, see [[note-templates#Metadata]] for more info.
+Foamテンプレートに特有のプロパティも存在します。詳細については、[[note-templates#Metadata]]を参照してください。
+
+
 

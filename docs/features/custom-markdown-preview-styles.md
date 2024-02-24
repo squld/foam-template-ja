@@ -1,12 +1,12 @@
-# Custom Markdown Preview Styles
+# カスタムMarkdownプレビュースタイル
 
-Visual Studio Code allows you to use your own CSS in the Markdown preview tab.
+Visual Studio Codeでは、Markdownプレビュータブで独自のCSSを使用できます。
 
-## Instructions
+## 使用方法
 
-Custom CSS for the Markdown preview can be implemented by using the `"markdown.styles": []` setting in `settings.json`. The stylesheets can either be https URLs or relative paths to local files in the current workspace.
+MarkdownプレビューのカスタムCSSは、`settings.json`の`"markdown.styles": []`設定を使用して実装できます。スタイルシートはhttpsのURLまたは現在のワークスペース内のローカルファイルへの相対パスのいずれかにすることができます。
 
-For example, to load a stylesheet called `Style.css`, we can update `settings.json` with the following line:
+例えば、`Style.css`というスタイルシートを読み込むには、`settings.json`に次の行を追加します:
 
 ```
 {
@@ -14,18 +14,20 @@ For example, to load a stylesheet called `Style.css`, we can update `settings.js
 }
 ```
 
-## Foam elements
+## Foam要素
 
-### Foam note & placeholder links
+### Foamノート & プレースホルダーリンク
 
-It is possible to custom style the links to a note or placeholder. The links are an `<a>` tag. For notes use the class `foam-note-link`, for placeholders use `foam-placeholder-link`.
+ノートまたはプレースホルダーへのリンクのカスタムスタイルを設定することができます。リンクは`<a>`タグです。ノートには`foam-note-link`クラスを、プレースホルダーには`foam-placeholder-link`クラスを使用します。
 
-### Cyclic inclusion warnings
+### 循環含有警告
 
-Foams offers the functionality to include other notes in your note. This will be displayed in the preview tab. Foam recognises a cyclic inclusion of notes and will display a warning when detected. The following html is used and can be custom styled using the class `foam-cyclic-link-warning`.
+Foamは、他のノートをあなたのノートに含める機能を提供します。これはプレビュータブで表示されます。Foamはノートの循環含有を認識し、検出された場合に警告を表示します。以下のhtmlが使用され、`foam-cyclic-link-warning`クラスを使用してカスタムスタイルを設定できます。
 
 ```html
 <div class="foam-cyclic-link-warning">
-  Cyclic link detected for wikilink: ${wikilink}
+  wikilink: ${wikilink}に対する循環リンクが検出されました
 </div>
 ```
+
+

@@ -1,10 +1,12 @@
-# Search for Notes
+# ノートの検索
 
-This #recipe contains tips on how to leverage VS Code search features.
+この #レシピ には、VS Codeの検索機能を活用するためのヒントが含まれています。
 
-[[todo]] Add more VS Code search power user tips here
+[[todo]] ここにVS Codeの検索のパワーユーザーヒントを追加
 
-Run `Cmd` + `P` ( `Ctrl` +  `P` on Windows ) and type a name (like 'issues') to find a note associated with that name (like 'known-issues.md' )
+`Cmd` + `P` (Windowsでは `Ctrl` +  `P`) を実行し、名前 ('issues'など) を入力して、その名前 ('known-issues.md'など) に関連するノートを見つけます。
 
-Run `Cmd` + `Shift` + `F` ( `Ctrl` + `Shift` + `F` on Windows ) and type a word (like 'links') to find all the notes that contain that term.
+`Cmd` + `Shift` + `F` (Windowsでは `Ctrl` + `Shift` + `F`) を実行し、単語 ('links'など) を入力して、その用語を含むすべてのノートを見つけます。
+
+
 

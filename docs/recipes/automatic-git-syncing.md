@@ -1,20 +1,22 @@
-# Automatically Sync with Git
+# Gitと自動的に同期する
 
-With this #recipe you can regularly commit and push to git, to keep your repo in always synched.
-You can also easily manipulate the git history to reduce clutter.
+この #レシピ を使えば、リポジトリを常に同期状態に保つために、定期的にgitにコミットしてプッシュすることができます。
+また、gitの履歴を操作してごちゃごちゃを減らすことも簡単にできます。
 
-## Required Extensions
+## 必要な拡張機能
 
 - [GitDoc](https://marketplace.visualstudio.com/items?itemName=vsls-contrib.gitdoc)
 
-## Instructions
+## 使用方法
 
-Click on the extension link above to see how to use it.
+上記の拡張機能リンクをクリックして、使用方法を確認してください。
 
-__For Foam specific needs, you can add a comment here by following the [[contribution-guide]]__
+__Foam特有のニーズについては、[[contribution-guide]]に従ってここにコメントを追加できます__
 
-## Feedback and issues
+## フィードバックと問題
 
-- Feedback and issues with the extension should be reported to the authors themselves
-- Feedback and issues with the integration of the extension in Foam can be reported in our [issue tracker](https://github.com/foambubble/foam/issues)
+- 拡張機能に関するフィードバックや問題は、その作者自身に報告してください
+- Foamでの拡張機能の統合に関するフィードバックや問題は、私たちの[issue tracker](https://github.com/foambubble/foam/issues)で報告できます
+
+
 

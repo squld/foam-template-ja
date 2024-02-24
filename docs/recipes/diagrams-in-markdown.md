@@ -1,25 +1,27 @@
-# Diagrams in Markdown
+# Markdownでのダイアグラム
 
-We have two alternative #recipe for displaying diagrams in markdown:
+Markdownコンテンツにダイアグラムを表示するための2つの代替 #レシピ があります:
 
-- [Diagrams in Markdown](#diagrams-in-markdown)
+- [Markdownでのダイアグラム](#markdownでのダイアグラム)
   - [Mermaid](#mermaid)
   - [Draw.io](#drawio)
-    - [Using Draw.io](#using-drawio)
+    - [Draw.ioの使用](#drawioの使用)
 
 ## Mermaid
 
-You can use [Mermaid](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid) plugin to draw and preview diagrams in your content.
+[Mermaid](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid)プラグインを使用して、コンテンツ内でダイアグラムを描画し、プレビューすることができます。
 
 ## Draw.io
 
-[Draw.io](https://marketplace.visualstudio.com/items?itemName=hediet.vscode-drawio) extension allows you to create, edit, and display your diagrams without leaving Visual Studio Code. The `.drawio.svg` or `.drawio.png` files can be automatically embedded and displayed in published Foams, no export needed. FYI, the diagram below was made using Draw.io! You can check the diagram [here](../../assets/images/diagram-drawio-demo.drawio.svg).
+[Draw.io](https://marketplace.visualstudio.com/items?itemName=hediet.vscode-drawio)拡張機能を使用すると、Visual Studio Codeを離れることなくダイアグラムを作成、編集、表示できます。`.drawio.svg`または`.drawio.png`ファイルは、エクスポートする必要なく、公開されたFoamに自動的に埋め込まれ、表示されます。ちなみに、以下のダイアグラムはDraw.ioを使用して作成されました! ダイアグラムは[こちら](../../assets/images/diagram-drawio-demo.drawio.svg)で確認できます。
 
 ![diagram-drawio-demo](../../assets/images/diagram-drawio-demo.drawio.svg)
 
-### Using Draw.io
+### Draw.ioの使用
 
-1. Install [Draw.io](https://marketplace.visualstudio.com/items?itemName=hediet.vscode-drawio) VS Code extension.
-2. Create a new `*.drawio.svg` or `*.drawio.png` file.
-3. Start drawing your diagram. Once you done, save it.
-4. Embed the diagram file as you embedding the image file, for example: `![My Diagram](my-diagram.drawio.svg)`
+1. [Draw.io](https://marketplace.visualstudio.com/items?itemName=hediet.vscode-drawio) VS Code拡張機能をインストールします。
+2. 新しい`*.drawio.svg`または`*.drawio.png`ファイルを作成します。
+3. ダイアグラムを描画します。完了したら、保存します。
+4. 画像ファイルを埋め込むように、ダイアグラムファイルを埋め込みます。例: `![My Diagram](my-diagram.drawio.svg)`
+
+

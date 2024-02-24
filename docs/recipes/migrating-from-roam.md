@@ -1,6 +1,8 @@
-# Migrating from Roam (stub)
+# Roamからの移行 (スタブ)
 
-**[[todo]] This [[roadmap]] item needs more specification work.**
+**[[todo]] この[[roadmap]]アイテムは、より詳細な仕様作業が必要です。**
 
-If you're interested in working on it, please start a conversation in [GitHub issues](https://github.com/foambubble/foam/issues).
+これに取り組みたい場合は、[GitHubのissue](https://github.com/foambubble/foam/issues)で会話を始めてください。
+
+
 

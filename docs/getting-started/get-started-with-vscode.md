@@ -1,44 +1,46 @@
-# Getting started with VS Code
+# VS Codeで始める
 
-VS Code is a powerful text editor, hidden behind a simple interface.
+VS Codeは、シンプルなインターフェースの背後に隠された強力なテキストエディタです。
 
-VS Code supports various **keyboard shortcuts**, the most important for us are:
+VS Codeは様々な**キーボードショートカット**をサポートしており、私たちにとって最も重要なものは以下の通りです:
 
-| Shortcut      | Action                       |
+| ショートカット      | アクション                       |
 | ------------- | ---------------------------- |
-| `cmd+N`       | create a new file            |
-| `cmd+S`       | save the current file        |
-| `cmd+O`       | open a file                  |
-| `cmd+P`       | use quickpick to open a file |
-| `cmd+shift+P` | invoke a command (see below) |
+| `cmd+N`       | 新しいファイルを作成            |
+| `cmd+S`       | 現在のファイルを保存        |
+| `cmd+O`       | ファイルを開く                  |
+| `cmd+P`       | quickpickを使用してファイルを開く |
+| `cmd+shift+P` | コマンドを呼び出す (以下参照)  |
 
-For more information, see the [VS Code keyboard cheat sheets](https://code.visualstudio.com/docs/getstarted/keybindings#_keyboard-shortcuts-reference), where you can also see how to customize your keybindings.
+詳細については、[VS Codeキーボードショートカットリファレンス](https://code.visualstudio.com/docs/getstarted/keybindings#_keyboard-shortcuts-reference)を参照してください。ここでは、キーバインディングのカスタマイズ方法も確認できます。
 
-## Commands
+## コマンド
 
-Commands make VS Code extremely powerful.
+コマンドはVS Codeを非常に強力にします。
 
-To invoke a command, press `cmd+shift+P` and select the command you want to execute.
-For example, to see the Foam graph:
+コマンドを呼び出すには、`cmd+shift+P`を押して実行したいコマンドを選択します。
+例えば、Foamのグラフを見るには:
 
-- press `cmd+shift+P`
-- start typing `show graph`
-- select the `Foam: Show Graph` command
+- `cmd+shift+P`を押す
+- `show graph`と入力を始める
+- `Foam: Show Graph`コマンドを選択する
 
-And watch the magic unfold.
+そして、魔法が展開されるのを見てください。
 
-For more information on commands, see [commands on the VS Code site](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette).
+コマンドに関する詳細は、[VS Codeサイトのコマンド](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette)を参照してください。
 
-If you want to learn more about VS Code, check out their [website](https://code.visualstudio.com/docs#first-steps).
+VS Codeについてもっと知りたい場合は、[ウェブサイト](https://code.visualstudio.com/docs#first-steps)をチェックしてください。
 
-## Panels
+## パネル
 
-You can see a few panels on the left, including:
+左側にはいくつかのパネルがあります。これには以下が含まれます:
 
-- `Outline`: this panel shows you the structure of the file based on the headings
-- `Tag Explorer`: This shows you the tags in your workspace, see [[tags]] for more information on tags
+- `アウトライン`: このパネルは、見出しに基づいてファイルの構造を表示します
+- `タグエクスプローラー`: これはワークスペース内のタグを表示します。タグに関する詳細は[[tags]]を参照してください
 
-## Settings
+## 設定
 
-To view or change the settings in VS Code, press `cmd+,` on Mac and `ctrl+,` on Windows/Linux.
+VS Codeの設定を表示または変更するには、Macでは`cmd+,`、Windows/Linuxでは`ctrl+,`を押します。
+
+
 

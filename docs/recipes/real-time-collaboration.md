@@ -1,3 +1,5 @@
-# Real-time Collaboration
+# リアルタイム共同作業
 
-This #recipe is here to just tell you that VS Code Live Share will allow you to collaborate live on your notes.
+この #レシピ は、VS Code Live Shareを使用してノートでリアルタイム共同作業を行う方法を紹介するためのものです。
+
+

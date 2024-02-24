@@ -1,60 +1,62 @@
-# Take notes on mobile phones
+# モバイルフォンからノートを取る
 
-This #recipe offers solutions to taking Foam notes on the go.
+この #レシピ では、外出先でFoamノートを取るための解決策を提供します。
 
-For the time being we have decided to not build a mobile app, but rely on third parties (see [[build-vs-assemble]]).
+現時点では、モバイルアプリの開発を行わず、第三者に依存することにしました ([[build-vs-assemble]]を参照) 。
 
-The most promising options are:
+最も有望なオプションは以下の通りです:
 
 ### [GitJournal](https://gitjournal.io/)
 
-Pros
+長所
 
-- Open source
-- Already a usable solution.
-- Provides functionality to edit, create, and browser markdown files.
-- Support journal mode, todo lists, and free writing
-- Syncs to GitHub repo
-- Supports Wikilinks
-- Supports Backlinks
-- Developer is happy to prioritize Foam compatibility
+- オープンソース
+- 既に使える解決策です。
+- Markdownファイルの編集、作成、ブラウズ機能を提供します。
+- ジャーナルモード、todoリスト、自由記述をサポート
+- GitHubリポジトリと同期
+- Wikilinksをサポート
+- バックリンクをサポート
+- 開発者はFoamとの互換性を優先してくれるとのこと
 
-Cons
+短所
 
-- Doesn't generate link reference lists (but this is ok, since [[workspace-janitor]] as a GitHub action can solve this)
-- Not as sleek as Apple/Google notes, some keyboard state glitching on Android, etc.
-- Lack of control over roadmap. Established product with a paid plan, so may not be open to Foam-supportive changes and additions that don't benefit most users.
+- リンク参照リストを生成しない (しかし、[[workspace-janitor]]をGitHubアクションとして利用すれば解決可能)
+- Apple/Googleのノートほど洗練されていない、Androidでのキーボード状態の不具合など
+- ロードマップに対するコントロールの欠如。既に確立された製品で有料プランがあるため、大多数のユーザーに利益をもたらさないFoamサポートの変更や追加に対してオープンではない可能性があります。
 
-Verdict: Good. By far best effort/outcome ratio would be to help improve GitJournal rather than building a [bespoke mobile app](#bespoke-mobile-app-for-foam).
+結論: 良い。[専用モバイルアプリ](#専用モバイルアプリ-for-foam)を構築するよりも、GitJournalを改善することに努力を注ぐ方がはるかに効果的です。
 
 ### GitHub Codespaces
 
-Pros
+長所
 
-- Works out of the box just like the desktop app
+- デスクトップアプリと同様にそのまま動作します
 
-Cons
+短所
 
-- not generally available quite yet
-- [Pricing](https://docs.github.com/en/free-pro-team@latest/github/developing-online-with-codespaces/about-billing-for-codespaces)
+- まだ一般には公開されていません
+- [価格](https://docs.github.com/ja/free-pro-team@latest/github/developing-online-with-codespaces/about-billing-for-codespaces)
 
-For a quick demo, see <https://www.youtube.com/watch?v=KI5m4Uy8_4I>.
+クイックデモについては、<https://www.youtube.com/watch?v=KI5m4Uy8_4I>をご覧ください。
 
-Verdict: Good. Pricing should be reasonable for taking notes on the fly. Harder to assess for people who would constantly use Foam from mobile phone.
+結論: 良い。外出先でノートを取るための価格は手頃であるべきです。モバイルフォンから常にFoamを使用する人にとっては評価が難しいです。
 
-## Bespoke mobile app for Foam
+## 専用モバイルアプリ for Foam
 
-Given we already have a solution, why would we spend time and effort building a bespoke mobile app?
+既に解決策がある場合、なぜ専用のモバイルアプリを構築するために時間と労力を費やすのでしょうか?
 
-- Taking notes on the go is a key part of a good note taking process, and the process should feel effortless
-- Having a custom app could help us support key user workflows in a more Foam-specific manner
+- 外出先でのノート取りは良いノート取りプロセスの重要な部分であり、そのプロセスは努力なく感じられるべきです
+- カスタムアプリを持つことで、よりFoam特有の方法で主要なユーザーワークフローをサポートできるかもしれません
 
-If such an app was worth building, it would have to have the following features:
+そのようなアプリが構築する価値がある場合、以下の機能を持つ必要があります:
 
-- Instant loading and syncing for quick notes
-- Sleek, simple, beautifully designed user experience.
-- Ability to search and navigate forward links and back links (only in paid GitJournal version)
-- Killer feature that makes it the best note taking tool for Foam (?)
+- 瞬時のローディングと同期で、外出先でのクイックノートを可能にします
+- スリークでシンプルで美しくデザインされたユーザーエクスペリエンス
+- リンクとバックリンクを検索し、ナビゲートする機能 (GitJournalの有料バージョンでのみ利用可能)
+- Foamにとって最高のノート取りツールにするためのキラー機能 (?)
 
-Given the effort vs reward ratio, it's a low priority for core team, but if someone wants to work on this, we can provide support! Talk to us on the #mobile-apps channel on [Foam Discord](https://foambubble.github.io/join-discord/w).
+努力対報酬の比率を考えると、コアチームにとっては低優先度ですが、これに取り組みたい人がいれば、サポートを提供できます! [Foam Discord](https://foambubble.github.io/join-discord/w)の #mobile-apps チャンネルで私たちに話しかけてください。
+
+
 

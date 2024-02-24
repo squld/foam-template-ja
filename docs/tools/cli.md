@@ -1,10 +1,12 @@
-# Command Line Interface
+# コマンドラインインターフェース
 
-Create a CLI tool to allow running common Foam commands. These may include:
+一般的なFoamコマンドを実行するためのCLIツールを作成します。これには以下が含まれます:
 
-- `foam init` - create a new foam workspace
-- `foam janitor` - run [[workspace-janitor]] in current workspace
-- `foam migrate <tool>` - migrate from tools like roam exports, obsidian and more
+- `foam init` - 新しいfoamワークスペースを作成します
+- `foam janitor` - 現在のワークスペースで[[workspace-janitor]]を実行します
+- `foam migrate <tool>` - roam exports、obsidianなどのツールからの移行を行います
 
-More commands to be added.
+さらにコマンドが追加される予定です。
+
+
 

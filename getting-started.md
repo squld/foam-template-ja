@@ -1,49 +1,51 @@
-# Getting Started
+# 始め方
 
-Welcome to your new foam workspace, let's get you started.
+新しいFoamワークスペースへようこそ、始めましょう。
 
-> if you are already familiar with Foam and don't need help, just remove the `docs` folder for a clean repo.
+> Foamにすでに慣れていて、助けが必要ない場合は、クリーンなリポジトリのために`docs`フォルダを削除してください。
 
-Let's go through this to set up your repo:
+リポジトリを設定するためにこれを通していきましょう:
 
-- [ ] if you are new with VS Code, see how to [[get-started-with-vscode]] and how to [[use-keyboard-shortcuts-for-editing]]
+- [ ] VS Codeに慣れていない場合は、[[get-started-with-vscode]]と[[use-keyboard-shortcuts-for-editing]]を見てみましょう
 
-- [ ] you can navigate the links between your notes by `cmd+click` (or `ctrl+click` on Windows) on a wikilink. You can go back with `ctrl+-`. Here, go to your [[inbox]]
+- [ ] wikilink上で`cmd+click` (またはWindowsでは`ctrl+click`) することで、ノート間をナビゲートできます。`ctrl+-`で戻ることができます。ここで、[[inbox]]に移動してみましょう
 
-- [ ] to see how your notes are connected, execute the `Foam: Show Graph` command. See [[graph-visualization]].
+- [ ] `Foam: Show Graph`コマンドを実行して、ノートがどのように接続されているかを見てみましょう。[[graph-visualization]]を参照してください。
 
-- [ ] #tags can be used to further organize your content. Look at the `Tag Explorer` view on the left panel to find and navigate the tags in your knowledge base. See [[tags-and-tag-explorer]].
+- [ ] #tags はコンテンツをさらに整理するために使用できます。左パネルの`Tag Explorer`ビューを見て、ナレッジベース内のタグを見つけてナビゲートしてみましょう。[[tags-and-tag-explorer]]を参照してください。
 
-- [ ] Foam supports [[spell-checking]] via VS Code.
+- [ ] FoamはVS Codeを通じて[[spell-checking]]をサポートしています。
 
-- [ ] You can also paste images in your Foam, just press `cmd+alt+v` to create the image file and link to it from your note. See [[paste-images-from-clipboard]].
+- [ ] Foamで画像を貼り付けることもできます。`cmd+alt+v`を押して画像ファイルを作成し、ノートからリンクするだけです。[[paste-images-from-clipboard]]を参照してください。
 
-- [ ] You can use Foam for your daily notes, or journaling. Execute now the `Foam: Open Daily Note` command to create a new file in your `journal` folder. See [[daily-notes]].
+- [ ] 日々のノートやジャーナリングにFoamを使用することができます。今すぐ`Foam: Open Daily Note`コマンドを実行して、`journal`フォルダに新しいファイルを作成してみましょう。[[daily-notes]]を参照してください。
 
-- [ ] Want to see how to manage your tasks? Go to the [[todo]] note
+- [ ] タスクの管理方法を見たいですか?[[todo]]ノートに移動してみましょう
 
-- [ ] The section at the end of this file contains wikilink definitions, which enable navigation of your notes from GitHub's web UI, and in general to make `[[wikilinks]]` understood by any Markdown parser. See [[link-reference-definitions]].
+- [ ] このファイルの最後のセクションにはwikilink定義が含まれており、GitHubのWeb UIからノートをナビゲートするため、一般的に`[[wikilinks]]`をMarkdownパーサーで理解できるようにします。[[link-reference-definitions]]を参照してください。
 
-- [ ] To explore all the Foam settings, press `cmd+,`, then `Extensions > Foam`
+- [ ] Foamのすべての設定を探索するには、`cmd+,`を押して、`Extensions > Foam`を選択してください
 
-- [ ] Living within VS Code, Foam can be customized in many ways! Look at the [Foam Recipes](https://foambubble.github.io/foam/user/recipes/recipes) for ideas!
+- [ ] FoamはVS Code内に存在するため、多くの方法でカスタマイズできます! アイデアについては、[Foam Recipes](https://foambubble.github.io/foam/user/recipes/recipes)を見てみましょう!
 
-- [ ] Join the [Foam community on Discord](https://foambubble.github.io/join-discord/e), introduce yourself and leave a message on how you found Foam and how the onboarding went :) We are always keen to do better
+- [ ] [Foam community on Discord](https://foambubble.github.io/join-discord/e)に参加し、自己紹介をして、Foamをどのように見つけ、オンボーディングがどのように進んだかメッセージを残してください :) 私たちは常に改善することに熱心です
 
-- [ ] Take the [Foam Welcome survey](http://foambubble.github.io/welcome-survey/e)! It helps us better understand your need and how we can make Foam better and better for you :)
+- [ ] [Foam Welcome survey](http://foambubble.github.io/welcome-survey/e)に参加してください! それは私たちがあなたのニーズをよりよく理解し、Foamをあなたにとってより良いものにするのに役立ちます :)
 
-## Advanced Features
+## 上級機能
 
-- [ ] You can create [[note-templates]] for things like book reviews, people, daily notes (coming soon), and more!
+- [ ] 本のレビュー、人物、日々のノート (近日公開予定) などのための[[note-templates]]を作成できます!
 
-## About Foam
+## Foamについて
 
-Foam doesn't do all this magic on its own, it relies on some amazing extensions. Look at their documentation if you want to fully unlock the possibilities!
+Foamはこれらの魔法を自分自身で行うわけではありません。いくつかの素晴らしい拡張機能に依存しています。可能性を完全に解き放ちたい場合は、それらのドキュメントを見てください!
 
-Here they are:
+それらはこちらです:
 
 - [Markdown All In One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
 - [vscode-paste-image](https://github.com/mushanshitiancai/vscode-paste-image)
 
-A special mention goes to [Markdown Links](https://marketplace.visualstudio.com/items?itemName=tchayen.markdown-links) and [Markdown Notes](https://marketplace.visualstudio.com/items?itemName=kortina.vscode-markdown-notes) which have now been replaced by our own implementation but were foundational to Foam's beginnings.
+特に[Markdown Links](https://marketplace.visualstudio.com/items?itemName=tchayen.markdown-links)と[Markdown Notes](https://marketplace.visualstudio.com/items?itemName=kortina.vscode-markdown-notes)に特別な言及があります。これらは現在私たち自身の実装に置き換えられましたが、Foamの始まりに基礎を築いたものでした。
+
+
 

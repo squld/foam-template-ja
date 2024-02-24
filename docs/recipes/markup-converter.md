@@ -1,20 +1,20 @@
-# Markup Converter
+# マークアップコンバーター
 
-This #recipe allows you to convert any document into Markdown for storing them in your notes.
+この #レシピ では、任意のドキュメントをマークダウンに変換し、ノートに保存する方法を紹介します。
 
-We will be using [Pandoc](https://pandoc.org/), a popular universal document converter. It can convert documents in Microsoft Word, HTML, LaTeX, and many other formats to various formats including markdown and many others.
+[Pandoc](https://pandoc.org/)、人気のあるユニバーサルドキュメントコンバーターを使用します。Microsoft Word、HTML、LaTeXなどのドキュメントをマークダウンを含む様々な形式に変換できます。
 
-## Instructions
+## 使用方法
 
-We will go through the example of converting Microsoft Word documents to Markdown. For detailed instructions on how to use Pandoc, please refer to the [Pandoc documentation](https://pandoc.org/MANUAL.html).
+Microsoft WordドキュメントをMarkdownに変換する例を通して説明します。Pandocの使用方法の詳細については、[Pandocのドキュメント](https://pandoc.org/MANUAL.html)を参照してください。
 
-1. [Install Pandoc](https://pandoc.org/installing.html)
-1. Open the terminal of your choice and verify that Pandoc is installed by running `pandoc --version`
-1. Copy the Microsoft Word documents that you want to convert into a new folder
-1. Change the current directory to the folder containing the Microsoft Word documents
-1. Copy one of the following commands (based on your operating system) into your terminal and press `Enter` to run
+1. [Pandocをインストールする](https://pandoc.org/installing.html)
+1. お好みのターミナルを開き、`pandoc --version`を実行してPandocがインストールされていることを確認する
+1. 変換したいMicrosoft Wordドキュメントを新しいフォルダにコピーする
+1. Microsoft Wordドキュメントが含まれているフォルダに現在のディレクトリを変更する
+1. 次のコマンドのいずれかをコピーしてターミナルに貼り付け、`Enter`を押して実行する (お使いのオペレーティングシステムに基づく)
 
-### Linux and macOS (Bash)
+### LinuxとmacOS (Bash)
 
 ```bash
 find -name "*.docx" -type f -exec sh -c '
@@ -27,17 +27,19 @@ find -name "*.docx" -type f -exec sh -c '
 ### Windows (PowerShell)
 
 ```powershell
-Get-ChildItem . -Filter *.docx | 
+Get-ChildItem . -Filter *.docx |
 Foreach-Object {
     pandoc --extract-media=./ --from docx --to markdown $_ -o $_.Name.Replace('.docx', '.md')
 }
 ```
 
-### Relevant Configurations
+### 関連する設定
 
-[Pandoc](https://pandoc.org/) accepts a range of command line arguments to control the conversion process. Here, we'll mention a few that are relevant to the example above.
+[Pandoc](https://pandoc.org/)は、変換プロセスを制御するためのさまざまなコマンドライン引数を受け入れます。ここでは、上記の例に関連するいくつかを紹介します。
 
-- `--extract-media=./` is used to extract the images from the Microsoft Word documents and store them in a subfolder named `media`
-- `-t markdown` converts the Microsoft Word documents to [Pandoc’s Markdown](https://pandoc.org/MANUAL.html#pandocs-markdown). You can also use `-t gfm` to convert to [GitHub Flavored Markdown](https://docs.github.com/en/get-started/writing-on-github)
+- `--extract-media=./`は、Microsoft Wordドキュメントから画像を抽出し、`media`というサブフォルダに保存するために使用されます
+- `-t markdown`は、Microsoft Wordドキュメントを[PandocのMarkdown](https://pandoc.org/MANUAL.html#pandocs-markdown)に変換します。[GitHub Flavored Markdown](https://docs.github.com/ja/get-started/writing-on-github)に変換するには、`-t gfm`を使用することもできます
 
-Note that you may want to review the converted Markdown files to ensure that the conversion was successful. Then, You may want to delete the original Microsoft Word documents.
+変換されたMarkdownファイルを確認し、変換が成功したことを確認することをお勧めします。その後、元のMicrosoft Wordドキュメントを削除することを検討してください。
+
+

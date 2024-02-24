@@ -1,21 +1,21 @@
-# Capture Notes With Shortcuts and GitHub Actions
+# ショートカットとGitHubアクションを使用したノートのキャプチャ
 
-With this #recipe you can create notes on your iOS device, which will automatically be imported into Foam.
+この #レシピ を使用すると、iOSデバイスでノートを作成し、自動的にFoamにインポートすることができます。
 
-## Context
+## コンテキスト
 
-* You use [Foam for VSCode](https://marketplace.visualstudio.com/items?itemName=foam.foam-vscode) to manage your notes
-* You wish to adopt a practice such as [A writing inbox for transient and incomplete notes](https://notes.andymatuschak.org/A%20writing%20inbox%20for%20transient%20and%20incomplete%20notes)
-* You wish to use [Shortcuts](https://support.apple.com/guide/shortcuts/welcome/ios) to capture quick notes into your Foam notes from your iOS device
+* [Foam for VSCode](https://marketplace.visualstudio.com/items?itemName=foam.foam-vscode)を使用してノートを管理しています
+* [一時的で不完全なノートのためのライティングインボックス](https://notes.andymatuschak.org/A%20writing%20inbox%20for%20transient%20and%20incomplete%20notes)のような習慣を採用したいと考えています
+* iOSデバイスからFoamノートに素早くノートをキャプチャするために[ショートカット](https://support.apple.com/guide/shortcuts/welcome/ios)を使用したいと考えています
 
-## Other tools
+## その他のツール
 
-* We assume you are familiar with how to use GitHub (if you are using Foam this is implicit)
-* You have an iOS device.
+* GitHubの使用方法に慣れていることを前提としています (Foamを使用している場合、これは暗黙の了解です)
+* iOSデバイスを持っています。
 
-## Instructions
+## 使用方法
 
-1. Setup the [`foam-capture-action`]() in your GitHub Repository, to be triggered by "Workflow dispatch" events.
+1. GitHubリポジトリで[`foam-capture-action`]()をセットアップし、"ワークフローのディスパッチ"イベントによってトリガーされるようにします。
 
 ```
 name: Manually triggered workflow
@@ -23,7 +23,7 @@ on:
   workflow_dispatch:
     inputs:
       data:
-        description: 'What information to put in the knowledge base.'
+        description: '知識ベースに入れる情報。'
         required: true
 
 jobs:
@@ -39,12 +39,12 @@ jobs:
     - run: |
         git config --local user.email "example@gmail.com"
         git config --local user.name "Your name"
-        git commit -m "Captured from workflow trigger" -a
+        git commit -m "ワークフロートリガーからキャプチャ" -a
         git push -u origin master
 ```
 
-2. In GitHub [create a Personal Access Token](https://github.com/settings/tokens) and give it `repo` scope - make a note of the token
-3. Run this command to find your `workflow-id` to be used in the Shortcut.
+2. GitHubで[パーソナルアクセストークンを作成](https://github.com/settings/tokens)し、`repo`スコープを付与します - トークンをメモしておきます
+3. ショートカットで使用する`workflow-id`を見つけるために、このコマンドを実行します。
 
 ```bash
 curl \
@@ -53,8 +53,10 @@ curl \
     https://api.github.com/repos/<owner>/<repository>/actions/workflows
 ```
 
-4. Copy this [Shortcut](https://www.icloud.com/shortcuts/57d2ed90c40e43a5badcc174ebfaaf1d) to your iOS devices and edit the contents of the last step, `GetContentsOfURL`
-   - Make sure you update the URL of the shortcut step with the `owner`, `repository`, `workflow-id` (from the previous step)
-   - Make sure you update the headers of the shortcut step, replaceing `[GITHUB_TOKEN]` with your Personal Access Token (from step 2)
+4. この[ショートカット](https://www.icloud.com/shortcuts/57d2ed90c40e43a5badcc174ebfaaf1d)をiOSデバイスにコピーし、最後のステップ`GetContentsOfURL`の内容を編集します。
+   - ショートカットステップのURLを、前のステップからの`owner`、`repository`、`workflow-id`で更新してください
+   - ショートカットステップのヘッダーを更新し、`[GITHUB_TOKEN]`をステップ2で取得したパーソナルアクセストークンに置き換えてください
 
-5. Run the shortcut & celebrate! ✨ (You should see a GitHub Action run start and the text you entered show up in `inbox.md` in your repository.)
+5. ショートカットを実行し、お祝いしましょう! ✨ (GitHubアクションの実行が開始され、入力したテキストがリポジトリの`inbox.md`に表示されるはずです。)
+
+

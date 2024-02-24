@@ -1,23 +1,25 @@
-# Frequently Asked Questions
+# よくある質問
 
-> ⚠️ Foam is still in preview. Expect the experience to be a little rough.
+> ⚠️ Foamはまだプレビュー段階です。体験が少し荒削りになることを予期してください。
 
-- [Frequently Asked Questions](#frequently-asked-questions)
-  - [Links/Graphs/BackLinks don't work. How do I enable them?](#linksgraphsbacklinks-dont-work-how-do-i-enable-them)
-  - [I don't want Foam enabled for all my workspaces](#i-dont-want-foam-enabled-for-all-my-workspaces)
-  - [I want to publish the graph view to GitHub pages or Vercel](#i-want-to-publish-the-graph-view-to-github-pages-or-vercel)
+- [よくある質問](#よくある質問)
+  - [リンク/グラフ/バックリンクが機能しません。どうやって有効にしますか?](#リンクグラフバックリンクが機能しませんどうやって有効にしますか)
+  - [すべてのワークスペースでFoamを有効にしたくありません](#すべてのワークスペースでfoamを有効にしたくありません)
+  - [グラフビューをGitHubページやVercelに公開したい](#グラフビューをgithubページやvercelに公開したい)
 
-## Links/Graphs/BackLinks don't work. How do I enable them?
+### リンク/グラフ/バックリンクが機能しません。どうやって有効にしますか?
 
-- Ensure that you have all the [[recommended-extensions]] installed in Visual Studio Code
-- Reload Visual Studio Code by running `Cmd` + `Shift` + `P` (`Ctrl` + `Shift` + `P` for Windows), type "reload" and run the **Developer: Reload Window** command to for the updated extensions take effect
-- Check the formatting rules for links on [[foam-file-format]] and [[wikilinks]]
+- Visual Studio Codeですべての[[recommended-extensions]]がインストールされていることを確認してください
+- `Cmd` + `Shift` + `P` (Windowsでは`Ctrl` + `Shift` + `P`) を実行し、"reload"と入力して**Developer: Reload Window**コマンドを実行し、更新された拡張機能が有効になるようにVisual Studio Codeをリロードしてください
+- リンクの書式ルールについては、[[foam-file-format]]と[[wikilinks]]を確認してください
 
-## I don't want Foam enabled for all my workspaces
-Any extension you install in Visual Studio Code is enabled by default. Given the philosophy of Foam, it works out of the box without doing any configuration upfront. In case you want to disable Foam for a specific workspace, or disable Foam by default and enable it for specific workspaces, it is advised to follow the best practices as [documented by Visual Studio Code](https://code.visualstudio.com/docs/editor/extension-marketplace#_manage-extensions)
+### すべてのワークスペースでFoamを有効にしたくありません
+Visual Studio Codeでインストールした拡張機能はデフォルトで有効になっています。Foamの哲学に基づき、事前に設定を行うことなくそのまま動作します。特定のワークスペースでFoamを無効にしたい場合、またはデフォルトでFoamを無効にして特定のワークスペースで有効にしたい場合は、[Visual Studio Codeによって文書化されているベストプラクティス](https://code.visualstudio.com/docs/editor/extension-marketplace#_manage-extensions)に従うことをお勧めします
 
-## I want to publish the graph view to GitHub pages or Vercel
-If you want a different front-end look to your published foam and a way to see your graph view, we'd recommend checking out these templates:
-- [foam-gatsby](https://github.com/mathieudutour/foam-gatsby-template) by [Mathieu Dutour](https://github.com/mathieudutour)
-- [foam-gatsby-kb](https://github.com/hikerpig/foam-template-gatsby-kb) by [hikerpig](https://github.com/hikerpig)
+### グラフビューをGitHubページやVercelに公開したい
+公開されたFoamに異なるフロントエンドの外観を持たせ、グラフビューを見る方法が欲しい場合は、これらのテンプレートをチェックしてみてください:
+- [Mathieu Dutour](https://github.com/mathieudutour)による[foam-gatsby](https://github.com/mathieudutour/foam-gatsby-template)
+- [hikerpig](https://github.com/hikerpig)による[foam-gatsby-kb](https://github.com/hikerpig/foam-template-gatsby-kb)
+
+
 

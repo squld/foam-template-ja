@@ -1,35 +1,35 @@
-# Note Templates
+# ノートテンプレート
 
-Foam supports note templates which let you customize the starting content of your notes instead of always starting from an empty note.
+Foamは、常に空のノートから始める代わりに、ノートの開始内容をカスタマイズできるノートテンプレートをサポートしています。
 
-Note templates are `.md` files located in the special `.foam/templates` directory of your workspace.
+ノートテンプレートは、ワークスペースの特別なディレクトリ `.foam/templates` にある `.md` ファイルです。
 
-## Quickstart
+## クイックスタート
 
-Create a template:
+テンプレートを作成する:
 
-* Run the `Foam: Create New Template` command from the command palette
-* OR manually create a regular `.md` file in the `.foam/templates` directory
+* コマンドパレットから `Foam: Create New Template` コマンドを実行します
+* または、`.foam/templates` ディレクトリに通常の `.md` ファイルを手動で作成します
 
-![Create new template GIF](../../assets/images/create-new-template.gif)
+![新しいテンプレートの作成 GIF](../../assets/images/create-new-template.gif)
 
-_Theme: Ayu Light_
+_テーマ: Ayu Light_
 
-To create a note from a template:
+テンプレートからノートを作成するには:
 
-* Run the `Foam: Create New Note From Template` command and follow the instructions. Don't worry if you've not created a template yet! You'll be prompted to create a new template if none exist.
-* OR run the `Foam: Create New Note` command, which uses the special default template (`.foam/templates/new-note.md`, if it exists)
+* `Foam: Create New Note From Template` コマンドを実行し、指示に従います。まだテンプレートを作成していない場合でも心配はいりません! テンプレートが存在しない場合は、新しいテンプレートの作成を促されます。
+* または、特別なデフォルトテンプレート (存在する場合は `.foam/templates/new-note.md`) を使用する `Foam: Create New Note` コマンドを実行します。
 
-![Create new note from template GIF](../../assets/images/create-new-note-from-template.gif)
+![テンプレートから新しいノートを作成する GIF](../../assets/images/create-new-note-from-template.gif)
 
-_Theme: Ayu Light_
+_テーマ: Ayu Light_
 
-## Special templates
+## 特別なテンプレート
 
-### Default template
+### デフォルトテンプレート
 
-The `.foam/templates/new-note.md` template is special in that it is the template that will be used by the `Foam: Create New Note` command.
-Customize this template to contain content that you want included every time you create a note. To begin it is *recommended* to define the YAML Front-Matter of the template similar to the following:
+`.foam/templates/new-note.md` テンプレートは、`Foam: Create New Note` コマンドによって使用される特別なテンプレートです。
+このテンプレートをカスタマイズして、ノートを作成するたびに含めたい内容を定義します。始めるには、テンプレートの YAML Front-Matter を以下のように定義することを*推奨*します:
 
 ```markdown
 ---
@@ -37,10 +37,10 @@ type: basic-note
 ---
 ```
 
-### Default daily note template
+### デフォルトの日次ノートテンプレート
 
-The `.foam/templates/daily-note.md` template is special in that it is the template that will be used when creating daily notes (e.g. by using `Foam: Open Daily Note`).
-Customize this template to contain content that you want included every time you create a daily note. To begin it is *recommended* to define the YAML Front-Matter of the template similar to the following:
+`.foam/templates/daily-note.md` テンプレートは、日次ノートを作成する際 (例えば `Foam: Open Daily Note` を使用する場合) に使用される特別なテンプレートです。
+このテンプレートをカスタマイズして、日次ノートを作成するたびに含めたい内容を定義します。始めるには、テンプレートの YAML Front-Matter を以下のように定義することを*推奨*します:
 
 ```markdown
 ---
@@ -48,170 +48,171 @@ type: daily-note
 ---
 ```
 
-## Variables
+## 変数
 
-Templates can use all the variables available in [VS Code Snippets](https://code.visualstudio.com/docs/editor/userdefinedsnippets#_variables).
+テンプレートでは、[VS Code スニペット](https://code.visualstudio.com/docs/editor/userdefinedsnippets#_variables)で利用可能なすべての変数を使用できます。
 
-In addition, you can also use variables provided by Foam:
+さらに、Foamによって提供される変数も使用できます:
 
-| Name                 | Description      |
+| 名前                 | 説明      |
 | -------------------- | ------------ |
-| `FOAM_SELECTED_TEXT` | Foam will fill it with selected text when creating a new note, if any text is selected. Selected text will be replaced with a wikilink to the new     |
-| `FOAM_TITLE`         | The title of the note. If used, Foam will prompt you to enter a title for the note.        |
-| `FOAM_TITLE_SAFE`    | The title of the note in a file system safe format. If used, Foam will prompt you to enter a title for the note unless `FOAM_TITLE` has already caused the prompt.   |
-| `FOAM_SLUG`          | The sluggified title of the note (using the default github slug method). If used, Foam will prompt you to enter a title for the note unless `FOAM_TITLE` has already caused the prompt.   |
-| `FOAM_DATE_*`        | `FOAM_DATE_YEAR`, `FOAM_DATE_MONTH`, `FOAM_DATE_WEEK` etc. Foam-specific versions of [VS Code's datetime snippet variables](https://code.visualstudio.com/docs/editor/userdefinedsnippets#_variables). Prefer these versions over VS Code's. |
+| `FOAM_SELECTED_TEXT` | 新しいノートを作成する際に、テキストが選択されている場合、Foamはそれを選択されたテキストで埋めます。選択されたテキストは新しいノートへのウィキリンクで置き換えられます。     |
+| `FOAM_TITLE`         | ノートのタイトル。使用されると、Foamはノートのタイトルを入力するように求めます。        |
+| `FOAM_TITLE_SAFE`    | ファイルシステムで安全な形式のノートのタイトル。使用されると、`FOAM_TITLE` が既にプロンプトを引き起こしていない限り、Foamはノートのタイトルを入力するように求めます。   |
+| `FOAM_SLUG`          | ノートのタイトルをスラッグ化したもの (デフォルトのgithubスラッグ方法を使用) 。使用されると、`FOAM_TITLE` が既にプロンプトを引き起こしていない限り、Foamはノートのタイトルを入力するように求めます。   |
+| `FOAM_DATE_*`        | `FOAM_DATE_YEAR`, `FOAM_DATE_MONTH`, `FOAM_DATE_WEEK` など。[VS Code の日付時刻スニペット変数](https://code.visualstudio.com/docs/editor/userdefinedsnippets#_variables)と同様の振る舞いをするFoam固有のバージョン。VS Code のバージョンよりもこれらのバージョンを優先してください。 |
 
-### `FOAM_DATE_*` variables
+### `FOAM_DATE_` 変数
 
-Foam defines its own set of datetime variables that have a similar behaviour as [VS Code's datetime snippet variables](https://code.visualstudio.com/docs/editor/userdefinedsnippets#_variables).
+Foamは、[VS Codeの日付スニペット変数](https://code.visualstudio.com/docs/editor/userdefinedsnippets#_variables)と同様の動作をする独自の日付変数セットを定義しています。
 
-For example, `FOAM_DATE_YEAR` has the same behaviour as VS Code's `CURRENT_YEAR`, `FOAM_DATE_SECONDS_UNIX` has the same behaviour as `CURRENT_SECONDS_UNIX`, etc.
+例えば、`FOAM_DATE_YEAR`はVS Codeの`CURRENT_YEAR`と同じ動作をし、`FOAM_DATE_SECONDS_UNIX`は`CURRENT_SECONDS_UNIX`と同じ動作をしますなど。
 
-By default, prefer using the `FOAM_DATE_` versions. The datetime used to compute the values will be the same for both `FOAM_DATE_` and VS Code's variables, with the exception of the creation notes using the daily note template.
+デフォルトでは、`FOAM_DATE_`バージョンを優先して使用します。`FOAM_DATE_`とVS Codeの変数の両方で値を計算する際の日時は同じになりますが、日次ノートテンプレートを使用してノートを作成する場合を除きます。
 
-For more nitty-gritty details about the supported date formats, [see here](https://github.com/foambubble/foam/blob/master/packages/foam-vscode/src/services/variable-resolver.ts).
+より詳細な日付フォーマットについては、[こちらを参照してください](https://github.com/foambubble/foam/blob/master/packages/foam-vscode/src/services/variable-resolver.ts)。
 
-#### Relative daily notes
+#### 相対的な日次ノート
 
-When referring to daily notes, you can use the relative snippets (`/+1d`, `/tomorrow`, etc.). In these cases, the new notes will be created with the daily note template, but the datetime used should be the relative datetime, not the current datetime.
-By using the `FOAM_DATE_` versions of the variables, the correct relative date will populate the variables, instead of the current datetime.
+日次ノートを参照する際には、相対的なスニペット (`/+1d`、`/tomorrow`など) を使用できます。これらのケースでは、新しいノートは日次ノートテンプレートで作成されますが、使用される日時は現在の日時ではなく、相対的な日時になります。
+`FOAM_DATE_`バージョンの変数を使用することで、現在の日時ではなく、期待通り明日の日付で変数が埋められます。
 
-For example, given this daily note template (`.foam/templates/daily-note.md`):
+例えば、この日次ノートテンプレート (`.foam/templates/daily-note.md`) があるとします:
 
 ```markdown
 # $FOAM_DATE_YEAR-$FOAM_DATE_MONTH-$FOAM_DATE_DATE
 
-## Here's what I'm going to do today
+## 今日やること
 
-* Thing 1
-* Thing 2
+* 事項1
+* 事項2
 ```
 
-When the `/tomorrow` snippet is used, `FOAM_DATE_` variables will be populated with tomorrow's date, as expected.
-If instead you were to use the VS Code versions of these variables, they would be populated with today's date, not tomorrow's, causing unexpected behaviour.
+`/tomorrow`スニペットを使用した場合、`FOAM_DATE_`変数は期待通り明日の日付で埋められます。
+代わりにVS Codeバージョンのこれらの変数を使用した場合、今日の日付で埋められ、予期しない動作を引き起こします。
 
-When creating notes in any other scenario, the `FOAM_DATE_` values are computed using the same datetime as the VS Code ones, so the `FOAM_DATE_` versions can be used in all scenarios by default.
+他のシナリオでノートを作成する場合、`FOAM_DATE_`の値はVS Codeのものと同じ日時を使用して計算されるため、デフォルトで全てのシナリオにおいて`FOAM_DATE_`バージョンを使用できます。
 
-## Metadata
+## メタデータ
 
-Templates can also contain metadata about the templates themselves. The metadata is defined in YAML "Frontmatter" blocks within the templates.
+テンプレートには、テンプレート自体に関するメタデータも含めることができます。メタデータはテンプレート内のYAML "Frontmatter"ブロックで定義されます。
 
-| Name         | Description         |
+| 名前         | 説明         |
 | ------------- | ---------------------- |
-| `filepath`    | The filepath to use when creating the new note. If the filepath is a relative filepath, it is relative to the current workspace. |
-| `name`        | A human readable name to show in the template picker.    |
-| `description` | A human readable description to show in the template picker.       |
+| `filepath`    | 新しいノートを作成する際に使用するファイルパス。ファイルパスが相対ファイルパスの場合、現在のワークスペースに対して相対的です。 |
+| `name`        | テンプレートピッカーに表示する人間が読める名前。    |
+| `description` | テンプレートピッカーに表示する人間が読める説明。       |
 
-Foam-specific variables (e.g. `$FOAM_TITLE`) can be used within template metadata. However, VS Code snippet variables are ([currently](https://github.com/foambubble/foam/pull/655)) not supported.
+Foam固有の変数 (例: `$FOAM_TITLE`) はテンプレートのメタデータ内で使用できます。しかし、VS Codeスニペット変数は ([現在のところ](https://github.com/foambubble/foam/pull/655)) サポートされていません。
 
-### `filepath` attribute
+### `filepath` 属性
 
-The `filepath` metadata attribute allows you to define a relative or absolute filepath to use when creating a note using the template. If the filepath is a relative filepath, it is relative to the current workspace.
+`filepath` メタデータ属性を使用すると、テンプレートを使用してノートを作成する際に使用する相対パスまたは絶対パスを定義できます。ファイルパスが相対パスの場合、現在のワークスペースに対して相対的です。
 
-#### Example of **relative** `filepath`
+#### **相対** `filepath` の例
 
-For example, `filepath` can be used to customize `.foam/templates/new-note.md`, overriding the default `Foam: Create New Note` behaviour of opening the file in the same directory as the active file:
+例えば、`.foam/templates/new-note.md` をカスタマイズして、アクティブなファイルと同じディレクトリではなく、特定のディレクトリにファイルを開く `Foam: Create New Note` のデフォルト動作を上書きする場合、`filepath` を使用できます:
 
 ```yaml
 ---
-# This will create the note in the "journal" subdirectory of the current workspace,
-# regardless of which file is the active file.
+# これは、アクティブなファイルに関係なく、現在のワークスペースの "journal" サブディレクトリにノートを作成します。
 foam_template:
   filepath: 'journal/$FOAM_TITLE.md'
 ---
 ```
 
-#### Example of **absolute** `filepath`
+#### **絶対** `filepath` の例
 
-`filepath` can be an absolute filepath, so that the notes get created in the same location, regardless of which file or workspace the editor currently has open.
-The format of an absolute filepath may vary depending on the filesystem used.
+`filepath` は絶対ファイルパスであり、エディターが現在開いているファイルやワークスペースに関係なく、ノートが同じ場所に作成されるようにすることができます。
+絶対ファイルパスの形式は、使用されるファイルシステムによって異なる場合があります。
 
 ```yaml
 ---
 foam_template:
-  # Unix / MacOS filesystems
+  # Unix / MacOS ファイルシステム
   filepath: '/Users/john.smith/foam/journal/$FOAM_TITLE.md'
 
-  # Windows filesystems
+  # Windows ファイルシステム
   filepath: 'C:\Users\john.smith\Documents\foam\journal\$FOAM_TITLE.md'
 ---
 ```
 
-#### Example of **date-based** `filepath`
+#### **日付ベース** `filepath` の例
 
-It is possible to vary the `filepath` value based on the current date using the `FOAM_DATE_*` variables. This is especially useful for the [[daily-notes]] template if you wish to organize by years, months, etc. Below is an example of a daily-note template metadata section that will create new daily notes under the `journal/YEAR/MONTH-MONTH_NAME/` filepath. For example, when a note is created on November 15, 2022, a new file will be created at `C:\Users\foam_user\foam_notes\journal\2022\11-Nov\2022-11-15-daily-note.md`. This method also respects the creation of daily notes relative to the current date (i.e. `/+1d`).
+現在の日付を使用して `filepath` 値を変更することができます。これは、年、月などで整理したい場合に特に便利です。以下は、`journal/YEAR/MONTH-MONTH_NAME/` ファイルパスの下に新しい日次ノートを作成する[[daily-notes]]テンプレートのメタデータセクションの例です。例えば、2022年11月15日にノートを作成すると、新しいファイルは `C:\Users\foam_user\foam_notes\journal\2022\11-Nov\2022-11-15-daily-note.md` に作成されます。この方法は、現在の日付に関連する日次ノートの作成 (例: `/+1d`) も尊重します。
 
 ```markdown
 ---
 type: daily-note
 foam_template:
-    description: Daily Note for $FOAM_TITLE
+    description: $FOAM_TITLE の日次ノート
     filepath: "C:\\Users\\foam_user\\foam_notes\\journal\\$FOAM_DATE_YEAR\\$FOAM_DATE_MONTH-$FOAM_DATE_MONTH_NAME_SHORT\\$FOAM_DATE_YEAR-$FOAM_DATE_MONTH-$FOAM_DATE_DATE-daily-note.md"
 ---
-# $FOAM_DATE_YEAR-$FOAM_DATE_MONTH-$FOAM_DATE_DATE Daily Notes
+# $FOAM_DATE_YEAR-$FOAM_DATE_MONTH-$FOAM_DATE_DATE の日次ノート
 ```
 
-> Note: this method **requires** the use of absolute file paths, and in this example is using Windows path conventions. This method will also override any filename formatting defined in `.vscode/settings.json`
+> 注: この方法は絶対ファイルパスの使用を**要求**し、この例ではWindowsのパス規則を使用しています。この方法は `.vscode/settings.json` で定義されたファイル名のフォーマットも上書きします。
 
-### `name` and `description` attributes
+### `name` と `description` 属性
 
-These attributes provide a human readable name and description to be shown in the template picker (e.g. When a user uses the `Foam: Create New Note From Template` command):
+これらの属性は、テンプレートピッカーで表示される人間が読める名前と説明を提供します (例: ユーザーが `Foam: Create New Note From Template` コマンドを使用する場合) :
 
-![Template Picker annotated with attributes](../../assets/images/template-picker-annotated.png)
+![テンプレートピッカーに属性を注釈付けした画像](../../assets/images/template-picker-annotated.png)
 
-### Adding template metadata to an existing YAML Frontmatter block
+### 既存の YAML Frontmatter ブロックにテンプレートメタデータを追加する
 
-If your template already has a YAML Frontmatter block, you can add the Foam template metadata to it.
+テンプレートが既に YAML Frontmatter ブロックを持っている場合、Foam テンプレートメタデータを追加できます。
 
-#### Limitations
+#### 制限事項
 
-Foam only supports adding the template metadata to *YAML* Frontmatter blocks. If the existing Frontmatter block uses some other format (e.g. JSON), you will have to add the template metadata to its own YAML Frontmatter block.
+Foam は *YAML* Frontmatter ブロックにテンプレートメタデータを追加することのみをサポートしています。既存の Frontmatter ブロックが他の形式 (例: JSON) を使用している場合、テンプレートメタデータを独自の YAML Frontmatter ブロックに追加する必要があります。
 
-Further, the template metadata must be provided as a [YAML block mapping](https://yaml.org/spec/1.2/spec.html#id2798057), with the attributes placed on the lines immediately following the `foam_template` line:
+さらに、テンプレートメタデータは [YAML ブロックマッピング](https://yaml.org/spec/1.2/spec.html#id2798057) として提供されなければならず、属性は `foam_template` 行の直後の行に配置されなければなりません:
 
 ```yaml
 ---
-existing_frontmatter: "Existing Frontmatter block"
-foam_template: # this is a YAML "Block" mapping ("Flow" mappings aren't supported)
-  name: My Note Template # Attributes must be on the lines immediately following `foam_template`
-  description: This is my note template
+existing_frontmatter: "既存の Frontmatter ブロック"
+foam_template: # これは YAML の "ブロック" マッピングです ("フロー" マッピングはサポートされていません)
+  name: 私のノートテンプレート # 属性は `foam_template` の直後の行に配置されなければなりません
+  description: これは私のノートテンプレートです
   filepath: `journal/$FOAM_TITLE.md`
 ---
-This is the rest of the template
+これはテンプレートの残りの部分です
 ```
 
-Due to the technical limitations of parsing the complex YAML format, unless the metadata is provided this specific form, Foam is unable to correctly remove the template metadata before creating the resulting note.
+複雑な YAML 形式の解析の技術的制限のため、メタデータがこの特定の形式で提供されない限り、Foam はテンプレートメタデータを正しく削除することができません。
 
-If this limitation proves inconvenient to you, please let us know. We may be able to extend our parsing capabilities to cover your use case. In the meantime, you can add the template metadata without this limitation by providing it in its own YAML Frontmatter block.
+この制限が不便である場合は、お知らせください。パース機能を拡張して、使用例をカバーできるかもしれません。その間、この制限なしでテンプレートメタデータを追加するには、独自の YAML Frontmatter ブロックに提供できます。
 
-### Adding template metadata to its own YAML Frontmatter block
+### テンプレートメタデータを独自の YAML Frontmatter ブロックに追加する
 
-You can add the template metadata to its own YAML Frontmatter block at the start of the template:
+テンプレートの先頭にテンプレートメタデータを独自の YAML Frontmatter ブロックとして追加できます:
 
 ```yaml
 ---
 foam_template:
-  name: My Note Template
-  description: This is my note template
+  name: 私のノートテンプレート
+  description: これは私のノートテンプレートです
   filepath: 'journal/$FOAM_TITLE.md'
 ---
-This is the rest of the template
+これはテンプレートの残りの部分です
 ```
 
-If the note already has a Frontmatter block, a Foam-specific Frontmatter block can be added to the start of the template. The Foam-specific Frontmatter block must always be placed at the very beginning of the file, and only whitespace can separate the two Frontmatter blocks.
+ノートが既に Frontmatter ブロックを持っている場合、Foam 固有の Frontmatter ブロックをテンプレートの先頭に追加できます。Foam 固有の Frontmatter ブロックは、ファイルの非常に始めに配置されなければならず、2つの Frontmatter ブロックの間には空白のみがあることができます。
 
 ```yaml
 ---
 foam_template:
-  name: My Note Template
-  description: This is my note template
+  name: 私のノートテンプレート
+  description: これは私のノートテンプレートです
   filepath: 'journal/$FOAM_TITLE.md'
 ---
 
 ---
-existing_frontmatter: "Existing Frontmatter block"
+existing_frontmatter: "既存の Frontmatter ブロック"
 ---
-This is the rest of the template
+これはテンプレートの残りの部分です
 ```
+
+
 

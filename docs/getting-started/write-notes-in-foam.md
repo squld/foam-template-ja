@@ -1,70 +1,71 @@
-# Writing Notes
+# ノートの書き方
 
-Notes are simple text files with some extra flavor, in the shape of Markdown syntax and support for extra properties (see [[note-properties]]).
+ノートは、Markdownの構文と追加のプロパティ ([[note-properties]]を参照) のサポートを加えた形で、シンプルなテキストファイルです。
 
-## Foam Syntax
+## Foamの構文
 
-Foam uses standard Markdown, with a few added twists:
+Foamは標準的なMarkdownを使用していますが、いくつかの追加機能があります:
 
-- the title of a note (e.g. in the [[graph-visualization]]) is given by precedence based on:
-  - the `title` property (see [[note-properties]])
-  - the first `# heading 1` of the file
-  - the file name
+- ノートのタイトル (例: [[graph-visualization]]内) は、以下に基づいて優先されます:
+  - `title` プロパティ ([[note-properties]]を参照)
+  - ファイルの最初の `# heading 1`
+  - ファイル名
 
-## Markdown Syntax
+## Markdownの構文
 
-With Markdown, we can style our notes in a simple way, while keeping the document a simple text file (the best way to future-proof your writings!).
+Markdownを使用すると、ドキュメントをシンプルなテキストファイルのままにしつつ、簡単にノートをスタイリングできます (あなたの書き物を将来にわたって保護する最良の方法です!) 。
 
-You can see the formatted output by running the `Markdown: Open Preview to the Side` command.
+フォーマットされた出力を見るには、`Markdown: Open Preview to the Side` コマンドを実行します。
 
-Here is a high level overview of Markdown, for more information on the Markdown syntax [see here](https://commonmark.org/help/).
+ここにMarkdownの概要を示します。Markdown構文の詳細については[こちらを参照してください](https://commonmark.org/help/)。
 
-# Heading 1
+# 見出し1
 
-## Heading 2
+## 見出し2
 
-### Heading 3
+### 見出し3
 
-#### Heading 4
+#### 見出し4
 
-##### Heading 5
+##### 見出し5
 
-###### Heading 6
+###### 見出し6
 
-This is a [link to google](https://www.google.com).
+これは[Googleへのリンク](https://www.google.com)です。
 
-This is a wikilink (aka internal link) to [[note-properties]].
+これは[[note-properties]]へのウィキリンク (内部リンク) です。
 
-Here is an image:
-![image](../../attachments/foam-icon.png)
+こちらは画像です:
+![画像](../../attachments/foam-icon.png)
 
-> this is a blockquote
-> it can span multiple lines
+> これは引用ブロックです
+> 複数行にわたることができます
 
-- list item
-- list item
-- list item
+- リストアイテム
+- リストアイテム
+- リストアイテム
 
-1. One
-2. Two
-3. Three
+1. いち
+2. に
+3. さん
 
-This text is **in bold** and this is *italic*.
+このテキストは **太字** で、これは *イタリック* です。
 
-The following is a horizontal rule
+以下は水平線です
 
 ---
 
-This is a table:
-| Column 1 | Column 2 |
+これはテーブルです:
+| 列1      | 列2      |
 | -------- | -------- |
 | R1C1     | R1C2     |
 | R2C1     | R2C2     |
 
-You can `inline code` or
-
+`インラインコード`を使用することも、
 ```text
-you can create
-code blocks
+コードブロックを
+作成することもできます
 ```
+
+
 

@@ -1,18 +1,20 @@
-# Including notes in a note
+# ノート内でのノートの含め方
 
-In some situations it might be useful to include the content of another note in your current note. Foam supports this displaying within the vscode environment. Note, this does not work out-of-the-box for your publishing solutions.
+特定の状況では、現在のノートに別のノートの内容を含めると便利な場合があります。FoamはVSCode環境内でこれを表示することをサポートしています。ただし、これは公開ソリューションではデフォルトで機能しません。
 
-## Including a note
+## ノートの含め方
 
-Including a note can be done by adding an `!` before a wikilink definition. For example `![[wikilink]]`.
+wikilink定義の前に`!`を追加することで、ノートを含めることができます。例えば`![[wikilink]]`のように。
 
-## Custom styling
+## カスタムスタイリング
 
-To modify how an embedded note looks and the scope of its content, see [[built-in-note-embedding-types]]
+埋め込まれたノートの見た目とその内容の範囲を変更するには、[[built-in-note-embedding-types]]を参照してください。
 
-For more fine-grained custom styling, see [[custom-markdown-preview-styles]]
+より細かいカスタムスタイリングについては、[[custom-markdown-preview-styles]]を参照してください。
 
-## Future possibilities
+## 将来の可能性
 
-Work on this feature is evolving and progressing. See the [[inclusion-of-notes]] proposal for the current discussion.
+この機能に関する作業は進化し、進行中です。現在の議論については、[[inclusion-of-notes]]の提案を参照してください。
+
+
 

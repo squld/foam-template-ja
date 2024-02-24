@@ -1,34 +1,34 @@
 # GitLab Pages
 
-You don't have to use GitHub to serve Foam pages. You can also use GitLab.
+Foamページを提供するためにGitHubを使用する必要はありません。GitLabも使用できます。
 
-Gitlab pages can be kept private for private repo, so that your notes are still private.
+GitLabページは、プライベートリポジトリの場合はプライベートに保つことができるため、メモがプライベートのままになります。
 
-## Setup a project
+## プロジェクトのセットアップ
 
-### Generate the directory from GitHub
+### GitHubからディレクトリを生成する
 
-Generate a solution using the [Foam template](https://github.com/foambubble/foam-template).
+[Foamテンプレート](https://github.com/squld/foam-template-ja)を使用してソリューションを生成します。
 
-Change the remote to GitLab, or copy all the files into a new GitLab repo
+リモートをGitLabに変更するか、すべてのファイルを新しいGitLabリポジトリにコピーします
 
-## Publishing pages with Gatsby
+## Gatsbyを使用したページの公開
 
-### Setup the Gatsby config
+### Gatsby設定のセットアップ
 
-Add a .gatsby-config.js file where:
+次のように `.gatsby-config.js` ファイルを追加します:
 
-* `$REPO_NAME` correspond to the name of your gtlab repo.
-* `$USER_NAME` correspond to your gitlab username.
+* `$REPO_NAME` はあなたのgtlabリポジトリの名前に対応します。
+* `$USER_NAME` はあなたのgitlabユーザー名に対応します。
 
 ```js
 const path = require("path");
 const pathPrefix = `/$REPO_NAME`;
 
-// Change me
+// 変更してください
 const siteMetadata = {
-  title: "A title",
-  shortName: "A short name",
+  title: "タイトル",
+  shortName: "短い名前",
   description: "",
   imageUrl: "/graph-visualization.jpg",
   siteUrl: "https://$USER_NAME.gitlab.io",
@@ -96,7 +96,7 @@ module.exports = {
 };
 ```
 
-And a `package.json` file containing:
+そして、以下を含む `package.json` ファイル:
 
 ```json
 {
@@ -128,19 +128,19 @@ And a `package.json` file containing:
 }
 ```
 
-The theme will be based on [gatsby-theme-primer-wiki](https://github.com/theowenyoung/gatsby-theme-primer-wiki).
+テーマは [gatsby-theme-primer-wiki](https://github.com/theowenyoung/gatsby-theme-primer-wiki) を基にしています。
 
-To test the theme locally first run `yarn install` and then use `gatsby develop` to serve the website.
-See gatsby documentation for more details.
+テーマをローカルでテストするには、最初に `yarn install` を実行し、その後 `gatsby develop` を使用してウェブサイトを提供します。
+詳細については、gatsbyのドキュメントを参照してください。
 
-### Set-up the CI for deployment
+### デプロイメントのためのCIのセットアップ
 
-Create a `.gitlab-ci.yml` file containing:
+`.gitlab-ci.yml` ファイルを作成し、以下の内容を含めます:
 
 ```yml
-# To contribute improvements to CI/CD templates, please follow the Development guide at:
+# CI/CDテンプレートの改善に貢献するには、以下の開発ガイドに従ってください:
 # https://docs.gitlab.com/ee/development/cicd/templates.html
-# This specific template is located at:
+# この特定のテンプレートはこちらにあります:
 # https://gitlab.com/gitlab-org/gitlab/-/blob/master/lib/gitlab/ci/templates/Pages/Gatsby.gitlab-ci.yml
 
 image: node:latest
@@ -150,12 +150,12 @@ stages:
 
 pages:
   stage: deploy
-  # This folder is cached between builds
+  # このフォルダはビルド間でキャッシュされます
   # https://docs.gitlab.com/ee/ci/yaml/index.html#cache
   cache:
     paths:
       - node_modules/
-      # Enables git-lab CI caching. Both .cache and public must be cached, otherwise builds will fail.
+      # git-lab CIのキャッシュを有効にします。.cacheとpublicは両方キャッシュされなければならず、そうでないとビルドが失敗します。
       - .cache/
       - public/
   script:
@@ -168,18 +168,18 @@ pages:
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
 ```
 
-This pipeline will now serve your website on every push to the main branch of your project.
+このパイプラインにより、プロジェクトのメインブランチにプッシュするたびに、ウェブサイトが提供されるようになります。
 
-## Publish with Jekyll
+## Jekyllを使用した公開
 
-### Add a _config.yaml
+### _config.yamlの追加
 
-Add another file to the root directory (the one with `readme.md` in it) called `_config.yaml` (no extension)
+ルートディレクトリ (`readme.md`が含まれているディレクトリ) に`_config.yaml` (拡張子なし) という別のファイルを追加します
 
 ```yaml
 title: My Awesome Foam Project
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "/" # the base hostname & protocol for your site
+baseurl: "" # サイトのサブパス、例: /blog
+url: "/" # サイトの基本ホスト名＆プロトコル
 theme: jekyll-theme-minimal
 plugins:
   - jekyll-optional-front-matter
@@ -188,16 +188,16 @@ optional_front_matter:
 defaults:
   -
     scope:
-      path: "" # we need to add this to properly render layouts
+      path: "" # レイアウトを正しくレンダリングするためにこれを追加する必要があります
     values:
       layout: "default"
 ```
 
-You can choose a theme if you want from places like [Jekyll Themes](https://jekyllthemes.io/)
+[Jekyll Themes](https://jekyllthemes.io/)などの場所からテーマを選択できます。
 
-### Add a Gemlock file
+### Gemlockファイルの追加
 
-Add another file to the root directory (the one with `readme.md` in it) called `Gemfile` (no extension)
+ルートディレクトリ (`readme.md`が含まれているディレクトリ) に`Gemfile` (拡張子なし) という別のファイルを追加します
 
 ```ruby
 source "https://rubygems.org"
@@ -207,18 +207,20 @@ gem "jekyll-theme-minimal"
 gem "jekyll-optional-front-matter"
 ```
 
-Commit the file and push it to gitlab.
+ファイルをコミットし、gitlabにプッシュします。
 
-### Setup CI/CD
+### CI/CDのセットアップ
 
-1. From the project home in GitLab click `Set up CI/CD`
-2. Choose `Jekyll` as your template from the template dropdown
-3. Click `commit`
-4. Now when you go to CI / CD > Pipelines, you should see the code running
+1. GitLabのプロジェクトホームから`Set up CI/CD`をクリックします
+2. テンプレートドロップダウンから`Jekyll`を選択します
+3. `commit`をクリックします
+4. これで、CI / CD > Pipelinesに移動すると、コードが実行されているのが見えるはずです
 
-### Troubleshooting
+### トラブルシューティング
 
-- *Could not locate Gemfile* - You didn't follow the steps above to [Add a Gemlock file](#add-a-gemlock-file)
-- *Conversion error: Jekyll::Converters::Scss encountered an error while converting* You need to reference a theme.
-- *Pages are running in CI/CD, but I only ever see `test`, and never deploy* - Perhaps you've renamed the main branch (from master) - check the settings in `.gitlab-ci.yml` and ensure the deploy command is running to the branch you expect it to.
-- *I deployed, but my .msd files don't seem to be being converted into .html files* - You need a gem that GitHub installs by default - check `gem "jekyll-optional-front-matter"` appears in the `Gemfile`
+- *Could not locate Gemfile* - 上記の[Add a Gemlock file](#add-a-gemlock-file)の手順に従っていません
+- *Conversion error: Jekyll::Converters::Scss encountered an error while converting* - テーマを参照する必要があります。
+- *Pages are running in CI/CD, but I only ever see `test`, and never deploy* - メインブランチ (マスターから) の名前を変更した可能性があります - `.gitlab-ci.yml`の設定を確認し、デプロイコマンドが期待するブランチで実行されていることを確認してください。
+- *I deployed, but my .msd files don't seem to be being converted into .html files* - GitHubがデフォルトでインストールするgemが必要です - `Gemfile`に`gem "jekyll-optional-front-matter"`が含まれていることを確認してください
+
+

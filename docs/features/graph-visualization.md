@@ -1,38 +1,38 @@
-# Graph Visualization
+# グラフの可視化
 
-Foam comes with a graph visualization of your notes.
-To see the graph execute the `Foam: Show Graph` command.
+Foamには、ノートのグラフ可視化機能が含まれています。
+グラフを表示するには、`Foam: Show Graph`コマンドを実行します。
 
-Your files, such as notes and documents, are shown as the nodes of the graph along with the tags defined in your notes. The edges of the graph represent either a link between two files or a file that contains a certain tag. A node in the graph will grow in size with the number of connections it has, representing stronger or more defined concepts and topics.
+ファイル (ノートやドキュメントなど) は、ノートに定義されたタグとともにグラフのノードとして表示されます。グラフのエッジは、2つのファイル間のリンクまたは特定のタグを含むファイルを表します。グラフ内のノードは、接続数が多いほど大きくなり、より強力またはより定義された概念やトピックを表します。
 
-## Graph Navigation
+## グラフナビゲーション
 
-With the Foam graph visualization you can:
+Foamのグラフ可視化を使用すると、以下のことができます:
 
-- highlight a node by hovering on it, to quickly see how it's connected to the rest of your notes
-- select one or more (by keeping `shift` pressed while selecting) nodes by clicking on them, to better understand the structure of your notes
-- navigate to a note by clicking on it's node while pressing `ctrl` or `cmd`
-- automatically center the graph on the currently edited note, to immediately see its connections
+- ノードにホバーして、他のノートとどのように接続されているかをすぐに確認し、ノードを強調表示
+- ノートの構造をよりよく理解するために、1つ以上のノード (選択中に`shift`を押し続ける) をクリックして選択
+- `ctrl`または`cmd`を押しながらノードをクリックすることで、ノートにナビゲート
+- 現在編集中のノートにグラフを自動的に中央揃えし、その接続をすぐに確認
 
-## Filter View
+## フィルタビュー
 
-If you only wish to view certain types of notes or tags, or want to hide linked attachment nodes then you can apply filters to the graph.
+特定のタイプのノートやタグのみを表示したい場合や、リンクされた添付ファイルノードを非表示にしたい場合は、グラフにフィルタを適用できます。
 
-- Open the graph view using the `Foam: Show Graph` command
-- Click the button in the top right corner of the graph view that says "Open Controls"
-- Expand the "Filter By Type" dropdown to view the selection of types that you can filter by
-- Uncheck the checkbox for any type you want to hide
-- The types displayed in this dropdown are defined by [[note-properties]] which includes Foam-standard types as well as custom types defined by you!
+- `Foam: Show Graph`コマンドを使用してグラフビューを開く
+- グラフビューの右上隅にある"Open Controls"というボタンをクリック
+- "Filter By Type"ドロップダウンを展開して、フィルタリングできるタイプの選択肢を表示
+- 非表示にしたいタイプのチェックボックスをオフにする
+- このドロップダウンに表示されるタイプは、Foam標準のタイプとあなたが定義したカスタムタイプを含む[[note-properties]]によって定義されます!
 
-![Graph filtering demo](../../assets/images/graph-filter.gif)
+![グラフフィルタリングデモ](../../assets/images/graph-filter.gif)
 
-## Custom Graph Styles
+## カスタムグラフスタイル
 
-The Foam graph will use the current VS Code theme by default, but it's possible to customize it with the `foam.graph.style` setting.
+Foamグラフはデフォルトで現在のVS Codeテーマを使用しますが、`foam.graph.style`設定でカスタマイズすることができます。
 
-![Graph style demo](../../assets/images/graph-style.gif)
+![グラフスタイルデモ](../../assets/images/graph-style.gif)
 
-A sample configuration object is provided below, you can provide as many or as little configuration as you wish:
+以下にサンプルの設定オブジェクトを提供します。必要な設定を自由に追加できます:
 
 ```json
 "foam.graph.style": {
@@ -48,40 +48,40 @@ A sample configuration object is provided below, you can provide as many or as l
 }
 ```
 
-- `background` background color of the graph, adjust to increase contrast
-- `fontSize` size of the title font for each node
-- `lineColor` color of the edges between nodes in the graph
-- `lineWidth` thickness of the edges between nodes
-- `particleWidth` size of the particle animation showing link direction when highlighting a node
-- `highlightedForeground` color of highlighted nodes and edges when hovering over a node
-- to style individual types of nodes jump to the next section: [Style Nodes By Type](#style-nodes-by-type)
+- `background` グラフの背景色。コントラストを高めるために調整します
+- `fontSize` 各ノードのタイトルフォントのサイズ
+- `lineColor` ノード間のエッジの色
+- `lineWidth` ノード間のエッジの太さ
+- `particleWidth` ノードをハイライトしたときにリンクの方向を示すパーティクルアニメーションのサイズ
+- `highlightedForeground` ノードをホバーしたときにハイライトされるノードとエッジの色
+- 個々のノードのスタイルをカスタマイズするには、次のセクションに進んでください: [タイプ別のノードスタイル](#タイプ別のノードスタイル)
 
-### Style Nodes by Type
+### タイプ別のノードスタイル
 
-It is possible to customize the style of a node based on the `type` property in the YAML frontmatter of the corresponding document.
+対応するドキュメントのYAMLフロントマター内の`type`プロパティに基づいて、ノードのスタイルをカスタマイズすることができます。
 
-There are a few default node types defined by Foam that are displayed in the graph:
+Foamによって定義されたいくつかのデフォルトのノードタイプがグラフに表示されます:
 
-- `note` defines the color for regular nodes whose documents have not overridden the `type` property.
-- `placeholder` defines the color for links that don't match any existing note. This is a [[placeholder]] because no file with such name exists.
-  - see [[wikilinks]] for more info <!--NOTE: this placeholder link should NOT have an associated file. This is to demonstrate the custom coloring-->
-- `tag` defines the color for nodes representing #tags, allowing tags to be used as graph nodes similar to backlinks.
-  - see [[tags]] for more info
-- `feature` shows an example of how you can use note types to customize the graph. It defines the color for the notes of type `feature`
-  - see [[note-properties]] for details
+- `note` は、ドキュメントが`type`プロパティを上書きしていない通常のノードの色を定義します。
+- `placeholder` は、既存のノートに一致しないリンクの色を定義します。これは[[placeholder]]です。そのような名前のファイルが存在しないためです。
+  - 詳細は[[wikilinks]]を参照してください
+- `tag` は、 #tags を表すノードの色を定義し、タグをバックリンクのようなグラフノードとして使用できるようにする。
+  - 詳細は[[tags]]を参照してください
+- `feature` は、グラフをカスタマイズするためにノートタイプを使用する方法の例を示しています。`feature`タイプのノートの色を定義します。
+  - 詳細は[[note-properties]]を参照してください
 
-For example the following `backlinking.md` note:
+例えば、以下の`backlinking.md`ノート:
 
 ```markdown
 ---
 type: feature
 ---
-# Backlinking
+# バックリンキング
 
 ...
 ```
 
-And the following `settings.json`:
+そして、以下の`settings.json`:
 
 ```json
 "foam.graph.style": {
@@ -95,7 +95,9 @@ And the following `settings.json`:
 }
 ```
 
-Will result in the following graph:
+以下のグラフの結果になります:
 
-![Style node by type](../../assets/images/style-node-by-type.png)
+![タイプ別のノードスタイル](../../assets/images/style-node-by-type.png)
+
+
 

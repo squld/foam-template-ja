@@ -1,9 +1,11 @@
-# Spell Checking
+# スペルチェック
 
-There are many spell checking extensions for VS Code.
+VS Codeには多くのスペルチェック拡張機能があります。
 
-The most popular spell checker for VS Code is [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker).
+VS Codeで最も人気のあるスペルチェッカーは[Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)です。
 
-Another one of our favorites is [LTeX](https://marketplace.visualstudio.com/items?itemName=valentjn.vscode-ltex&ssr=false#overview), which is a bit heavier but offers some extra functionality.
+私たちのお気に入りのもう一つは[LTeX](https://marketplace.visualstudio.com/items?itemName=valentjn.vscode-ltex&ssr=false#overview)で、少し重いですが、いくつかの追加機能を提供しています。
 
-Another popular one is [Spellright](https://marketplace.visualstudio.com/items?itemName=ban.spellright), but be mindful that there have been reports of incompatibility with the `vscode-markdown` extension (see https://github.com/foambubble/foam/issues/1068).
+もう一つ人気のあるものは[Spellright](https://marketplace.visualstudio.com/items?itemName=ban.spellright)ですが、`vscode-markdown`拡張機能との互換性がないとの報告がありますので注意してください (https://github.com/foambubble/foam/issues/1068を参照) 。
+
+

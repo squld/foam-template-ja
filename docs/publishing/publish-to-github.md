@@ -1,16 +1,18 @@
-# Publish to GitHub
+# GitHubへの公開
 
-The standard [foam-template](https://github.com/foambubble/foam-template) is ready to be published to GitHub, and GitHub pages.
+標準の[foam-template-ja](https://github.com/squld/foam-template-ja)は、GitHubおよびGitHubページに公開する準備ができています。
 
-## Enable navigation in GitHub
+## GitHubでのナビゲーションを有効にする
 
-To allow navigation from within the GitHub repo, make sure to generate the link references, by setting
+GitHubリポジトリ内からのナビゲーションを可能にするために、リンク参照を生成するように設定してください
 
 - `Foam › Edit: Link Reference Definitions` -> `withExtensions`
 
-See [[link-reference-definitions]] for more information.
+詳細については、[[link-reference-definitions]]を参照してください。
 
-## Customising the style
+## スタイルのカスタマイズ
 
-You can edit `assets/css/style.scss` to change how published pages look.
+公開されたページの見た目を変更するには、`assets/css/style.scss`を編集できます。
+
+
 

@@ -1,51 +1,51 @@
-# Publish to Azure DevOps Wiki
+# Azure DevOps Wikiへの公開
 
-Publish your Foam workspace as an Azure DevOps wiki.
+FoamワークスペースをAzure DevOps wikiとして公開します。
 
-[Azure DevOps](https://azure.microsoft.com/en-us/services/devops/) is Microsoft's collaboration software for software development teams, formerly known as Team Foundation Server (TFS) and Visual Studio Team Services. It is available as an on-premise or SaaS version. The following recipe was tested with the SaaS version, but should work the same way for the on-premise.
+[Azure DevOps](https://azure.microsoft.com/en-us/services/devops/)は、ソフトウェア開発チームのためのMicrosoftのコラボレーションソフトウェアで、以前はTeam Foundation Server (TFS)およびVisual Studio Team Servicesとして知られていました。オンプレミスまたはSaaSバージョンで利用可能です。以下のレシピはSaaSバージョンでテストされましたが、オンプレミスでも同じ方法で動作するはずです。
 
-The following recipe is written with the assumption that you already have an [Azure DevOps](https://azure.microsoft.com/en-us/services/devops/) project.
+以下のレシピは、すでに[Azure DevOps](https://azure.microsoft.com/en-us/services/devops/)プロジェクトを持っていることを前提として書かれています。
 
-## Setup a Foam workspace
+## Foamワークスペースのセットアップ
 
-1. Generate a Foam workspace using the [foam-template project](https://github.com/foambubble/foam-template).
-2. Change the remote to a git repository in Azure DevOps (Repos -> Import a Repository -> Add Clone URL with Authentication), or copy all the files into a new Azure DevOps git repository.
-3. Define which document will be the wiki home page. To do that, create a file called `.order` in the Foam workspace root folder, with first line being the document filename without `.md` extension. For a project created from the Foam template, the file would look like this:
+1. [foam-template-jaプロジェクト](https://github.com/squld/foam-template-ja)を使用してFoamワークスペースを生成します。
+2. リモートをAzure DevOpsのgitリポジトリに変更します (Repos -> Import a Repository -> Add Clone URL with Authentication) 、またはすべてのファイルを新しいAzure DevOps gitリポジトリにコピーします。
+3. ウィキのホームページになるドキュメントを定義します。そのために、Foamワークスペースのルートフォルダに`.order`というファイルを作成し、最初の行に`.md`拡張子なしのドキュメントファイル名を記載します。Foamテンプレートから作成されたプロジェクトの場合、ファイルは次のようになります:
 
 ```
 readme
 ```
 
-4. Push the repository to remote in Azure DevOps.
+4. リポジトリをAzure DevOpsのリモートにプッシュします。
 
-## Publish repository to a wiki
+## リポジトリをwikiとして公開する
 
-1. Navigate to your Azure DevOps project in a web browser.
-2. Choose **Overview** > **Wiki**. If you don't have wikis for your project, choose **Publish code as a wiki** on welcome page.
-3. Choose repository with your Foam workspace, branch (usually `master` or `main`), folder (for workspace created from foam-template it is `/`), and wiki name, and press **Publish**.
+1. ウェブブラウザでAzure DevOpsプロジェクトに移動します。
+2. **Overview** > **Wiki**を選択します。プロジェクトにwikiがない場合は、ウェルカムページで**Publish code as a wiki**を選択します。
+3. Foamワークスペースが含まれるリポジトリ、ブランチ (通常は`master`または`main`) 、フォルダ (foam-template-jaから作成されたワークスペースの場合は`/`) 、およびwiki名を選択し、**Publish**を押します。
 
-A published workspace looks like this:
+公開されたワークスペースは次のようになります:
 
 ![Azure DevOps wiki](../../assets/images/azure-devops-wiki-demo.png)
 
-There is default table of contents pane to the left of the wiki content. Here, you'll find a list of all directories that are present in your Foam workspace, and all wiki pages. Page names are derived from files names, and they are listed in alphabetical order. You may reorder pages by adding filenames without `.md` extension to `.order` file.
+wikiコンテンツの左側には、デフォルトの目次ペインがあります。ここでは、Foamワークスペースに存在するすべてのディレクトリとすべてのwikiページが表示されます。ページ名はファイル名から派生しており、アルファベット順にリストされています。`.order`ファイルに`.md`拡張子なしのファイル名を追加することで、ページを並び替えることができます。
 
-_Note that first entry in `.order` file defines wiki's home page._
+_`.order`ファイルの最初のエントリがwikiのホームページを定義します。_
 
-## Update wiki
+## Wikiの更新
 
-While you are pushing changes to GitHub, you won't see the wiki updated if you don't add Azure as a remote. You can push to multiple repositories simultaneously.
+GitHubへの変更をプッシュしている間、Azureをリモートに追加しない限り、wikiが更新されることはありません。複数のリポジトリに同時にプッシュすることができます。
 
- 1. First open a terminal and check if Azure is added running: `git remote show origin`. If you don't see Azure add it in the output then follow these steps.
- 2. Rename your current remote (most likely named origin) to a different name by running: `git remote rename origin main`
- 3. You can then add the remote for your second remote repository, in this case, Azure. e.g `git remote add azure https://<YOUR_ID>@dev.azure.com/<YOUR_ID>/foam-notes/_git/foam-notes`. You can get it from: Repos->Files->Clone and copy the URL.
- 4. Now, you need to set up your origin remote to push to both of these. So run: `git config -e` and edit it.
- 5. Add the `remote origin` section to the bottom of the file with the URLs from each remote repository you'd like to push to. You'll see something like that:
+ 1. まず、ターミナルを開いて、`git remote show origin`を実行し、Azureが追加されているかどうかを確認します。出力にAzureが表示されない場合は、次の手順に従ってください。
+ 2. 現在のリモート (おそらくoriginという名前) を別の名前に変更します。例: `git remote rename origin main`
+ 3. 次に、2番目のリモートリポジトリのリモートを追加します。この場合はAzureです。例: `git remote add azure https://<YOUR_ID>@dev.azure.com/<YOUR_ID>/foam-notes/_git/foam-notes`。これは、Repos->Files->CloneからURLをコピーして取得できます。
+ 4. これで、originリモートを設定して、これらの両方にプッシュする必要があります。そのためには、`git config -e`を実行して編集します。
+ 5. プッシュしたい各リモートリポジトリのURLを含む`remote origin`セクションをファイルの下部に追加します。以下のようなものが表示されます:
 
  ```bash
  [core]
   ...
-   (ignore this part)
+   (この部分は無視)
    ...
 [branch "master"]
   remote = github
@@ -61,6 +61,8 @@ While you are pushing changes to GitHub, you won't see the wiki updated if you d
   url = https://<YOUR_ID>@dev.azure.com/<YOUR_ID>/foam-notes/_git/foam-notes
  ```
 
- 6. You can then push to both repositories by: `git push origin master` or a single one using: `git push github master` or `git push azure master`
+ 6. これで、`git push origin master`を使用して両方のリポジトリにプッシュするか、`git push github master`または`git push azure master`を使用して1つのリポジトリにプッシュできます。
 
-For more information, read the [Azure DevOps documentation](https://docs.microsoft.com/en-us/azure/devops/project/wiki/publish-repo-to-wiki).
+詳細については、[Azure DevOpsドキュメント](https://docs.microsoft.com/en-us/azure/devops/project/wiki/publish-repo-to-wiki)を参照してください。
+
+

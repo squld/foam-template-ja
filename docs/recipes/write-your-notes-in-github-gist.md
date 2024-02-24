@@ -1,55 +1,57 @@
-# Write your notes in GitHub Gist
+# GitHub Gistでノートを書く
 
-This #recipe will allow you to persist your notes in a GitHub repository, and automatically sync changes without needing to manually commit/push/pull, then GistPad might be an option worth exploring.
+この #レシピ を使用すると、GitHubリポジトリにノートを永続化し、手動でコミット/プッシュ/プルする必要なく変更を自動的に同期できる場合、GistPadが検討する価値のあるオプションかもしれません。
 
-[GistPad](https://aka.ms/gistpad) is a Visual Studio Code extension that allows you to edit your GitHub gists and repos, without needing to clone anything locally.
+[GistPad](https://aka.ms/gistpad)は、何もローカルにクローンすることなく、GitHubのgistとリポジトリを編集できるVisual Studio Code拡張機能です。
 
-It provides support for editing Foam workspaces, complete with `[[link]]` [completion/navigation](https://github.com/vsls-contrib/gistpad#links), [daily pages](https://github.com/vsls-contrib/gistpad#daily-pages), [pasting images](https://github.com/vsls-contrib/gistpad#pasting-images-1) and [backlinks](https://github.com/vsls-contrib/gistpad#backlinks).
+`[[link]]` [completion/navigation](https://github.com/vsls-contrib/gistpad#links)、[daily pages](https://github.com/vsls-contrib/gistpad#daily-pages)、[pasting images](https://github.com/vsls-contrib/gistpad#pasting-images-1)、[backlinks](https://github.com/vsls-contrib/gistpad#backlinks)を完備したFoamワークスペースの編集をサポートしています。
 
 <img width="700px" src="https://user-images.githubusercontent.com/116461/87234714-96ba9400-c388-11ea-92c3-544d9a3bb633.png" />
 
-## Getting started
+## 始め方
 
-To start using GistPad for your Foam-based knowledge base, simply perform the following steps:
+GistPadをFoamベースのナレッジベースで使用するには、以下の手順を実行してください:
 
-1. Download the [GistPad extension](https://aka.ms/gistpad) and then re-start Visual Studio Code
+1. [GistPad拡張機能](https://aka.ms/gistpad)をダウンロードし、Visual Studio Codeを再起動します。
 
-1. Run the `GistPad: Sign In` command and then complete the authentication flow using your GitHub account
+1. `GistPad: Sign In`コマンドを実行し、GitHubアカウントを使用して認証フローを完了します。
 
-1. Run the `GistPad: Open Repository` command and select the `Create repo from template...` or `Create private repo from template...` depending on your preference
+1. `GistPad: Open Repository`コマンドを実行し、`Create repo from template...`または`Create private repo from template...`を選択します。好みに応じて選択してください。
 
-1. Select the `Foam-style wiki` template, and then specify a name for your Foam workspace (e.g. `my-foam-notes`, `johns-knowledge-base`)
+1. `Foam-style wiki`テンプレートを選択し、Foamワークスペースに名前を指定します (例: `my-foam-notes`, `johns-knowledge-base`) 。
 
-Your new repo will be created in your GitHub account, and the `Foam` welcome page will be automatically opened. If you already have an existing Foam workspace in GitHub, then when you run step #3 above, simply select or specify the name of the GitHub repository instead.
+新しいリポジトリがGitHubアカウントに作成され、`Foam`のウェルカムページが自動的に開かれます。既にGitHubにFoamワークスペースがある場合は、上記の手順#3で、GitHubリポジトリの名前を選択または指定してください。
 
-> Note: If you have any and all feedback on how GistPad can be improved to support your Foam workflow, please don't hesitate to [let us know](https://github.com/vsls-contrib/gistpad)! 👍
+> 注意: GistPadをFoamワークフローに合わせて改善するためのフィードバックがあれば、遠慮なく[お知らせください](https://github.com/vsls-contrib/gistpad)!👍
 
 <img width="700px" src="https://user-images.githubusercontent.com/116461/87863222-c1b76180-c90d-11ea-87d9-04bee1c58a0d.png" />
 
-## Managing your workspace
+## ワークスペースの管理
 
-Once you've opened/created the Foam repository, it will appear in the `Repositories` view of the `GistPad` tab (the one with the little notebook icon). From this tree view, you can add/edit/delete/rename new pages, upload local files, as well as view the backlinks for each page (they appear as child notes of a page).
+Foamリポジトリを開いたり作成したりすると、`GistPad`タブ (小さなノートブックアイコンが付いたもの) の`Repositories`ビューに表示されます。このツリービューから、新しいページを追加/編集/削除/名前変更したり、ローカルファイルをアップロードしたり、各ページのバックリンクを表示したりすることができます (ページの子ノートとして表示されます) 。
 
 <img width="250px" src="https://user-images.githubusercontent.com/116461/87234704-83a7c400-c388-11ea-90a8-2a660bef4dc5.png" />
 
-## Editing your workspace
+## ワークスペースの編集
 
-When you create or open a page, you can edit the markdown content as usual, as well as [paste images](https://github.com/vsls-contrib/gistpad#pasting-images-1), and create [`[[links]]` to other pages](https://github.com/vsls-contrib/gistpad#links). When you type `[[`, you'll receive auto-completion for the existing pages in your workspace, and you can also automatically create new pages by simply creating a link to it.
+ページを作成または開くと、通常どおりマークダウンコンテンツを編集したり、[画像を貼り付けたり](https://github.com/vsls-contrib/gistpad#pasting-images-1)、他のページへの[`[[links]]`を作成したりすることができます。`[[`と入力すると、ワークスペース内の既存のページの自動補完が表示され、リンクを作成することで新しいページを自動的に作成することもできます。
 
-Since you're using the Visual Studio Code markdown editor, you can benefit from all of the rich language services (e.g. syntax highlighting, header collapsing), as well as the extension ecosystem (e.g. [Emojisense](https://marketplace.visualstudio.com/items?itemName=bierner.emojisense)).
+Visual Studio Codeのマークダウンエディターを使用しているので、豊富な言語サービス (例: 構文ハイライト、ヘッダーの折りたたみ) や拡張機能エコシステム (例: [Emojisense](https://marketplace.visualstudio.com/items?itemName=bierner.emojisense)) の恩恵を受けることができます。
 
-## Navigating your workspace
+## ワークスペースのナビゲーション
 
-When editing a file, you can easily navigate `[[links]]` by hovering over them to see a preview of their contents and/or `cmd+clicking` on them in order to jump to the respective page. Furthermore, when you add a link to a page, a [backlink](https://github.com/vsls-contrib/gistpad#backlinks) is automatically added to it.
+ファイルを編集しているときに、`[[links]]`をホバーして内容のプレビューを表示したり、`cmd+click`して該当するページにジャンプしたりすることが簡単にできます。さらに、ページへのリンクを追加すると、そのページに[バックリンク](https://github.com/vsls-contrib/gistpad#backlinks)が自動的に追加されます。
 
-You can view a page's backlinks using either of the following techniques:
+ページのバックリンクを表示するには、以下のいずれかの方法を使用できます:
 
-1. Expanding the file's node in the `Repositories` tree, since it's child nodes will represent backlinks. This makes it easy to browse your pages and their backlinks in a single hierarchical view.
+1. `Repositories`ツリーでファイルのノードを展開すると、子ノードがバックリンクを表すため、ページとそのバックリンクを1つの階層ビューで簡単に閲覧できます。
 
-1. Opening a file, and then viewing it's backlinks list at the bottom of the editor view. This makes it easy to read a page and then see its backlinks in a contextually rich way.
+1. ファイルを開いて、エディタービューの下部にあるバックリンクリストを表示します。これにより、ページを読んでから、コンテキストに富んだ方法でバックリンクを確認できます。
 
-## Daily Pages
+## 日次ページ
 
-In addition to creating arbitrary pages, you can use GistPad for journaling or capturing [daily notes](https://github.com/vsls-contrib/gistpad#daily-pages). Simply click the calendar icon in the `Repositories` tree, which will open up the page that represents today. If the page doesn't already exist, then it will be created in the workspace before being opened.
+任意のページを作成するだけでなく、GistPadを使用して日記をつけたり、[日次ノート](https://github.com/vsls-contrib/gistpad#daily-pages)をキャプチャしたりすることもできます。`Repositories`ツリーでカレンダーアイコンをクリックすると、今日を表すページが開きます。ページがまだ存在しない場合は、ワークスペースに作成されてから開かれます。
 
 <img width="700px" src="https://user-images.githubusercontent.com/116461/87234721-b356cc00-c388-11ea-946a-e7f9c92258a6.png" />
+
+

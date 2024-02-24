@@ -1,25 +1,25 @@
-# Foam Note Templates
+# Foamノートテンプレート
 
-Foam includes note templates! 
-This allows you to easily create notes that have similar structure without having to use copy/paste :)
+Foamにはノートテンプレートが含まれています!
+これにより、コピー＆ペーストを使用せずに、類似の構造を持つノートを簡単に作成できます :)
 
-Templates support the [VS Code's Snippet Syntax](https://code.visualstudio.com/docs/editor/userdefinedsnippets#_snippet-syntax), which means you can:
-- add variables to the newly created note
-- add tabstop to automatically navigate to the key parts of the note, just like a form
-Below you can see an example showing a todo list and a timestamp.
+テンプレートは[VS Codeのスニペット構文](https://code.visualstudio.com/docs/editor/userdefinedsnippets#_snippet-syntax)をサポートしているため、以下が可能です:
+- 新しく作成されたノートに変数を追加する
+- フォームのように、ノートの重要な部分に自動的にナビゲートするためのタブストップを追加する
+以下の例では、todoリストとタイムスタンプを示しています。
 
-## Todo List
+## Todoリスト
 
-1. ${1:First tabstop}
-2. ${2:A second tabstop}
-3. ${3:A third tabstop}
+1. ${1:最初のタブストップ}
+2. ${2:2番目のタブストップ}
+3. ${3:3番目のタブストップ}
 
-Note Created: ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}
+ノート作成日: ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}
 
 ---
 
-Try out the above example by running the `Foam: Create New Note From Template` command and selecting the `your-first-template` template. Notice what happens when your new note is created!
+上記の例を試すには、`Foam: Create New Note From Template`コマンドを実行し、`your-first-template`テンプレートを選択してください。新しいノートが作成されたときに何が起こるかに注目してください!
 
-To remove this template, simply delete the `.foam/templates/your-first-template.md` file.
+このテンプレートを削除するには、単に`.foam/templates/your-first-template.md`ファイルを削除してください。
 
-Enjoy!
+お楽しみください!

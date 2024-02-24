@@ -1,51 +1,51 @@
-# Publish to Vercel
+# Vercelへの公開
 
-This #recipe shows you how to deploy the default Foam website template to Vercel.
+この #レシピ では、デフォルトのFoamウェブサイトテンプレートをVercelにデプロイする方法を示します。
 
-[Vercel](https://vercel.com/) is a static website hosting solution similar to GitHub Pages (see [[publish-to-github-pages]]).
+[Vercel](https://vercel.com/)は、GitHubページ ([[publish-to-github-pages]]を参照) と同様の静的ウェブサイトホスティングソリューションです。
 
-## Setting up the project
+## プロジェクトの設定
 
-### Using Foam's template
+### Foamのテンプレートを使用する
 
-Generate a GitHub repository using the default [Foam template](https://github.com/foambubble/foam-template), this will be the workspace that we will be deploying with Vercel. This workspace is a barebone Jekyll source website, which means we can customize and install plugins just like any other Jekyll websites.
+デフォルトの[Foamテンプレート](https://github.com/squld/foam-template-ja)を使用してGitHubリポジトリを生成します。これがVercelでデプロイするワークスペースになります。このワークスペースはベアボーンのJekyllソースウェブサイトであり、他のJekyllウェブサイトと同様にプラグインをカスタマイズしてインストールできます。
 
-As we won't be using GitHub Pages, we will be adding a few configuration files in order to help Vercel pick up on how to build our site.
+GitHubページを使用しないため、Vercelがサイトのビルド方法を把握するためにいくつかの設定ファイルを追加する必要があります。
 
-### Adding a `_config.yml`
+### `_config.yml`の追加
 
-First, we'll need to add a `_config.yml` at the root directory. This is the Jekyll configuration file. In here, we will set the site's title, theme, repository and permalink options, and also tell Jekyll what plugins to use:
+まず、ルートディレクトリに`_config.yml`を追加する必要があります。これはJekyllの設定ファイルです。ここでは、サイトのタイトル、テーマ、リポジトリ、パーマリンクオプションを設定し、Jekyllに使用するプラグインを指示します:
 
 ```yaml
 # _config.yml
 title: Foam
-# All the plugins we will be installing now that we won't be using GitHub Pages
+# GitHubページを使用しないためにインストールするすべてのプラグイン
 plugins:
-  - jekyll-katex  # optional
+  - jekyll-katex  # オプション
   - jekyll-default-layout
   - jekyll-relative-links
   - jekyll-readme-index
   - jekyll-titles-from-headings
   - jekyll-optional-front-matter
-# The default Jekyll theme we will be using
+# 使用するデフォルトのJekyllテーマ
 theme: jekyll-theme-primer
-# The GitHub repository that we are hosting our foam workspace from
+# FoamワークスペースをホストしているGitHubリポジトリ
 repository: user/repo
-# Generate permalinks in format specified in: https://jekyllrb.com/docs/permalinks/#built-in-formats
+# https://jekyllrb.com/docs/permalinks/#built-in-formats で指定された形式でパーマリンクを生成
 permalink: pretty
 ```
 
-The `theme` specifies a theme for our deployed Jekyll website. The default GitHub Pages template is called [Primer](https://github.com/pages-themes/primer). See Primer docs for how to customise html layouts and templates. We can also choose a theme if you want from places like [Jekyll Themes](https://jekyllthemes.io/).
+`theme`は、デプロイされたJekyllウェブサイトのテーマを指定します。デフォルトのGitHubページテンプレートは[Primer](https://github.com/pages-themes/primer)と呼ばれます。htmlレイアウトとテンプレートのカスタマイズ方法については、Primerのドキュメントを参照してください。[Jekyll Themes](https://jekyllthemes.io/)などの場所からテーマを選択することもできます。
 
-The `plugins` specifies a list of Jekyll plugins that we will be installing in the next section. As we won't be using GitHub Pages, we'll need to install these plugins that GitHub Pages installs for us under the hood.
+`plugins`は、GitHubページを使用しないため、GitHubページが内部でインストールしてくれるこれらのプラグインをインストールする必要があるJekyllプラグインのリストを指定します。
 
-_If you want to use LaTeX rendered with KaTeX (which is what the plugin `jekyll-katex` does), you can specify it here. And yes, one of the benefits of deploying with Vercel is that we can use KaTeX to render LaTeX! More on: [[math-support-with-katex]]_
+_KaTeXを使用してLaTeXをレンダリングしたい場合 (`jekyll-katex`プラグインが行うこと) 、ここで指定できます。Vercelでデプロイする利点の1つは、KaTeXを使用してLaTeXをレンダリングできることです! 詳細は: [[math-support-with-katex]]_
 
-### Adding a `Gemfile`
+### `Gemfile`の追加
 
-Next up, we'll create another new file called `Gemfile` in the root directory. This is where we will let Vercel know what plugins to install when building our website.
+次に、ルートディレクトリに`Gemfile`という新しいファイルを作成します。これにより、Vercelがウェブサイトをビルドする際にインストールするプラグインを知らせます。
 
-In our `Gemfile`, we need to specify our Ruby packages:
+`Gemfile`では、Rubyパッケージを指定する必要があります:
 
 ```ruby
 # Gemfile
@@ -58,26 +58,28 @@ gem "jekyll-default-layout"
 gem "jekyll-relative-links"
 gem "jekyll-readme-index"
 gem "jekyll-titles-from-headings"
-gem "jekyll-katex"  # Optional, the package that enables KaTeX math rendering
+gem "jekyll-katex"  # オプション、KaTeX数式レンダリングを有効にするパッケージ
 ```
 
-### Enable math rendering with KaTeX (optional)
+### KaTeXを使用した数式レンダリングの有効化 (オプション)
 
-Besides adding the plugin `jekyll-katex` in `_config.yml` and `Gemfile`, we'll also have to follow the guides in [[math-support-with-katex]] to let our site fully support using KaTeX to render math equations.
+`_config.yml`と`Gemfile`にプラグイン`jekyll-katex`を追加するだけでなく、[[math-support-with-katex]]のガイドに従って、サイトがKaTeXを使用して数式をレンダリングすることを完全にサポートする必要があります。
 
-### Committing changes to GitHub repo
+### GitHubリポジトリへの変更のコミット
 
-Finally, commit the newly created files to GitHub.
+最後に、新しく作成されたファイルをGitHubにコミットします。
 
-## Importing project to Vercel
+## Vercelへのプロジェクトのインポート
 
-First, import our foam workspace (GitHub repository) to Vercel with [Vercel's _Import Git Repository_](https://vercel.com/import/git). Paste our GitHub repo's url and Vercel will automatically pull and analyze the tool we use to deploy our website. (In our case: Jekyll.)
+まず、[Vercelの _Import Git Repository_](https://vercel.com/import/git)を使用して、Foamワークスペース (GitHubリポジトリ) をVercelにインポートします。GitHubリポジトリのURLを貼り付けると、Vercelは自動的にプルして分析し、ウェブサイトをデプロイするために使用するツールを認識します。 (この場合はJekyllです。)
 
-Next, select the folder to deploy from if prompted. If we are using the default template, then Vercel will default to the root directory of our Foam workspace.
+次に、プロンプトが表示された場合はデプロイするフォルダを選択します。デフォルトテンプレートを使用している場合、VercelはFoamワークスペースのルートディレクトリをデフォルトとします。
 
-Finally, if all is successful, Vercel will show the detected framework: Jekyll. Press `Deploy` to proceed on publishing our project.
+最後に、すべてが成功した場合、Vercelは検出されたフレームワーク: Jekyllを表示します。`Deploy`を押してプロジェクトの公開を進めます。
 
 ![](../../assets/images/vercel-detect-preset.png)
 
-And now, Vercel will take care of building and rendering our foam workspace each time on push. Vercel will publish our site to `xxx.vercel.app`, we can also define a custom domain name for our Vercel website.
+これで、VercelはプッシュするたびにFoamワークスペースのビルドとレンダリングを行います。Vercelはサイトを`xxx.vercel.app`に公開し、Vercelウェブサイトのカスタムドメイン名も定義できます。
+
+
 

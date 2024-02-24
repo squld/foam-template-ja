@@ -1,108 +1,111 @@
 <!-- omit in toc -->
-# Recipes
+# レシピ
 
-A #recipe is a guide, tip or strategy for getting the most out of your Foam workspace!
+ #レシピ は、Foamワークスペースを最大限に活用するためのガイド、ヒント、または戦略です!
 
-- [Contribute](#contribute)
-- [Take smart notes](#take-smart-notes)
-- [Discover](#discover)
-- [Organise](#organise)
-- [Write](#write)
-- [Version control](#version-control)
-- [Publish](#publish)
-- [Collaborate](#collaborate)
-- [Workflow](#workflow)
-- [Creative ideas](#creative-ideas)
-- [Other](#other)
+- [貢献する](#貢献する)
+- [賢くノートを取る](#賢くノートを取る)
+- [発見する](#発見する)
+- [整理する](#整理する)
+- [書く](#書く)
+- [バージョン管理](#バージョン管理)
+- [公開する](#公開する)
+- [共同作業](#共同作業)
+- [ワークフロー](#ワークフロー)
+- [創造的なアイデア](#創造的なアイデア)
+- [その他](#その他)
 
-## Contribute
+## 貢献する
 
-- Start by reading [[contribution-guide]]
-- If you discover features not listed here, we'd love to have them! [[how-to-write-recipes]].
+- [[contribution-guide]]を読んで始めましょう
+- ここにない機能を発見したら、ぜひ教えてください! [[how-to-write-recipes]]
 
-## Take smart notes
+## 賢くノートを取る
 
-- Introduction to Zettelkasten [[todo]]
-- Clip webpages with [[web-clipper]]
-- Convert Microsoft Word files into Markdown with [[markup-converter]]
+- Zettelkastenの紹介 [[todo]]
+- ウェブページをクリップする [[web-clipper]]
+- Microsoft WordファイルをMarkdownに変換する [[markup-converter]]
 
-## Discover
+## 発見する
 
-- Explore your notes using [[graph-visualization]]
-- Discover relationships with [[backlinking]]
-- Simulating [[unlinked-references]]
+- [[graph-visualization]]を使ってノートを探索する
+- [[backlinking]]で関係性を発見する
+- [[unlinked-references]]をシミュレートする
 
-## Organise
+## 整理する
 
-- Using [[backlinking]] for reference lists.
+- 参考文献リストに[[backlinking]]を使用する。
 
-## Write
+## 書く
 
-- Link documents with [[wikilinks]].
-- Use shortcuts for [[creating-new-notes]]
-- Instantly create and access your [[daily-notes]]
-- Add and explore [[tags]]
-- Create [[note-templates]]
-- Find [[orphans]]
-- Use custom [[note-macros]] to create weekly, monthly etc. notes
-- Draw [[diagrams-in-markdown]]
-- Prettify your links, [[automatically-expand-urls-to-well-titled-links]]
-- Style your environment with [[custom-markdown-preview-styles]]
-- Paste and link [[add-images-to-notes]]
+- [[wikilinks]]で文書をリンクする。
+- [[creating-new-notes]]のショートカットを使用する
+- [[daily-notes]]を即座に作成してアクセスする
+- [[tags]]を追加して探索する
+- [[note-templates]]を作成する
+- [[orphans]]を見つける
+- 週刊、月刊などのノートを作成するために[[note-macros]]を使用する
+- [[diagrams-in-markdown]]で図を描く
+- [[automatically-expand-urls-to-well-titled-links]]でリンクを美しくする
+- [[custom-markdown-preview-styles]]で環境をスタイリングする
+- [[add-images-to-notes]]で画像を貼り付けてリンクする
 - [[shows-image-preview-on-hover]]
-- [Markdown All-in-One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one) features [[todo]] [[good-first-task]]
-  - Manage checklists
-  - Automatic Table of Contents
-  - Live preview markdown
-  - _More..._
-- VS Code Advanced Features [[todo]] [[good-first-task]]
-  - Focus with Zen Mode
-- Display content of other notes in the preview tab by [[including-notes]]
+- [Markdown All-in-One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)の機能 [[todo]] [[good-first-task]]
+  - チェックリストを管理する
+  - 自動目次
+  - マークダウンのライブプレビュー
+  - _その他..._
+- VS Codeの高度な機能 [[todo]] [[good-first-task]]
+  - Zenモードで集中する
+- [[including-notes]]でプレビュータブ内に他のノートの内容を表示する
 
-## Version control
+## バージョン管理
 
-- Quick commits with VS Code's built in [[git-integration]]
-- Store your workspace in an auto-synced GitHub repo with [[write-your-notes-in-github-gist]]
-- Sync your GitHub repo automatically using the [GitDoc VSCode Plugin](https://marketplace.visualstudio.com/items?itemName=vsls-contrib.gitdoc) [[automatic-git-syncing]].
+- VS Codeの組み込み[[git-integration]]でクイックコミット
+- [[write-your-notes-in-github-gist]]でワークスペースを自動同期GitHubリポジトリに保存
+- [GitDoc VSCodeプラグイン](https://marketplace.visualstudio.com/items?itemName=vsls-contrib.gitdoc)を使用してGitHubリポジトリを自動的に同期[[automatic-git-syncing]]。
 
-## Publish
+## 公開する
 
-- Publish using official Foam template
-  - Publish to [[publish-to-github-pages]]
-  - Publish to [[publish-to-gitlab-pages]]
-  - Publish to [[publish-to-azure-devops-wiki]]
-  - Publish to [[publish-to-vercel]]
-- Publish using community templates
-  - [[publish-to-netlify-with-eleventy]] by [@juanfrank77](https://github.com/juanfrank77)
-  - [[generate-gatsby-site]] by [@mathieudutour](https://github.com/mathieudutour) and [@hikerpig](https://github.com/hikerpig)
-  - [foamy-nextjs](https://github.com/yenly/foamy-nextjs) by [@yenly](https://github.com/yenly)
-- Make the site your own by [[publish-to-github]].
-- Render math symbols, by either
-  - adding client-side [[math-support-with-mathjax]] to the default [[publish-to-github-pages]] site
-  - adding a custom Jekyll plugin to support [[math-support-with-katex]]
+- 公式Foamテンプレートを使用して公開
+  - [[publish-to-github-pages]]に公開
+  - [[publish-to-gitlab-pages]]に公開
+  - [[publish-to-azure-devops-wiki]]に公開
+  - [[publish-to-vercel]]に公開
+- コミュニティテンプレートを使用して公開
+  - [@juanfrank77](https://github.com/juanfrank77)による[[publish-to-netlify-with-eleventy]]
+  - [@mathieudutour](https://github.com/mathieudutour)と[@hikerpig](https://github.com/hikerpig)による[[generate-gatsby-site]]
+  - [@yenly](https://github.com/yenly)による[foamy-nextjs](https://github.com/yenly/foamy-nextjs)
+- サイトを自分のものにする[[publish-to-github]]。
+- 数学記号をレンダリングするには、
+  - クライアントサイド[[math-support-with-mathjax]]をデフォルトの[[publish-to-github-pages]]サイトに追加する
+  - カスタムJekyllプラグインを追加して[[math-support-with-katex]]をサポートする
 
-## Collaborate
 
-- Give your team push access to your [GitHub repo](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-access-to-your-personal-repositories/inviting-collaborators-to-a-personal-repository)
-- Real-time collaboration via VS Code Live Share [[real-time-collaboration]]
-- Accept patches via GitHub PRs [[todo]]
+## 共同作業
 
-## Workflow
+- チームに[GitHubリポジトリ](https://docs.github.com/ja/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-access-to-your-personal-repositories/inviting-collaborators-to-a-personal-repository)へのプッシュアクセスを与える
+- VS Code Live Shareを介したリアルタイム共同作業 [[real-time-collaboration]]
+- GitHub PRを介してパッチを受け入れる [[todo]]
 
-- Capture notes from Drafts app on iOS [[capture-notes-with-drafts-pro]]
-- Capture notes from iOS Shortcuts [[capture-notes-with-shortcuts-and-github-actions]]
+## ワークフロー
 
-## Creative ideas
+- iOSのDraftsアプリからノートをキャプチャする [[capture-notes-with-drafts-pro]]
+- iOSショートカットからノートをキャプチャする [[capture-notes-with-shortcuts-and-github-actions]]
 
-Creative ideas welcome!
+## 創造的なアイデア
 
-- Support [Anki](https://apps.ankiweb.net/) cards from notes like [Remnote](https://www.remnote.io/) [[todo]]
+創造的なアイデアを歓迎します!
 
-_See [[contribution-guide]] and [[how-to-write-recipes]]._
+- [Remnote](https://www.remnote.io/)のように、ノートから[Anki](https://apps.ankiweb.net/)カードをサポートする [[todo]]
 
-## Other
+_詳細は[[contribution-guide]]と[[how-to-write-recipes]]を参照してください。_
 
-Thought of a recipe but don't see a category for them? Add them here and we'll organise them once we detect a theme.
+## その他
 
-_See [[contribution-guide]] and [[how-to-write-recipes]]._
+レシピのアイデアがあるが、それらのカテゴリーが見当たらない場合は、ここに追加してください。テーマが見つかり次第、整理します。
+
+_詳細は[[contribution-guide]]と[[how-to-write-recipes]]を参照してください。_
+
+
 

@@ -1,24 +1,26 @@
-# Publishing pages
+# ページの公開
 
-Foam pages can be published.
+Foamページは公開できます。
 
-TODO add publishing TOC
+TODO 公開TOCを追加
 
-## Foam site generator?
+## Foamサイトジェネレーター?
 
-Another case of the [[build-vs-assemble]] dilemma. We could provide a better publishing experience by building a bespoke static site generator (or a gatsby plugin) that's aware of Foam conventions (backlinks etc.)
+[[build-vs-assemble]]のジレンマの別のケースです。Foamの慣習 (バックリンクなど) を認識する特別な静的サイトジェネレーター (またはgatsbyプラグイン) を構築することで、より良い公開体験を提供できます。
 
-Eventually we should probably do it, as that would unlock a huge amount of power, but we should always strive to keep it optional.
+最終的にはそれを行うべきですが、それは大きな可能性を解き放つでしょうが、常にそれをオプションとして保つよう努めるべきです。
 
-At a bare minimum, Foam repos should remain valid markdown, and should be publishable by any sufficiently complete markdown to html generation tools.
+最低限、Foamリポジトリは有効なマークダウンのままであり、十分に完全なマークダウンからhtmlへの生成ツールによって公開可能であるべきです。
 
-Would be cool if Foam pages could be published. Some ideas here.
+Foamページが公開できると良いですね。ここにいくつかのアイデアがあります。
 
-- [x] Easymode: Make your GitHub public
-- [x] Static site generator integration, publish from GH actions to GitHub pages / Netlify etc!!!
-  - [ ] Add annotations to pages for setting visibility (many ways to do this)
-    - [ ] Public by default, and `@private` annotations
-    - [ ] Private by default, and `@public` annotations
-    - [ ] Only public `/public` folder, just move a document there, no annotation needed
-    - [ ] More granular access control? Email someone a link with a hash? [Testing](testing.md)
+- [x] イージーモード: GitHubを公開に設定する
+- [x] 静的サイトジェネレーターの統合、GHアクションからGitHubページ/Netlifyなどに公開!!!
+  - [ ] ページの可視性を設定するための注釈を追加する (これを行う方法は多数あります)
+    - [ ] デフォルトで公開、および`@private`注釈
+    - [ ] デフォルトで非公開、および`@public`注釈
+    - [ ] `/public`フォルダのみ公開、ドキュメントをそこに移動するだけで、注釈は不要
+    - [ ] より細かいアクセス制御?ハッシュ付きのリンクを誰かにメールで送る?[テスト](testing.md)
+
+
 

@@ -1,38 +1,40 @@
 # Janitor
 
-To store your personal knowledge graph in markdown files instead of a database, we need some additional tooling to create and maintain relationships with notes.
+個人の知識グラフをデータベースではなくマークダウンファイルで保存するためには、ノート間の関係を作成し維持するための追加のツールが必要です。
 
-**Foam Janitor** (inspired by Andy Matuschak's [note-link-janitor](https://github.com/andymatuschak/note-link-janitor)) helps you migrate existing notes to Foam, and maintain your Foam's health over time.
+**Foam Janitor** (Andy Matuschakの[note-link-janitor](https://github.com/andymatuschak/note-link-janitor)に触発されて) は、既存のノートをFoamに移行し、時間をかけてFoamの健康を維持するのに役立ちます。
 
-Currently, Foam's Janitor helps you to:
+現在、FoamのJanitorは以下を助けます:
 
-- Ensure your [[link-reference-definitions]] are up to date
-- Ensure every document has a well-formatted title (required for Markdown Links, Markdown Notes, and Foam Gatsby Template compatibility)
+- [[link-reference-definitions]]が最新であることを確認します
+- すべてのドキュメントに適切にフォーマットされたタイトルがあることを確認します (Markdown Links、Markdown Notes、Foam Gatsby Templateとの互換性に必要です)
 
-In the future, Janitor can help you with
+将来的には、Janitorは以下を助けることができます:
 
-- Updating [[materialized-backlinks]]
-- Lint, format and structure notes
-- Rename and move notes around while keeping their references up to date.
+- [[materialized-backlinks]]の更新
+- ノートのリント、フォーマット、構造化
+- 参照を最新の状態に保ちながら、ノートの名前を変更し、移動します。
 
-## Using Janitor from VS Code (Experimental)
+## VS CodeからJanitorを使用する (実験的)
 
-Execute the "Foam: Run Janitor" command from the command palette.
+コマンドパレットから"Foam: Run Janitor"コマンドを実行します。
 
-![Foam Janitor demo](../../assets/images/foam-janitor-demo.gif)
+![Foam Janitorデモ](../../assets/images/foam-janitor-demo.gif)
 
-## Using Janitor from command line (Experimental)
+## コマンドラインからJanitorを使用する (実験的)
 
 > ⚠️ Improvements to this documentation are welcome!
 
-The Janitor can be installed from [NPM](https://www.npmjs.com/) and executed as a standalone CLI tool:
+Janitorは[NPM](https://www.npmjs.com/)からインストールされ、スタンドアロンのCLIツールとして実行されます:
 
 ```sh
 > npm install -g foam-cli
 > foam janitor path/to/workspace
 ```
 
-You can run the Janitor as a git hook on every commit to ensure your workspace links are up to date. This can be especially helpful if you edit your markdown documents from other apps.
+Janitorをgitフックとして各コミットで実行し、ワークスペースのリンクが最新であることを確認することができます。これは、他のアプリからマークダウンドキュメントを編集する場合に特に役立ちます。
 
-You can also run the Janitor from a GitHub action to ensure that all changes coming to your workspace are up to date. This can be useful when editing your Foam notes from mobile (i.e. via [GitJournal](https://gitjournal.io)), or your Foam has multiple contributors and you want to ensure that all changes are correctly integrated.
+GitHubアクションからJanitorを実行して、ワークスペースに来るすべての変更が最新であることを確認することもできます。これは、モバイルからFoamノートを編集する場合 (例: [GitJournal](https://gitjournal.io)経由) 、またはFoamに複数の貢献者がいて、すべての変更が正しく統合されていることを確認したい場合に便利です。
+
+
 

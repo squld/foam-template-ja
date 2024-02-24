@@ -1,22 +1,22 @@
-# Resource Filters
+# リソースフィルター
 
-Resource filters can be passed to some Foam commands to limit their scope.
+リソースフィルターは、Foamコマンドのスコープを制限するためにいくつかのコマンドに渡すことができます。
 
-A filter supports the following parameters:
+フィルターは以下のパラメータをサポートしています:
 
-- `tag`: include a resource if it has the given tag (e.g. `{"tag": "#research"}`)
-- `type`: include a resource if it is of the given type (e.g. `{"type": "daily-note"}`)
-- `path`: include a resource if its path matches the given regex (e.g. `{"path": "/projects/*"}`). **Note that this parameter supports regex and not globs.**
-- `expression`: include a resource if it makes the given expression `true`, where `resource` represents the resource being evaluated (e.g. `{"expression": "resource.type ==='weekly-note'"}`)
-- `title`: include a resource if the title matches the given regex (e.g. `{"title": "Team meeting:*"}`)
+- `tag`: 指定されたタグを持つリソースを含める (例: `{"tag": "#research"}`)
+- `type`: 指定されたタイプのリソースを含める (例: `{"type": "daily-note"}`)
+- `path`: そのパスが指定されたregexに一致するリソースを含める (例: `{"path": "/projects/*"}`) 。**このパラメータはregexをサポートしており、globsはサポートしていません。**
+- `expression`: 指定された式が`true`になるリソースを含める (例: `{"expression": "resource.type ==='weekly-note'"}`)
+- `title`: タイトルが指定されたregexに一致するリソースを含める (例: `{"title": "Team meeting:*"}`)
 
-A filter also supports some logical operators:
+フィルターはいくつかの論理演算子もサポートしています:
 
-- `and`: include a resource if it matches all the sub-parameters (e.g `{"and": [{"tag": "#research"}, {"title": "Paper *"}]}`)
-- `or`: include a resource if it matches any of the sub-parameters (e.g `{"or": [{"tag": "#research"}, {"title": "Paper *"}]}`)
-- `not`: invert the result of the nested filter (e.g. `{"not": {"type": "daily-note"}}`)
+- `and`: すべてのサブパラメータに一致するリソースを含める (例: `{"and": [{"tag": "#research"}, {"title": "Paper *"}]}`)
+- `or`: いずれかのサブパラメータに一致するリソースを含める (例: `{"or": [{"tag": "#research"}, {"title": "Paper *"}]}`)
+- `not`: ネストされたフィルタの結果を反転させる (例: `{"not": {"type": "daily-note"}}`)
 
-Here is an example of a complex filter, for example to show the Foam graph only of a subset of the workspace:
+例えば、ワークスペースのサブセットのみのFoamグラフを表示するための複雑なフィルタは以下のようになります:
 
 ```
 {
@@ -40,3 +40,5 @@ Here is an example of a complex filter, for example to show the Foam graph only 
   }
 }
 ```
+
+

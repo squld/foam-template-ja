@@ -1,10 +1,12 @@
-# Shows Image Preview on Hover
+# 画像のホバー時プレビューの表示
 
-This #recipe allows you to see a preview of an image on hover.
+この #レシピ を使用すると、画像にホバーしたときにプレビューを表示できます。
 
-Use extension: [Image preview](https://marketplace.visualstudio.com/items?itemName=kisstkondoros.vscode-gutter-preview) to shows image preview in the gutter and on hover
+拡張機能: [Image preview](https://marketplace.visualstudio.com/items?itemName=kisstkondoros.vscode-gutter-preview) を使用すると、ガターとホバー時に画像プレビューが表示されます。
 
-It looks like this
+以下のように表示されます。
 
 ![picture 1](../../assets/images/preview-image-on-hover.png)
 ![picture 2](../../assets/images/preview-image-in-glutter.png)
+
+

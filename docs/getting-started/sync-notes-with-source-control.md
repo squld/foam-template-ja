@@ -1,12 +1,14 @@
-# Sync notes with source control
+# ソースコントロールとノートの同期
 
-Source control is a way to precicely manage the history and content of a directory of files.
-Often used for program code, this feature is very useful for note taking as well.
+ソースコントロールは、ファイルディレクトリの履歴と内容を正確に管理する方法です。
+プログラムコードによく使用されますが、ノートの取り方にも非常に役立ちます。
 
-There are (too) many ways to commit your changes to source control:
+変更をソースコントロールにコミットする方法は多数あります:
 
-- Using VS Code's own git integration
-  - The quick and easy way is to use the `Git: Commit All` command after editing files. The default Foam workspace settings will stage & sync all of your changes to the remote:
-- Using GitDoc for [[automatic-git-syncing]]
-- Whatever way you like to do it (CLI?)
+- VS Codeのgit統合を使用する
+  - 簡単で迅速な方法は、ファイルを編集した後に`Git: Commit All`コマンドを使用することです。デフォルトのFoamワークスペース設定では、変更をリモートにステージング＆同期します:
+- [[automatic-git-syncing]]のためのGitDocを使用する
+- 好きな方法で行う (CLI?)
+
+
 

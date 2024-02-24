@@ -1,18 +1,20 @@
-# Make Backlinks More Prominent
+# バックリンクをより目立たせる
 
-One of the most most common early feature requests in Foam is to make the Markdown Notes Backlinks Explorer more prominent.
+Foamで最も一般的な初期の機能要求の一つは、Markdown Notesバックリンクエクスプローラーをより目立たせることです。
 
-This #recipe shows you how to do that.
+この #レシピ では、それをどのように行うかを示しています。
 
-At the moment, you can drag the explorer pane to your bottom pane, and either show it side by side with another pane, or have take the full width of the editor:
+現時点では、エクスプローラーパネルをエディタの下部のパネルにドラッグして、別のパネルと横に並べて表示するか、エディタの全幅を占めるようにすることができます:
 
-![Demo of dragging and dropping the pane](../../assets/images/demo-backlinks-explorer.gif)
+![デモのドラッグアンドドロップパネル](../../assets/images/demo-backlinks-explorer.gif)
 
-In the future we'll want to improve this feature by
+将来的には、この機能を改善するために
 
 - [[materialized-backlinks]]
-- Providing more context around back link reference
-  - Could be done by tweaking Markdown Notes slightly. Maybe a user setting?
-- Make back links editable using [VS Code Search Editors](https://code.visualstudio.com/updates/v1_43#_search-editors)
-  - [Suggested by @Jash on Discord](https://discordapp.com/channels/729975036148056075/729978910363746315/730999992419876956)
+- バックリンク参照の周りにもっとコンテキストを提供する
+  - Markdown Notesを少し調整することで実現できるかもしれません。ユーザー設定かもしれません?
+- [VS Code Search Editors](https://code.visualstudio.com/updates/v1_43#_search-editors)を使用してバックリンクを編集可能にする
+  - [Discordの@Jashによって提案されました](https://discordapp.com/channels/729975036148056075/729978910363746315/730999992419876956)
+
+
 

@@ -1,61 +1,61 @@
-# Capture Notes With Drafts Pro
+# Drafts Proでメモをキャプチャする
 
-With this #recipe you can create notes on your iOS device, which will automatically be imported into Foam.
+この #レシピ を使用すると、iOSデバイス上でメモを作成し、自動的にFoamにインポートすることができます。
 
-## Context
+## コンテキスト
 
-* You use [Foam for VSCode](https://marketplace.visualstudio.com/items?itemName=foam.foam-vscode) to manage your notes
-* You wish to adopt a practice such as [A writing inbox for transient and incomplete notes](https://notes.andymatuschak.org/A%20writing%20inbox%20for%20transient%20and%20incomplete%20notes)
-* You wish to use [Drafts Pro](https://docs.getdrafts.com/) to capture quick notes into your Foam notes from your iOS device
+* [Foam for VSCode](https://marketplace.visualstudio.com/items?itemName=foam.foam-vscode)を使用してメモを管理しています
+* [A writing inbox for transient and incomplete notes](https://notes.andymatuschak.org/A%20writing%20inbox%20for%20transient%20and%20incomplete%20notes)のような習慣を採用したいと考えています
+* iOSデバイスからFoamのメモに素早くメモをキャプチャするために[Drafts Pro](https://docs.getdrafts.com/)を使用したいと考えています
 
-## Other tools
+## 他のツール
 
-* We assume you are familiar with how to use GitHub (if you are using Foam this is implicit)
-* You have an iOS device with [Drafts](https://getdrafts.com/)
-* You have upgraded to [Drafts Pro](https://docs.getdrafts.com/draftspro) (needed to edit actions).
+* GitHubの使用方法に慣れていることを前提としています (Foamを使用している場合、これは暗黙の了解です)
+* [Drafts](https://getdrafts.com/)を搭載したiOSデバイスを持っています
+* アクションを編集するために[Drafts Pro](https://docs.getdrafts.com/draftspro)にアップグレードしています
 
-## Instructions
+## 使用方法
 
-1. [Create a new action in Drafts](https://docs.getdrafts.com/docs/actions/editing-actions)
-2. Add a single [step](https://docs.getdrafts.com/actions/steps/) of type Script
-3. Edit the script adding the code from the block below
-4. Edit settings at the top of the script to suit your preferences
-5. Set other Action options in Drafts as you wish
-6. Save the Action
-7. In GitHub [create a Personal Access Token](https://github.com/settings/tokens) and give it `repo` scope - make a note of the token
-8. In Drafts create a note
-9. Select the action you created in steps 1-6
-10. On the first run you will need to add the following information:
-    1. your GitHub username
-    2. the repository name of your Foam repo
-    3. the GitHub access token from step 7
-    4. An author name
-11. Check your GitHub repo for a commit
-12. If you are publishing your Foam to the web you may want to edit your publishing configuration to exclude inbox files - as publishing (and method) is a user choice that is beyond the scope of this recipe
+1. [Draftsで新しいアクションを作成します](https://docs.getdrafts.com/docs/actions/editing-actions)
+2. スクリプトのタイプの単一の[ステップ](https://docs.getdrafts.com/actions/steps/)を追加します
+3. 下記のブロックからコードを追加してスクリプトを編集します
+4. スクリプトの上部にある設定を好みに合わせて編集します
+5. Draftsの他のアクションオプションをお好みで設定します
+6. アクションを保存します
+7. GitHubで[個人アクセストークンを作成します](https://github.com/settings/tokens) そして`repo`スコープを与えます - トークンをメモしておきます
+8. Draftsでメモを作成します
+9. ステップ1-6で作成したアクションを選択します
+10. 最初の実行時には、以下の情報を追加する必要があります:
+    1. GitHubのユーザー名
+    2. Foamリポジトリのリポジトリ名
+    3. ステップ7からのGitHubアクセストークン
+    4. 著者名
+11. GitHubリポジトリでコミットを確認します
+12. WebにFoamを公開している場合は、公開ファイルからインボックスファイルを除外するために公開設定を編集することをお勧めします - 公開 (および方法) はユーザーの選択であり、このレシピの範囲を超えています
 
-## Code for Drafts Action
+## Drafts Actionのコード
 
 ```javascript
-// adapted from https://forums.getdrafts.com/t/script-step-post-to-github-without-working-copy/3594
-// post to writing inbox in Foam digital garden
+// https://forums.getdrafts.com/t/script-step-post-to-github-without-working-copy/3594 から適応
+// Foamデジタルガーデンのライティング受信箱に投稿
 
 /*
- * edit these lines to suit your preferences
+ * 環境に合わせてこれらの行を編集
  */
-const inboxFolder = "inbox/";   // the folder in your Foam repo where notes are saved. MUST have trailing slash, except for root of repo use ''
-const requiredTags = ['inbox']; // all documents will have these added in addition to tags from the Drafts app
-const addLinkToInbox = true;    // true = created note will have link to [[index]], false = no link
-const addTimeStamp = true;      // true = add a note of capture date/time at foot of note
+const inboxFolder = "inbox/";   // Foamリポジトリ内のノートが保存されるフォルダ。末尾にスラッシュが必要ですが、ルートの場合は''を使用
+const requiredTags = ['inbox']; // これらに加えてDraftsアプリからのタグがすべて追加されます
+const addLinkToInbox = true;    // true = 作成されたノートに[[index]]へのリンクが追加されます、false = リンクなし
+const addTimeStamp = true;      // true = ノートの末尾にキャプチャ日時を追加
 
 /*
- * stop editing
+ * 編集を停止
  */
 
-const credential = Credential.create("GitHub garden repo", "The repo name, and its credentials, hosting your Foam notes");
-credential.addTextField("username", "GitHub Username");
-credential.addTextField('repo', 'Repo name');
-credential.addPasswordField("key", "GitHub personal access token");
-credential.addTextField('author', 'Author');
+const credential = Credential.create("GitHub garden repo", "Foamノートをホストしているリポジトリ名とその認証情報");
+credential.addTextField("username", "GitHubユーザー名");
+credential.addTextField('repo', 'リポジトリ名');
+credential.addPasswordField("key", "GitHubパーソナルアクセストークン");
+credential.addTextField('author', '著者');
 credential.authorize();
 
 const githubKey = credential.getValue('key');
@@ -63,7 +63,7 @@ const githubUser = credential.getValue('username');
 const repo = credential.getValue('repo');
 const author = credential.getValue('author');
 
-const http = HTTP.create(); // create HTTP object
+const http = HTTP.create(); // HTTPオブジェクトを作成
 const base = 'https://api.github.com';
 
 
@@ -105,14 +105,14 @@ var doc = `${preamble}${txt}`;
 
 if (addTimeStamp){
 
-    doc += `\n\nCaptured: ${postdate}\n`
+    doc += `\n\nキャプチャ: ${postdate}\n`
 }
 
 const options = {
     url: `https://api.github.com/repos/${githubUser}/${repo}/contents/${inboxFolder}${fn}`,
     method: 'PUT',
     data: {
-        message: `Inbox from Drafts ${datestr}`,
+        message: `Draftsからの受信箱 ${datestr}`,
         content: Base64.encode(doc)
     },
     headers: {
@@ -123,7 +123,7 @@ const options = {
 var response = http.request(options);
 
 if (response.success) {
-    // yay
+    // やったね
 } else {
     console.log(response.statusCode);
     console.log(response.error);
@@ -138,3 +138,5 @@ function pad(n) {
 }
 
 ```
+
+

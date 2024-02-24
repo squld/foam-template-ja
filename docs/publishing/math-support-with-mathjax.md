@@ -2,9 +2,9 @@
 layout: mathjax
 ---
 
-# Math Support
+# 数式サポート
 
-Published Foam pages don't support math formulas by default. To enable this feature, you can add the following code snippet to the end of `_layouts/page.html`:
+公開されたFoamページはデフォルトで数式をサポートしていません。この機能を有効にするには、`_layouts/page.html`の最後に次のコードスニペットを追加できます:
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
@@ -18,34 +18,36 @@ Published Foam pages don't support math formulas by default. To enable this feat
 </script>
 ```
 
-This approach uses the [MathJax](https://www.mathjax.org/) library to render anything delimited by ```$``` (customizable in the snippet above) pairs to inline math and ```$$``` to blocks of math (like a html div tag) using with the AMS-LaTeX dialect embedded within MathJax.
+このアプローチは、AMS-LaTeX方言をMathJaxに組み込んで、`$` (上記のスニペットでカスタマイズ可能) で区切られたものをインライン数式として、`$$`を数式のブロック (html divタグのように) としてレンダリングする[MathJax](https://www.mathjax.org/)ライブラリを使用します。
 
-Example of inline math using `$...$`:
+`$...$`を使用したインライン数式の例:
 
-`$e^{i \pi}+1=0$`, becomes $e^{i \pi}+1=0$
+`$e^{i \pi}+1=0$`は、$e^{i \pi}+1=0$になります
 
-Example of a math block using `$$...$$`:
+`$$...$$`を使用した数式ブロックの例:
 
 `$$ f_{\mathbf{X}}\left(x_{1}, \ldots, x_{k}\right)=\frac{\exp \left(-\frac{1}{2}(\mathbf{x}-\boldsymbol{\mu})^{\mathrm{T}} \mathbf{\Sigma}^{-1}(\mathbf{x}-\boldsymbol{\mu})\right)}{\sqrt{(2 \pi)^{k}|\mathbf{\Sigma}|}} $$`
 
-Becomes:
+は、次のようになります:
 
 $$ f_{\mathbf{X}}\left(x_{1}, \ldots, x_{k}\right)=\frac{\exp \left(-\frac{1}{2}(\mathbf{x}-\boldsymbol{\mu})^{\mathrm{T}} \mathbf{\Sigma}^{-1}(\mathbf{x}-\boldsymbol{\mu})\right)}{\sqrt{(2 \pi)^{k}|\mathbf{\Sigma}|}} $$
 
-## Alternative approaches
+## 代替アプローチ
 
-There are other dialects of LaTeX (instead of AMS), and other JavaScript rendering libraries you may want to use. In a future version of Foam, we may support KaTeX syntax out of the box, but at this time, these integrations are left as an exercise to the user.
+AMS以外のLaTeX方言や、使用したい他のJavaScriptレンダリングライブラリがあります。将来のFoamバージョンでは、KaTeX構文を標準でサポートするかもしれませんが、現時点ではこれらの統合はユーザーに任されています。
 
-## Why don't my Math expressions work on my Foam's home page?
+## Foamのホームページで数式が機能しないのはなぜですか?
 
-If you want the index page of your Foam site to render maths, you'll need to add that to `_layouts/home.html` as well, or change the layout of the index page to be "page" instead of "home" by putting this Front Matter on the top of your `readme.md/index.md`:
+Foamサイトのインデックスページで数学をレンダリングしたい場合は、`_layouts/home.html`にもそれを追加する必要があります。または、`readme.md/index.md`の先頭にこのFront Matterを置くことで、インデックスページのレイアウトを"home"ではなく"page"に変更します:
 
 ```
 ---
 layout: page
 ---
 
-# Your normal title here
+# 通常のタイトルはここに
 ```
 
-Reference: [How to support latex in github-pages](https://stackoverflow.com/questions/26275645/how-to-support-latex-in-github-pages)
+参照: [How to support latex in github-pages](https://stackoverflow.com/questions/26275645/how-to-support-latex-in-github-pages)
+
+

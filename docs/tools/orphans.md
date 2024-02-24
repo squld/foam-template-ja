@@ -1,10 +1,12 @@
-# Orphaned Notes
+# 孤立したノート
 
-Foam helps you to find orphans: notes that have neither forward links nor backlinks.
+Foamは、前方リンクもバックリンクも持たない孤立したノートを見つけるのに役立ちます。
 
-Orphans can be found in the Orphans panel.
+孤立したノートは、孤立したノートパネルで見つけることができます。
 
-Two settings allows you to control the behaviour of the Orphans panel:
+孤立したノートパネルの挙動を制御するために、2つの設定があります:
 
-- `foam.orphans.exclude`: list of glob patterns that will be used to exclude directories. For example, a value of `["journal/**/*"]` would exclude your daily notes.
-- `foam.orphans.groupBy`: sets the default view mode of the Orphans panel: either groups by folder (by default), or lists all orphans. The view can be toggled on the fly from the panel, but it won't overwrite the setting.
+- `foam.orphans.exclude`: ディレクトリを除外するために使用されるglobパターンのリストです。例えば、`["journal/**/*"]`の値は、あなたの日々のノートを除外します。
+- `foam.orphans.groupBy`: 孤立したノートパネルのデフォルトのビューモードを設定します: デフォルトではフォルダーごとにグループ化するか、すべての孤立したノートをリストします。パネルからビューを即座に切り替えることができますが、設定を上書きすることはありません。
+
+

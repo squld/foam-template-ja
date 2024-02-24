@@ -1,34 +1,36 @@
-# Generate a site using Gatsby
+# Gatsbyを使用してサイトを生成する
 
-## Using foam-gatsby-template
+## foam-gatsby-templateの使用
 
-You can use [foam-gatsby-template](https://github.com/mathieudutour/foam-gatsby-template) to generate a static site to host it online on GitHub or [Vercel](https://vercel.com).
+[foam-gatsby-template](https://github.com/mathieudutour/foam-gatsby-template)を使用して、GitHubまたは[Vercel](https://vercel.com)上でオンラインでホストできる静的サイトを生成できます。
 
-### Publishing your foam to GitHub pages
+### GitHubページへのfoamの公開
 
-It comes configured with GitHub actions to auto deploy to GitHub pages when changes are pushed to your main branch.
+メインブランチに変更がプッシュされると、GitHubアクションがGitHubページに自動デプロイするように設定されています。
 
-### Publishing your foam to Vercel
+### Vercelへのfoamの公開
 
-When you're ready to publish, run a local build.
+公開する準備ができたら、ローカルビルドを実行します。
 
 ```bash
 cd _layouts
 npm run build
 ```
 
-Remove `public` from your .gitignore file then commit and push your public folder in `_layouts` to GitHub.
+.gitignoreファイルから`public`を削除し、`_layouts`内のpublicフォルダをGitHubにコミットしてプッシュします。
 
-Log into your Vercel account. (Create one if you don't have it already.)
+Vercelアカウントにログインします (まだ持っていない場合は作成してください) 。
 
-Import your project. Select `_layouts/public` as your root directory and click **Continue**. Then name your project and click **Deploy**.
+プロジェクトをインポートします。ルートディレクトリとして`_layouts/public`を選択し、**Continue**をクリックします。次に、プロジェクトに名前を付けて、**Deploy**をクリックします。
 
-That's it!
+それだけです!
 
-## Using foam-template-gatsby-kb
+## foam-template-gatsby-kbの使用
 
-You can use another template [foam-template-gatsby-kb](https://github.com/hikerpig/foam-template-gatsby-kb), and host it on [Vercel](https://vercel.com) or [Netlify](https://www.netlify.com/).
+別のテンプレート[foam-template-gatsby-kb](https://github.com/hikerpig/foam-template-gatsby-kb)を使用し、[Vercel](https://vercel.com)または[Netlify](https://www.netlify.com/)上でホストできます。
 
-## Using foam-template-gatsby-theme-primer-wiki
+## foam-template-gatsby-theme-primer-wikiの使用
 
-You can use another template [foam-template-gatsby-theme-primer-wiki](https://github.com/theowenyoung/foam-template-gatsby-theme-primer-wiki), ([Demo](https://demo-wiki.owenyoung.com/)), and host it on Github Pages, [Vercel](https://vercel.com) or [Netlify](https://www.netlify.com/).
+別のテンプレート[foam-template-gatsby-theme-primer-wiki](https://github.com/theowenyoung/foam-template-gatsby-theme-primer-wiki) ([デモ](https://demo-wiki.owenyoung.com/)) を使用し、Githubページ、[Vercel](https://vercel.com)または[Netlify](https://www.netlify.com/)上でホストできます。
+
+

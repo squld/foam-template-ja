@@ -1,38 +1,40 @@
-# How to Write Recipes
+# レシピの書き方
 
-This is an example of how to structure a Recipe. The first paragraph or two should explain the purpose of the recipe succinctly, including why it's useful, if that's not obvious.
+レシピの最初の一、二段落では、レシピの目的を簡潔に説明する必要があります。その目的が明らかでない場合は、その有用性も含めて説明してください。
 
-Recipes are intended to document:
+レシピは以下を文書化することを意図しています:
 
-- How to use Foam's basic features
-- Power user pro-tips
-- Useful customisations of the default Foam environment
-- Integrations with third party tools and extensions (should be listed below)
+- Foamの基本機能の使用方法
+- パワーユーザーのプロのヒント
+- デフォルトのFoam環境の有用なカスタマイズ
+- サードパーティのツールや拡張機能との統合 (以下にリストされています)
 
-## Required Extensions
+## 必要な拡張機能
 
-- **[Hacker Typer](https://marketplace.visualstudio.com/items?itemName=jevakallio.vscode-hacker-typer)** (not really required for this recipe, just an example)
-- [Foam for VSCode](https://marketplace.visualstudio.com/items?itemName=foam.foam-vscode) (installed by default)
+- **[Hacker Typer](https://marketplace.visualstudio.com/items?itemName=jevakallio.vscode-hacker-typer)** (このレシピには実際には必要ありませんが、例として挙げています)
+- [Foam for VSCode](https://marketplace.visualstudio.com/items?itemName=foam.foam-vscode) (デフォルトでインストールされています)
 
-The first section should be a bulleted list of extensions required to use this recipe. At a minimum, this section should list all additional, non-standard extensions.
+最初のセクションは、このレシピを使用するために必要な拡張機能の箇条書きリストであるべきです。最低限、すべての追加の非標準拡張機能をリストする必要があります。
 
-Ideally, you should also note which Foam [[recommended-extensions]] are responsible for providing this feature, so any issue reports can be directed to the correct repositories.
+理想的には、この機能を提供するFoam [[recommended-extensions]]も記載して、問題報告を正しいリポジトリに向けることができるようにするべきです。
 
-When creating new recipes, if you don't know which extension does what, you can leave it out.
+新しいレシピを作成するときに、どの拡張機能が何をするのかわからない場合は、それを省略できます。
 
-## Instructions
+## 使用方法
 
-Here we describe how the extension should be used.
+ここでは、拡張機能の使用方法を説明します。
 
-![Demo](../../assets/images/foam-navigation-demo.gif)
+![デモ](../../assets/images/foam-navigation-demo.gif)
 
-You may include a screenshot or GIF of the feature in action by uploading an image to the `assets/images` directory. Please try to keep GIFs as small as possible by recording them with a low frame rate.
+`assets/images`ディレクトリに画像をアップロードすることで、機能のアクションのスクリーンショットやGIFを含めることができます。GIFは、低フレームレートで録画することでできるだけ小さく保ってください。
 
-That's pretty much it!
+それだけです!
 
-## How to contribute
+## 貢献方法
 
-You can add [[recipes]] by creating a pull request to [foambubble/foam](https://github.com/foambubble/foam) on GitHub.
+[foambubble/foam](https://github.com/foambubble/foam)のGitHubにプルリクエストを作成することで、[[recipes]]を追加できます。
 
-Read more in our [[contribution-guide]].
+[[contribution-guide]]で詳細を読むことができます。
+
+
 

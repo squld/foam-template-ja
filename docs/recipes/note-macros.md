@@ -1,26 +1,26 @@
-# Custom Note Macros
+# カスタムノートマクロ
 
-This #recipe allows you to create custom note macros.
+この #レシピ を使用すると、カスタムノートマクロを作成できます。
 
-## Installation
+## インストール
 
-**This extension is not included in the template**
+**この拡張機能はテンプレートに含まれていません**
 
-To install search note-macros in vscode or head to [note-macros - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=NeelyInnovations.note-macros)
+VScodeでnote-macrosを検索するか、[note-macros - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=NeelyInnovations.note-macros)にアクセスしてインストールします。
 
-## Instructions
+## 使用方法
 
-### Run macro From command pallette
+### コマンドパレットからマクロを実行
 
-Simply use `Ctrl+P` or `Alt+P` depend on your os, and type `Note Macros: Run A Macro` then chose the macro you want to execute.
+`Ctrl+P`またはOSに応じて`Alt+P`を使用し、`Note Macros: Run A Macro`と入力して実行したいマクロを選択します。
 
-### Create Custom Note Macros
+### カスタムノートマクロの作成
 
-Create your own custom macros by adding them to your `settings.json` (Code|File > Preferences > User Settings). A full example can be found at [settings.json](https://github.com/kneely/note-macros/blob/master/settings.json)
+`settings.json`にマクロを追加することでカスタムマクロを作成できます (Code|File > Preferences > User Settings) 。完全な例は[note-macrosのsettings.json](https://github.com/kneely/note-macros/blob/master/settings.json)で見つけることができます。
 
-For example:
+例えば:
 
-This macro creates a Weekly note in the Weekly note Directory.
+このマクロは、WeeklyノートディレクトリにWeeklyノートを作成します。
 
 ```json
 {
@@ -38,11 +38,11 @@ This macro creates a Weekly note in the Weekly note Directory.
 }
 ```
 
-For an explanation of the fields please go to [note-macros - Explanation of Fields](https://github.com/kneely/note-macros#explanation-of-fields)
+フィールドの説明については、[note-macros - フィールドの説明](https://github.com/kneely/note-macros#explanation-of-fields)を参照してください。
 
-### Add Keybindings to Run your Macros
+### マクロを実行するためのキーバインドの追加
 
-in `keybindings.json` (Code|File > Preferences > Keyboard Shortcuts) add bindings to your macros:
+`keybindings.json`にマクロへのバインディングを追加します (Code|File > Preferences > Keyboard Shortcuts) :
 
 ```json
 {
@@ -51,8 +51,10 @@ in `keybindings.json` (Code|File > Preferences > Keyboard Shortcuts) add binding
 }
 ```
 
-## Issues and Feedback
+## 問題とフィードバック
 
-If you have any issues or questions please look at the [README.md](https://github.com/kneely/note-macros#note-macros) on the [note-macros](https://github.com/kneely/note-macros) GitHub.
+問題や質問がある場合は、[note-macros](https://github.com/kneely/note-macros) GitHubの[README.md](https://github.com/kneely/note-macros#note-macros)を参照してください。
 
-If you run into any issues that are not fixed by referring to the README or feature requests please open an [issue](https://github.com/kneely/note-macros/issues).
+READMEを参照しても解決しない問題や機能リクエストがある場合は、[issue](https://github.com/kneely/note-macros/issues)を開いてください。
+
+

@@ -1,6 +1,6 @@
-# Pre-defined User Snippets
+# 事前定義されたユーザースニペット
 
-This #recipe allows us to introduce Roam style commands to Foam, by using [VS Code Snippets](https://code.visualstudio.com/docs/editor/userdefinedsnippets). Consider the below snippets:
+この #レシピ を使用すると、[VS Codeスニペット](https://code.visualstudio.com/docs/editor/userdefinedsnippets)を使用してFoamにRoamスタイルのコマンドを導入できます。以下のスニペットを考えてみてください:
 
 ```json
 {
@@ -15,7 +15,7 @@ This #recipe allows us to introduce Roam style commands to Foam, by using [VS Co
   "Current date": {
     "scope": "markdown",
     "prefix": "/date",
-    "description": "Current date",
+    "description": "現在の日付",
     "body": [
       "${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE} ${CURRENT_HOUR}:${CURRENT_MINUTE}:${CURRENT_SECOND}"
     ]
@@ -23,28 +23,30 @@ This #recipe allows us to introduce Roam style commands to Foam, by using [VS Co
 }
 ```
 
-Which would look like:
-![GIF demonstrating User Snippets](../../assets/images/snippets.gif)
+これは以下のようになります:
+![ユーザースニペットを示すGIF](../../assets/images/snippets.gif)
 
-Using snippets enables Foam users to add [[custom-snippets]] themselves so they live alongside the first-class `/commands`.
+スニペットを使用することで、Foamユーザーは自分自身で[[custom-snippets]]を追加できるため、ファーストクラスの`/commands`と並んで存在します。
 
-## Notes & Considerations
+## ノートと考慮事項
 
-- VS Code supplies "commands" already via the command palette
-  - Consider the UX around this. Users less familiar with VS Code are more likely to be familiar with `/` to trigger a command menu. Experienced VS Code users may be more likely to favour the command palette.
-- We can use `TabCompletionProvider` and `snippets` and mix them (maybe) via the following VS Code setting: `"editor.snippetSuggestions": "inline" | "top" | "bottom" | "none"`
-- For more discussion, consult the PR [here](https://github.com/foambubble/foam/pull/192).
+- VS Codeは既にコマンドパレットを介して"コマンド"を提供しています
+  - これに関するUXを考慮してください。VS Codeにあまり慣れていないユーザーは、コマンドメニューをトリガーするために`/`を使用することにより慣れている可能性が高いです。経験豊富なVS Codeユーザーは、コマンドパレットを好むかもしれません。
+- `TabCompletionProvider`と`snippets`を混ぜることができます (多分) 以下のVS Code設定を通じて: `"editor.snippetSuggestions": "inline" | "top" | "bottom" | "none"`
+- 詳細な議論については、[こちら](https://github.com/foambubble/foam/pull/192)のPRを参照してください。
 
-## Simplifying Markdown Syntax
+## Markdown構文の簡素化
 
-Some markdown syntax is difficult for users who have never authored markdown before. Take for example a checkbox/todo. The following syntax is required:
+一部のmarkdown構文は、以前にmarkdownを作成したことがないユーザーにとって難しい場合があります。例えば、チェックボックス/TODOです。以下の構文が必要です:
 
 ```
-- [ ] Something todo...
+- [ ] 何かのtodo...
 ```
 
-We could provide snippets that expand out into the associated markdown syntax, like in the below GIF:
-![GIF demonstrating markdown snippets](../../assets/images/markdown-snippets.gif)
+以下のGIFのように、関連するmarkdown構文に展開されるスニペットを提供することができます:
+![markdownスニペットを示すGIF](../../assets/images/markdown-snippets.gif)
 
-The JSON for these snippets can be found [here](https://github.com/foambubble/foam/pull/192#issuecomment-666736270).
+これらのスニペットのJSONは[こちら](https://github.com/foambubble/foam/pull/192#issuecomment-666736270)で見つけることができます。
+
+
 

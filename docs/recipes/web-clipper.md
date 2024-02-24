@@ -1,14 +1,16 @@
-# Web Clipper
+# Webクリッパー
 
-This #recipe allows you to convert any web content into Markdown for storing them in your notes.
+この #レシピ を使用すると、任意のWebコンテンツをMarkdownに変換して、ノートに保存することができます。
 
-There are a couple of options when it comes to clipping web pages:
+Webページをクリッピングするにはいくつかのオプションがあります:
 
 - [Web Clipper](https://marketplace.visualstudio.com/items?itemName=jsartelle.web-clipper)
-  - This is a Web Clipper as a VSCode extension, takes a webpage URL and outputs Markdown. Uses [mercury](https://github.com/postlight/mercury-parser)
+  - これはVSCode拡張機能としてのWebクリッパーで、WebページのURLを取得し、Markdownを出力します。[mercury](https://github.com/postlight/mercury-parser)を使用しています
 
 - [Markdown Clipper](https://github.com/deathau/markdownload)
-  - A Firefox and Google Chrome extension to clip websites and download them into a readable markdown file.
+  - ウェブサイトをクリップして、読みやすいマークダウンファイルとしてダウンロードするためのFirefoxとGoogle Chromeの拡張機能です。
 
 - [Web Clipper](https://clipper.website/)
-  - A Firefox, Chrome and Edge extension to clip websites and save them directly to the GitHub repository into a readable markdown file.
+  - ウェブサイトをクリップして、読みやすいマークダウンファイルとしてGitHubリポジトリに直接保存するためのFirefox、Chrome、Edgeの拡張機能です。
+
+

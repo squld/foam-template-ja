@@ -1,18 +1,20 @@
-# Publish to Netlify with Eleventy
+# Eleventyを使用してNetlifyに公開する
 
-You can use [foam-eleventy-template](https://github.com/juanfrank77/foam-eleventy-template) to generate a static site with [Eleventy](https://www.11ty.dev/), and host it online on [Netlify](https://www.netlify.com/).
+[foam-eleventy-template](https://github.com/juanfrank77/foam-eleventy-template)を使用して、[Eleventy](https://www.11ty.dev/)で静的サイトを生成し、[Netlify](https://www.netlify.com/)上でオンラインでホストすることができます。
 
-With this template you can
+このテンプレートを使用すると、
 
-- Have control over what to publish and what to keep private
-- Customize the styling of the site to your own liking
+- 公開するものとプライベートに保つものを制御できます
+- サイトのスタイリングを自分好みにカスタマイズできます
 
-## Publishing your foam
+## foamの公開
 
-When you're ready to publish, import the GitHub repository you created with **foam-eleventy-template** into your Netlify account. (Create one if you don't have it already.)
+公開する準備ができたら、**foam-eleventy-template**で作成したGitHubリポジトリをNetlifyアカウントにインポートします (まだ持っていない場合は作成してください) 。
 
-Once that's done, all you have to do is make changes to your workspace in VS Code and push them to the main branch on GitHub. Netlify will recognize the changes, deploy them automatically and give you a link where your Foam is published.
+それが完了したら、VS Codeでワークスペースに変更を加え、GitHubのメインブランチにプッシュするだけです。Netlifyは変更を認識し、自動的にデプロイし、Foamが公開されているリンクを提供します。
 
-That's it!
+それだけです!
 
-You can now see it online and use that link to share it with your friends, so that they can see it too.
+これで、オンラインで見ることができ、そのリンクを友人と共有して、彼らも見ることができます。
+
+

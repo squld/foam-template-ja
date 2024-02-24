@@ -1,14 +1,10 @@
-# Using Foam
+# Foamの使用
 
-Foam is a collection VS Code extensions and recipes that power up the editor
-into a full-blown note taking system. This folder contains user documentation
-describing how to get started using Foam, what its main features are, and
-strategies for getting the most out of Foam. The full docs are included in the
-`foam-template` repo that most users start from.
+Foamは、エディタをフルブローンのノートテイキングシステムにパワーアップするVS Code拡張機能とレシピのコレクションです。このフォルダには、Foamの使用を開始する方法、主な機能、Foamを最大限に活用するための戦略を説明するユーザードキュメントが含まれています。完全なドキュメントは、ほとんどのユーザーが最初に使用する`foam-template-ja`リポジトリに含まれています。
 
-> See also [[frequently-asked-questions]].
+> [[frequently-asked-questions]]も参照してください。
 
-## Getting Started
+## 入門
 
 - [[get-started-with-vscode]]
 - [[recommended-extensions]]
@@ -17,7 +13,7 @@ strategies for getting the most out of Foam. The full docs are included in the
 - [[sync-notes-with-source-control]]
 - [[keyboard-shortcuts]]
 
-## Features
+## 機能
 
 - [[wikilinks]]
 - [[tags]]
@@ -33,21 +29,23 @@ strategies for getting the most out of Foam. The full docs are included in the
 - [[link-reference-definitions]]
 - [[custom-snippets]]
 
-## Recipes
+## レシピ
 
-[[recipes]] is a collection of user-contributed patterns that describe different ways you could utilize Foam or integrate it with other tools.
+[[recipes]]は、Foamを利用するさまざまな方法や他のツールとの統合方法を説明するユーザーが提供したパターンのコレクションです。
 
-## Publishing
+## 公開
 
-You can publish your Foam notes for consumption in different formats.
-Examples: [[publish-to-github-pages]], [[generate-gatsby-site]], [[publish-to-vercel]]
+Foamノートをさまざまな形式で公開できます。
+例: [[publish-to-github-pages]]、[[generate-gatsby-site]]、[[publish-to-vercel]]
 
-See [[publishing]] for more details.
+詳細は[[publishing]]を参照してください。
 
-## Tools
+## ツール
 
 - [[cli]]
 - [[workspace-janitor]]
 - [[orphans]]
 - [[foam-logging-in-vscode]]
+
+
 

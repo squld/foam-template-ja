@@ -1,10 +1,12 @@
-# Backlinking
+# バックリンク
 
-When using [[wikilinks]], you can find all notes that link to a specific note in the **Connections Explorer**
+[[wikilinks]]を使用すると、特定のノートにリンクしているすべてのノートを**Connections Explorer**で見つけることができます。
 
-- Run `Cmd` + `Shift` + `P` (`Ctrl` + `Shift` + `P` for Windows), type "connections" and run the **Explorer: Focus on Connections** view.
-- Keep this pane always visible to discover relationships between your thoughts
-- You can drag the connections panel to a different section in VS Code if you prefer. See: [[make-backlinks-more-prominent]]
-- You can filter the connections to see just backlinks, forward links, or all connections
-- Finding backlinks in published Foam workspaces via [[materialized-backlinks]] is on the [[roadmap]] but not yet implemented.
+- `Cmd` + `Shift` + `P` (Windowsの場合は`Ctrl` + `Shift` + `P`) を実行し、"connections"と入力して**Explorer: Focus on Connections**ビューを実行します。
+- 思考の間の関係を発見するために、このペインを常に表示させておきます。
+- VS Code内の異なるセクションに接続パネルをドラッグすることもできます。参照: [[make-backlinks-more-prominent]]
+- 接続をフィルタリングして、バックリンク、フォワードリンク、またはすべての接続のみを表示することができます。
+- 公開されたFoamワークスペースでのバックリンクの検索は[[materialized-backlinks]]を通じて行われますが、[[roadmap]]にはまだ実装されていません。
+
+
 

@@ -1,12 +1,14 @@
-# Paste Images from Clipboard
+# クリップボードから画像を貼り付ける
 
-By installing the [vscode-paste-image](https://github.com/mushanshitiancai/vscode-paste-image) extension, you can paste an image from the clipboard with `cmd+alt+v`.
+[vscode-paste-image](https://github.com/mushanshitiancai/vscode-paste-image)拡張機能をインストールすることで、`cmd+alt+v`でクリップボードから画像を貼り付けることができます。
 
-Images are automatically copied to the `/attachments` folder and a reference is added in the file where you pasted them.
+画像は自動的に`/attachments`フォルダにコピーされ、貼り付けたファイルに参照が追加されます。
 
-A prompt will ask you to confirm the name of the image, to disable it set `"pasteImage.showFilePathConfirmInputBox": false,` in the settings.
+画像の名前を確認するプロンプトが表示されますが、設定で`"pasteImage.showFilePathConfirmInputBox": false,`を設定することで無効にできます。
 
-To change the location where the image is created, change the `pasteImage.path` property, e.g.:
+画像の作成場所を変更するには、`pasteImage.path`プロパティを変更します。例えば:
 
-- `${currentFileDir}`: save the image next to the file
-- `${currentFileDir}/images`: create an `images` directory next to the file and save the image there
+- `${currentFileDir}`: ファイルの隣に画像を保存します
+- `${currentFileDir}/images`: ファイルの隣に`images`ディレクトリを作成し、そこに画像を保存します
+
+

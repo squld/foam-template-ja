@@ -2,42 +2,42 @@
 tags: my-tag1 my-tag2 my-tag3/notes
 ---
 
-# Tags
+# タグ
 
-You can add tags to your notes to categorize or link notes together.
+メモにタグを追加して、カテゴリ分けしたり、メモ同士をリンクさせたりすることができます。
 
-## Creating a tag
+## タグの作成
 
-There are two ways of creating a tag:
+タグを作成する方法は2つあります:
 
-- Adding a `#tag` anywhere in the text of the note, for example: #my-tag1
-- Using the `tags: tag1, tag2` yaml frontmatter [[note-properties|note property]]. Notice `my-tag1` and `my-tag2` tags which are added to this document this way.
+- メモのテキストのどこかに `#tag` を追加することで、例えば: #my-tag1
+- `tags: tag1, tag2` のyamlフロントマターを使用すること。このドキュメントにはこの方法で `my-tag1` と `my-tag2` タグが追加されています。
 
-Tags can also be hierarchical, so you can have `#parent/child` such as #my-tag3/info.
+タグは階層構造を持つこともできるので、`#parent/child` のように #my-tag3/info のようなタグを持つことができます。
 
-### Tag completion
+### タグの補完
 
-Typing the `#` character will launch VS Code's "Intellisense." This provider will show a list of possible tags that match the character. If you are editing in the frontmatter [[note-properties|note property]], you can invoke tag completion on the `tags:` line by either typing the `#` character, or using the ["trigger suggest"](https://code.visualstudio.com/docs/editor/intellisense) keybinding (usually `ctrl+space`). If the `#` is used in the frontmatter, it will be removed when the tag is inserted.
+`#` 文字を入力すると、VS Codeの"Intellisense"が起動します。この機能は、入力された文字に一致する可能なタグのリストを表示します。フロントマターで編集している場合は、`tags:` 行で `#` 文字を入力するか、["trigger suggest"](https://code.visualstudio.com/docs/editor/intellisense) キーバインド (通常は `ctrl+space`) を使用してタグ補完を呼び出すことができます。フロントマターで `#` を使用した場合、タグが挿入されるときに `#` は削除されます。
 
-## Using *Tag Explorer*
+## *Tag Explorer* の使用
 
-It's possible to navigate tags via the Tag Explorer panel. Expand the Tag Explorer view in the left side bar which will list all the tags found in current Foam environment. Then, each level of tags can be expanded until the options to search by tag and a list of all files containing a particular tag are shown.
+Tag Explorerパネルを通じてタグをナビゲートすることができます。左サイドバーでTag Explorerビューを展開すると、現在のFoam環境で見つかったすべてのタグがリストされます。その後、タグの各レベルを展開すると、タグで検索するオプションと、特定のタグを含むすべてのファイルのリストが表示されます。
 
-Tags can also be visualized in the Foam Graph Explorer. See [[graph-visualization]] for more info including how to change the color of nodes representing tags.
+タグはFoam Graph Explorerでも視覚化することができます。タグを表すノードの色を変更する方法を含む詳細については、[[graph-visualization]]を参照してください。
 
-## Styling tags
+## タグのスタイリング
 
-It is possible to customize the way that tags look in the Markdown Preview panel that renders your Foam notes. This requires some knowledge of the CSS language, which is used to customize the styles of web technologies such as VSCode. A cursory introduction to CSS can be [found here](https://www.freecodecamp.org/news/get-started-with-css-in-5-minutes-e0804813fc3e/).
+FoamノートをレンダリングするMarkdownプレビューパネルでタグの見た目をカスタマイズすることができます。これにはCSS言語の知識が必要です。CSSはVSCodeなどのウェブ技術のスタイルをカスタマイズするために使用されます。CSSの簡単な紹介は[こちら](https://www.freecodecamp.org/news/get-started-with-css-in-5-minutes-e0804813fc3e/)で見つけることができます。
 
-1. Create a CSS file within your Foam project, for example in `.foam/css/custom-tag-style.css` or [.vscode/custom-tag-style.css](../../.vscode/custom-tag-style.css)
-2. Add CSS code that targets the `.foam-tag` class
-3. Add a rule for each [CSS property](https://www.w3schools.com/cssref/index.php) you would like applied to your tags.
-4. Open the `.vscode/settings.json` file (or the Settings browser with `ctrl+,`)
-5. Add the path to your new stylesheet to the `markdown.styles` setting.
+1. Foamプロジェクト内にCSSファイルを作成します。例えば、`.foam/css/custom-tag-style.css` または [.vscode/custom-tag-style.css](../../.vscode/custom-tag-style.css) にします。
+2. `.foam-tag` クラスを対象とするCSSコードを追加します。
+3. タグに適用したい各[CSSプロパティ](https://www.w3schools.com/cssref/index.php)に対するルールを追加します。
+4. `.vscode/settings.json` ファイルを開くか (または `ctrl+,` で設定ブラウザを開きます) 。
+5. 新しいスタイルシートのパスを `markdown.styles` 設定に追加します。
 
-> Note: the file path for the stylesheet will be relative to the currently open folder in the workspace when changing this setting for the current workspace. If changing this setting for the user, then the file path will be relative to your global [VSCode settings](https://code.visualstudio.com/docs/getstarted/settings).
+> 注: スタイルシートのファイルパスは、ワークスペースで現在開いているフォルダに対して相対的になります。ユーザーの設定を変更する場合、ファイルパスはグローバルな[VSCode設定](https://code.visualstudio.com/docs/getstarted/settings)に対して相対的になります。
 
-The end result will be a CSS file that looks similar to the content below. Now you can make your tags standout in your note previews.
+最終的な結果は、以下の内容に似たCSSファイルになります。これで、ノートプレビューでタグを目立たせることができます。
 
 ```css
 .foam-tag{
@@ -46,13 +46,15 @@ The end result will be a CSS file that looks similar to the content below. Now y
 }
 ```
 
-![custom tag style demo](../../assets/images/custom-tag-style.png)
+![カスタムタグスタイルデモ](../../assets/images/custom-tag-style.png)
 
-## Using backlinks in place of tags
+## タグの代わりにバックリンクを使用する
 
-Given the power of backlinks, some people prefer to use them as tags.
-For example you can tag your notes about books with [[book]].
+バックリンクの力を考えると、タグとして使用することを好む人もいます。
+例えば、本に関するノートを [[book]] でタグ付けすることができます。
 
-[note-properties|note property]: note-properties.md "Note Properties"
-[graph-visualization]: graph-visualization.md "Graph Visualization"
+[note-properties|note property]: note-properties.md "ノートのプロパティ"
+[graph-visualization]: graph-visualization.md "グラフの可視化"
+
+
 
