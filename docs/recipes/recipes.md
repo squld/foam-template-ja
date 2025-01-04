@@ -75,7 +75,7 @@
 - コミュニティテンプレートを使用して公開
   - [@juanfrank77](https://github.com/juanfrank77)による[[publish-to-netlify-with-eleventy]]
   - [@mathieudutour](https://github.com/mathieudutour)と[@hikerpig](https://github.com/hikerpig)による[[generate-gatsby-site]]
-  - [@yenly](https://github.com/yenly)による[foamy-nextjs](https://github.com/yenly/foamy-nextjs)
+
 - サイトを自分のものにする[[publish-to-github]]。
 - 数学記号をレンダリングするには、
   - クライアントサイド[[math-support-with-mathjax]]をデフォルトの[[publish-to-github-pages]]サイトに追加する
